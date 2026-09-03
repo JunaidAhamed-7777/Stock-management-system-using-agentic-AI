@@ -1,23 +1,53 @@
-web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c5ad8ca38c9993
-# StockFlow — Design System Specification (`design.md`)
+web application/stitch/projects/12804117146067154911/screens/9a71a5da7ede4487875dcde84369331b
+# StockFlow Enterprise — Comprehensive Design System Specification (`design.md`)
 
 ## 1. Overview & Brand Identity
 
 **Product Name:** StockFlow Enterprise  
-**Archetype:** B2B Mission-Critical SaaS / Logistics & Inventory Engine  
-**Aesthetic:** Functionalist, ultra-clean, dense, high-contrast, zero-fluff data architecture.  
+**Archetype:** B2B Mission-Critical SaaS / Logistics, Inventory & Stock Orchestration Engine  
+**Aesthetic:** Functionalist, ultra-clean, high-density, zero-fluff data architecture. Built for operations admins, plant procurement officers, and Tier-1 hardware suppliers.  
 **Target Viewport:** Desktop (1440px+ optimized layout, collapsible sidebar, fluid responsive grid).  
 **Core Principles:**
-- **Scannability First:** Tabular figures, monospaced SKUs/coordinates, strict badge color semantics, and 40–44px row heights.
-- **Single Accent Discipline:** Controlled Royal Navy / Electric Cobalt (`#2563EB`) strictly reserved for primary actions, active navigational states, and focus boundaries.
-- **Subtle Elevation:** Rely on 1px crisp hairline borders (`#E2E8F0`) and soft, ambient shadows rather than heavy cards or blur effects.
-- **Tri-Role Cohesion:** Unified visual grammar across Admin, Supplier, and Customer portals with role switcher context.
+- **Scannability First:** Tabular numerals, monospaced SKUs/coordinates, strict semantic badge styling, and 40–44px row heights.
+- **Single Accent Discipline:** Controlled Royal Navy / Electric Cobalt (`#2563EB`) reserved strictly for primary actions, active navigational states, and focus indicators.
+- **Subtle Elevation:** Rely on 1px crisp hairline borders (`#E2E8F0`) and ambient micro-shadows rather than heavy cards, gradients, or blur effects.
+- **Tri-Role Cohesion & Seamless Transition:** Unified visual grammar across Admin, Supplier, and Customer portals with role-switcher context and synchronized cross-portal data telemetry.
 
 ---
 
-## 2. Color Palette & Token System
+## 2. Portal Taxonomy & Information Architecture
 
-### 2.1 Neutral Surfaces & Backgrounds
+### 2.1 Admin Portal (Global Operations & Governance)
+- **Executive Command Center:** Global inventory valuation, DC capacity saturation, high-priority exception triage, and master SKU table.
+- **Stock Transactions & Audit Ledger:** Cryptographic audit trail of stock movements, receipts, dispatches, cycle count adjustments, and Merkle root consensus.
+- **Inventory & Multi-DC Allocations:** Real-time cross-facility stock allocation, safety floors, burn velocity, and automated rebalancing recommendations.
+- **AI Forecasting & Stockout Hub:** Autonomous depletion predictions, 30-day Bayesian projection curves, and ARE replenishment guardrails.
+- **Profile & RBAC Management:** User credentials, YubiKey hardware 2FA, granular permission matrix, and active session telemetry.
+
+### 2.2 Supplier Portal (Precision Components Global)
+- **Supplier Operations Dashboard:** Open PO fulfillment, on-time delivery (OTIF), ASN pipeline, and dock appointment scheduling.
+- **Supplied Products Catalog:** Manufacturer part numbers, volume tier pricing, stock buffers, and RoHS/AEC-Q100 compliance badges.
+- **Add & Edit Product Specification:** Tabbed enterprise form for hardware specifications, lead times, tiered pricing matrix, and X12 EDI 832 validation.
+- **Purchase Orders & ASN Fulfillment:** Incoming order processing, dock arrival SLAs, freight BOL generation, and AS2 telemetry.
+- **Inbound Stock Management:** Multi-DC buffer health, regional burn rates, and automated EDI 855 replenishment triggers.
+
+### 2.3 Customer Portal (Apex Manufacturing Corp)
+- **Customer Procurement Dashboard:** Net-30 available credit line ($184.5k/$250k), active wholesale orders, 30-day spend, and live carrier GPS tracking.
+- **Contracted Product Catalog:** Search and multi-filter toolbar, category presets, contracted vs. MSRP pricing, and bulk selection drawer.
+- **Product Details & Volume Tiers:** Engineering pinout diagrams, B2B price break matrix, warehouse availability, and BOM complementary pairing.
+- **Wholesale Cart & Dispatch Checkout:** Single-node freight consolidation calculator, pallet counts, job site delivery routing, and Net-30 PO approval.
+- **Customer Orders & Dispatch Tracking:** Filterable shipment table, freight tracking, waypoint route map, and trailer temperature telemetry.
+
+### 2.4 Authentication & Identity Suite
+- **Enterprise Split-Screen Login:** Side-by-side layout with high-impact brand/metrics hero, Okta/SAML SSO, role quick-switch, and FIDO2 MFA.
+- **Organization & DC Registration:** 4-step onboarding wizard for corporate entity registration, warehouse node setup, and EDI protocol config.
+- **User Profile & RBAC Security:** Superuser profile, granular permission matrix, hardware security key management, and cross-terminal session control.
+
+---
+
+## 3. Color Palette & Token System
+
+### 3.1 Neutral Surfaces & Backgrounds
 | Token Name | Hex Value | Tailwind Class / Usage |
 | :--- | :--- | :--- |
 | `surface-canvas` | `#F8FAFC` | `bg-slate-50` — Global dashboard background |
@@ -26,14 +56,14 @@ web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c
 | `surface-hover` | `#F8FAFC` | `hover:bg-slate-50` — Table row hover, menu item hover |
 | `surface-active` | `#E2E8F0` | `bg-slate-200` — Active segmented button background |
 
-### 2.2 Neutral Borders & Dividers
+### 3.2 Neutral Borders & Dividers
 | Token Name | Hex Value | Usage |
 | :--- | :--- | :--- |
 | `border-default` | `#E2E8F0` | `border-slate-200` — Standard card borders, table dividers |
 | `border-subtle` | `#F1F5F9` | `border-slate-100` — Subtle inner dividers |
 | `border-strong` | `#CBD5E1` | `border-slate-300` — Input outlines, active dropdown triggers |
 
-### 2.3 Typography & Text Content
+### 3.3 Typography & Text Content
 | Token Name | Hex Value | Usage |
 | :--- | :--- | :--- |
 | `text-primary` | `#0F172A` | `text-slate-900` — Headings, key figures, table headers |
@@ -41,7 +71,7 @@ web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c
 | `text-muted` | `#64748B` | `text-slate-500` — Subtitles, helper text, breadcrumbs |
 | `text-subtle` | `#94A3B8` | `text-slate-400` — Icon strokes, placeholder text, timestamps |
 
-### 2.4 Primary Accent (Brand)
+### 3.4 Primary Accent (Brand)
 | Token Name | Hex Value | Usage |
 | :--- | :--- | :--- |
 | `primary-50` | `#EFF6FF` | Soft active background, selected table rows |
@@ -51,7 +81,7 @@ web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c
 | `primary-700` | `#1D4ED8` | Primary button hover state |
 | `primary-900` | `#1E3A8A` | High-contrast brand elements |
 
-### 2.5 Semantic Status & Telemetry Tokens
+### 3.5 Semantic Status & Telemetry Tokens
 | Status | Background (`bg-*`) | Border (`border-*`) | Text (`text-*`) | Meaning / Application |
 | :--- | :--- | :--- | :--- | :--- |
 | **Success** | `#ECFDF5` (`emerald-50`) | `#A7F3D0` (`emerald-200`) | `#065F46` (`emerald-800`) | In Stock (>80%), Fulfilled, Delivered, AS2 Connected |
@@ -62,7 +92,7 @@ web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c
 
 ---
 
-## 3. Typography Hierarchy
+## 4. Typography Hierarchy
 
 - **Primary Font Family:** `Hanken Grotesk`, `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `sans-serif`
 - **Monospace Family (Data/SKUs):** `ui-monospace`, `SFMono-Regular`, `Menlo`, `Monaco`, `Consolas`, `monospace`
@@ -80,9 +110,9 @@ web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c
 
 ---
 
-## 4. Spacing, Elevation & Layout Grid
+## 5. Spacing, Elevation & Layout Grid
 
-### 4.1 Spacing Scale (8pt Grid System)
+### 5.1 Spacing Scale (8pt Grid System)
 - `2xs` = 2px (`p-0.5` / `gap-0.5`)
 - `xs` = 4px (`p-1` / `gap-1`)
 - `sm` = 8px (`p-2` / `gap-2`)
@@ -92,84 +122,37 @@ web application/stitch/projects/12804117146067154911/screens/d607508005ee447d94c
 - `xl` = 24px (`p-6` / `gap-6`)
 - `2xl` = 32px (`p-8` / `gap-8`)
 
-### 4.2 Border Radius
+### 5.2 Border Radius
 - **Micro (Inputs, Badges, Table Buttons):** `rounded` (4px / 0.25rem)
 - **Cards & Containers:** `rounded-lg` (6px to 8px / 0.5rem)
 - **Pills / Status Dots:** `rounded-full` (9999px)
 
-### 4.3 Shadows (Elevation)
+### 5.3 Shadows (Elevation)
 - **Card Flat (Default):** `shadow-none` with `border border-slate-200`
 - **Interactive Hover:** `shadow-sm` (`0 1px 2px 0 rgb(0 0 0 / 0.05)`)
-- **Dropdowns & Popovers:** `shadow-md` (`0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)`)
-- **Modals & Flyouts:** `shadow-xl` (`0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)`)
+- **Dropdowns & Popovers:** `shadow-md` (`0 4px 6px -1px rgb(0 0 0 / 0.1)`)
+- **Modals & Flyouts:** `shadow-xl` (`0 20px 25px -5px rgb(0 0 0 / 0.1)`)
 
 ---
 
-## 5. Component Patterns & Anatomy
+## 6. Component Patterns & Anatomy
 
-### 5.1 App Shell Frame
-- **Sidebar Navigation:**
-  - Width: `240px` (standard), collapsible to `64px` icon rail.
-  - Background: `bg-white` with `border-r border-slate-200`.
-  - Brand Unit: 40px icon logo (`#1E293B` container with layered blue glyph) + "StockFlow" wordmark + `v2.4 Enterprise` pill badge.
-  - Active Role Selector: Select/switch input at the top (`Admin Portal`, `Supplier Portal`, `Customer Portal`).
-  - Section Headings: 11px uppercase `tracking-wider` slate-400 headers (`CORE`, `PROCUREMENT & SUPPLY`, `SALES & FULFILLMENT`, `SYSTEM & GOVERNANCE`).
-  - Nav Item: 36px height, rounded-md, `text-slate-600 hover:text-slate-900 hover:bg-slate-50`. Active state: `bg-blue-50 text-blue-700 font-semibold`.
-  - Footer: Real-time telemetry pulse dot (Green `14ms Sync`) and Collapse toggle.
-- **Top Header Bar:**
-  - Height: `56px`, `bg-white border-b border-slate-200`.
-  - Left: Facility selector dropdown (`Chicago Central DC-01` with quick chevron).
-  - Center: Global Omnisearch input with keyboard shortcut pill (`⌘K`).
-  - Right: Action CTA button (`+ Quick PO`), notification bell with counter badge (`3`), user avatar, name, and role (`Elena Rostova • Operations Admin`).
+### 6.1 App Shell Frames
+- **Persistent Header:** 56px height, white background, 1px border-b, facility dropdown selector, omnisearch `⌘K`, notification bell with count badge, and user avatar.
+- **Collapsible Sidebar:** 240px width (expandable/collapsible to 64px rail), role switch dropdown, categorised nav sections (`CORE`, `PROCUREMENT & SUPPLY`, `SALES & FULFILLMENT`, `SYSTEM & GOVERNANCE`), and real-time sync telemetry footer (`14ms Sync`).
 
-### 5.2 Metric / KPI Stat Cards
-- Layout: 4-column grid (`grid-cols-4 gap-4`).
-- Container: White card with 1px slate-200 border, `p-4 rounded-lg`.
-- Top: Metric label (`text-xs uppercase font-semibold text-slate-500`) + trailing pill badge (e.g. `+3.2%`, `Action Req.`, `98.4% SLA`).
-- Value: 28px–32px bold number in `#0F172A`.
-- Footer: Micro-sparkline, mini progress ratio bar, or secondary metric detail (`vs $4.74M LM`, `4 stockouts imminent`).
+### 6.2 High-Density Data Tables
+- Row height: 40px to 44px.
+- Table header: `bg-slate-50`, uppercase 12px tracking-wider, border-b border-slate-200.
+- Data cells: Tabular figures for quantities, monospaced codes for SKUs and serials, status badges with color-coded dot indicator, right-aligned monetary values.
+- Bulk Drawer: Sticky floating tray at bottom on multi-row checkbox selection.
 
-### 5.3 High-Density Data Tables
-- **Table Density:** 40px–44px row heights for rapid scanning of large inventory catalogs.
-- **Header (`<thead>`):** `bg-slate-50 text-slate-600 text-xs font-semibold uppercase tracking-wider border-b border-slate-200`.
-- **Data Rows (`<tbody>`):**
-  - Text: 13px–14px `#0F172A`.
-  - Border: 1px border between rows (`border-b border-slate-100`).
-  - Hover: `hover:bg-slate-50/80 transition-colors`.
-  - Checkbox: Custom 16px square checkbox with 3px border radius.
-- **Status Badges:** Compact inline badge, `px-2 py-0.5 rounded text-xs font-medium` with colored dot (`h-1.5 w-1.5 rounded-full mr-1.5`).
-- **Row Actions:** Small icon buttons or outline pill buttons (`Approve PO`, `Track`, `Gate Pass`, `...`).
-- **Pagination Bar:** Showing records 1–10 of N, items per page dropdown, and numeric page navigator.
+### 6.3 Form Architecture & Inputs
+- Standard input height: 36px (`h-9`), crisp border (`border-slate-300`), focus ring (`focus:border-blue-600 focus:ring-1 focus:ring-blue-600`).
+- Multi-Step Stepper: Horizontal flow bar with step numbers, titles, and active indicator.
+- Spec Matrix: Structured two-column key-value grids with monospace values and unit selectors.
 
-### 5.4 Buttons & Interactive Controls
-- **Primary Button:**
-  - Style: `bg-blue-600 hover:bg-blue-700 text-white font-medium px-3.5 py-1.5 rounded text-sm shadow-sm transition-colors`.
-  - Used for: Primary creation tasks (`+ Create New Product SKU`, `+ New Wholesale Order`, `Approve PO`).
-- **Secondary / Outline Button:**
-  - Style: `bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium px-3 py-1.5 rounded text-sm transition-colors`.
-  - Used for: Filter toggles, CSV bulk export, report downloads.
-- **Dark Neutral Button (Operations):**
-  - Style: `bg-slate-900 hover:bg-slate-800 text-white font-medium px-3.5 py-1.5 rounded text-sm`.
-  - Used for: Quick Action triggers (`+ Quick PO`, `Acknowledge PO`).
-- **Danger Button:**
-  - Style: `bg-red-600 hover:bg-red-700 text-white font-medium px-3 py-1.5 rounded text-sm`.
-
-### 5.5 Form Controls & Filter Bars
-- **Inputs:** `h-9 px-3 text-sm bg-white border border-slate-300 rounded text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none`.
-- **Filter Presets:** Horizontal pill tabs (`All`, `Fast Moving`, `Quarantine (14)`, `Allocated > 80%`).
-- **Multi-Filter Bar:** Search input + facility dropdown + stock level filter + category filter + view toggles.
-
-### 5.6 Telemetry & Edge Resilience States
-- **Live Sync Badge:** Pill with green pulse dot + latency stamp (`14ms Sync`, `Real-Time Sync 0.4s ago`).
-- **Empty State Card:** Neutral bordered card with centered icon illustration, bold heading (`No Backordered Items Currently`), descriptive copy, and a secondary action button (`View Fulfilled Archive`).
-- **Inline Alert Banner:** Crisp callout banner with 1px border (`border-blue-200 bg-blue-50/70 text-blue-900`) and inline action link (`AUDIT DELTA BINS`).
-- **Telemetry Skeleton:** Subtle pulsating slate-100 placeholder blocks representing streaming data channels.
-
----
-
-## 6. Accessibility & Implementation Rules
-
-1. **Strict WCAG AAA Contrast:** All text tokens against neutral backgrounds maintain >= 7:1 contrast for body copy and >= 4.5:1 for data captions.
-2. **Tabular Numerals:** Always apply CSS `font-variant-numeric: tabular-nums` or `font-mono` on inventory counts, serials, and currency.
-3. **No Gratuitous Animation:** Confine animations to instant `<150ms` UI state transitions (button press, dropdown display, modal opacity).
-4. **Resilient Fallbacks:** Every data table must supply an integrated empty state and error recovery button.
+### 6.4 Telemetry & Edge Resilience States
+- **Live Sync Indicator:** Pulsing green indicator dot + latency display (`14ms Sync • SAP S/4HANA`).
+- **Cryptographic Audit Hash:** Merkle root hash verification bar with consensus node checkmarks.
+- **Offline / Degraded Banner:** High-visibility amber/red banner indicating pending local cache reconciliation.
