@@ -12,6 +12,10 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Generated Build Artifact shit
+client/dist/
+server/dist/
+
 # Dependency directories
 node_modules/
 /dist/
