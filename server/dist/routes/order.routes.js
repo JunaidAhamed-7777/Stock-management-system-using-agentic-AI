@@ -93,7 +93,10 @@ router.post("/", auth_js_1.authenticate, async (req, res) => {
         // Handle specific error codes
         if (error instanceof Error) {
             const message = error.message;
-            if (message.includes("Product") || message.includes("Insufficient stock")) {
+            if (message.startsWith("Product")) {
+                return res.status(404).json({ message });
+            }
+            if (message.includes("Insufficient stock")) {
                 return res.status(400).json({ message });
             }
         }

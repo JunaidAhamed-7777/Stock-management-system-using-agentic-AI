@@ -238,6 +238,14 @@ router.patch("/:id/status", authenticate, async (req: AuthenticatedRequest, res:
       return res.status(403).json({ message: "Only admins can change order status" });
     }
 
+    // Check if order exists
+    const existingOrder = await prisma.order.findUnique({
+      where: { id: parsedId },
+    });
+    if (!existingOrder) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
     // Validate status
     const validStatuses = ["PENDING", "CONFIRMED", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED"];
     if (!validStatuses.includes(status)) {
