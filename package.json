@@ -1,0 +1,14 @@
+{
+  "name": "stock-management-system",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client && npm run build --prefix server",
+    "install": "npm install --prefix client && npm install --prefix server",
+    "lint": "npm run lint --prefix client && npm run lint --prefix server",
+    "test": "npm test --prefix client && npm test --prefix server"
+  }
+}
