@@ -72,7 +72,7 @@ A full-stack stock/inventory management platform with three portals: Customer, S
    ```
    Edit `server/.env` with your configuration:
    ```
-   DATABASE_URL=postgresql://postgres@localhost:5432/stock_management
+   DATABASE_URL=postgresql://YOUR_POSTGRES_USER:YOUR_POSTGRES_PASSWORD@localhost:5432/stock_management?schema=public
    JWT_SECRET=your-jwt-secret-key
    BCRYPT_SALT_ROUNDS=10
    PORT=3001
