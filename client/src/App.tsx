@@ -90,20 +90,20 @@ function App() {
             <Route path="/customer/products/:id" element={<ProductDetailPage />} />
             <Route path="/customer/cart" element={<CartPage />} />
             <Route path="/customer/orders" element={<OrdersPage />} />
-            <Route path="/customer/orders/:id" element={(<Route>) => <div>Order detail</div>} />
+            <Route path="/customer/orders/:id" element={<div>Order detail</div>} />
 
             {/* Supplier routes */}
             <Route path="/supplier/dashboard" element={<DashboardPage role={userRole} />} />
-            <Route path="/supplier/products" element={(<Route>) => <div>Supplier Products</div>} />
+            <Route path="/supplier/products" element={<div>Supplier Products</div>} />
             <Route path="/supplier/orders" element={<OrdersPage />} />
 
             {/* Admin routes */}
             <Route path="/admin/dashboard" element={<DashboardPage role={userRole} />} />
-            <Route path="/admin/products" element={(<Route>) => <div>Admin Products</div>} />
-            <Route path="/admin/low-stock" element={(<Route>) => <div>Low Stock</div>} />
+            <Route path="/admin/products" element={<div>Admin Products</div>} />
+            <Route path="/admin/low-stock" element={<div>Low Stock</div>} />
           </Routes>
-        </Routes>
-      </main>
+        </main>
+      </div>
     </Router>
   );
 }

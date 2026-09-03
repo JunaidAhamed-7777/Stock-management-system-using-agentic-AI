@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Request, Router } from "express";
 import { PrismaClient } from "@prisma/client";
 
 const router = Router();
@@ -86,14 +86,14 @@ router.post("/", async (req, res) => {
     });
   } catch (error) {
     console.error("Create order error:", error);
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error instanceof Error ? error.message : "Internal server error" });
   }
 });
 
 // Get all orders (admin) or user's orders
 router.get("/", async (req, res) => {
   try {
-    const { userId, role } = req;
+    const { userId, role } = req as Request & { userId?: number; role?: string };
 
     if (role === "ADMIN") {
       const orders = await prisma.order.findMany({

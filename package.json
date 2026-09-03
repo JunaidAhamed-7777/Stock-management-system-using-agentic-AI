@@ -6,7 +6,8 @@
     "server"
   ],
   "scripts": {
-    "dev": "npm run dev --prefix client & npm run dev --prefix server"
+    "dev": "npm run dev --prefix client & npm run dev --prefix server",
+    "build": "npm run build --workspace=client && npm run build --workspace=server"
   },
   "allowScripts": {
     "prisma@5.22.0": true,

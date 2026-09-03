@@ -8,18 +8,13 @@ const prisma = new PrismaClient();
 router.get("/low-stock", async (req, res) => {
   try {
     const products = await prisma.product.findMany({
-      where: {
-        quantity: {
-          lte: prisma.sql`low_stock_threshold`,
-        },
-      },
       include: {
         category: true,
         supplier: true,
       },
     });
 
-    return res.json(products);
+    return res.json(products.filter((product) => product.quantity <= product.lowStockThreshold));
   } catch (error) {
     console.error("Get low stock products error:", error);
     return res.status(500).json({ message: "Internal server error" });
