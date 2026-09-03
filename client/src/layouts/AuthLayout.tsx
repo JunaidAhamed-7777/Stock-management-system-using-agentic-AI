@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Container } from "../components/styles";
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const AuthLayout: React.FC = () => {
   const { login } = useAuth();
@@ -19,7 +17,7 @@ const AuthLayout: React.FC = () => {
   };
 
   return (
-    <Container>
+    <div className="max-w-7xl mx-auto p-4">
       <h2>Stock Management System</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="mb-4">
@@ -53,7 +51,7 @@ const AuthLayout: React.FC = () => {
           </a>
         </p>
       </form>
-    </Container>
+    </div>
   );
 };
 

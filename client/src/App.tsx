@@ -1,58 +1,66 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate, useSearchParams } from "react-router-dom";
-import axios from "axios";
-import "./index.css";
-import CustomerLayout from "../layouts/CustomerLayout";
-import SupplierLayout from "../layouts/SupplierLayout";
-import AdminLayout from "../layouts/AdminLayout";
-import LoginPage from "./pages/Auth/LoginPage";
-import RegisterPage from "./pages/Auth/RegisterPage";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import CustomerLayout from "./layouts/CustomerLayout";
+import SupplierLayout from "./layouts/SupplierLayout";
+import AdminLayout from "./layouts/AdminLayout";
+import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./pages/Dashboard";
 import ProductsPage from "./pages/Products";
 import ProductDetailPage from "./pages/ProductDetail";
 import CartPage from "./pages/Cart";
 import OrdersPage from "./pages/Orders";
+import LoginPage from "./pages/Auth/LoginPage";
+import RegisterPage from "./pages/Auth/RegisterPage";
 
 function App() {
+  const { user, isLoading, login, logout } = useAuth();
   const navigate = useNavigate();
-  const [userRole, setUserRole] = useState<string | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsLoggedIn(true);
-      setUserRole(localStorage.getItem("role"));
-      navigate(`/${userRole?.toLowerCase() || "customer"}`);
-    }
-  }, [navigate, userRole]);
+    // AuthContext loads user state on mount via /api/auth/me
+  }, [user]);
 
   const handleLogin = (role: string) => {
-    localStorage.setItem("token", "mock-token");
-    localStorage.setItem("role", role);
-    setUserRole(role);
-    setIsLoggedIn(true);
     navigate(`/${role}`);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    setIsLoggedIn(false);
-    setUserRole(null);
+    logout();
     navigate("/login");
   };
 
-  if (!isLoggedIn) {
+  if (isLoading) {
     return (
       <Router>
         <Routes>
-          <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
-          <Route path="/register" element={<RegisterPage onLogin={handleLogin} />} />
+          <Route path="/login" element={<AuthLayout />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </Router>
     );
   }
+
+  // If no user, redirect to login
+  if (!user) {
+    return (
+      <Router>
+        <Routes>
+          <Route path="/login" element={<AuthLayout />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </Router>
+    );
+  }
+
+  const role = user.role;
+
+  // Role-based redirect
+  useEffect(() => {
+    if (role) {
+      navigate(`/${role}`);
+    }
+  }, [role]);
 
   return (
     <Router>
@@ -60,19 +68,19 @@ function App() {
         <nav className="navbar bg-white shadow">
           <div className="navbar-logo max-w-xs">Stock Management</div>
           <div className="navbar-menu flex space-x-8">
-            {userRole === "admin" && (
+            {role === "admin" && (
               <a href="#" onClick={(e) => {
                 e.preventDefault();
                 navigate("/admin/dashboard");
               }}>Admin Dashboard</a>
             )}
-            {userRole === "supplier" && (
+            {role === "supplier" && (
               <a href="#" onClick={(e) => {
                 e.preventDefault();
                 navigate("/supplier/dashboard");
               }}>Supplier Dashboard</a>
             )}
-            {userRole === "customer" && (
+            {role === "customer" && (
               <a href="#" onClick={(e) => {
                 e.preventDefault();
                 navigate("/customer/dashboard");
@@ -84,21 +92,25 @@ function App() {
 
         <main className="container pt-8">
           <Routes>
+            {/* Public routes - auth pages */}
+            <Route path="/login" element={<AuthLayout />} />
+            <Route path="/register" element={<RegisterPage />} />
+
             {/* Customer routes */}
-            <Route path="/customer/dashboard" element={<DashboardPage role={userRole} />} />
-            <Route path="/customer/products" element={<ProductsPage role={userRole} />} />
+            <Route path="/customer/dashboard" element={<DashboardPage role={role} />} />
+            <Route path="/customer/products" element={<ProductsPage role={role} />} />
             <Route path="/customer/products/:id" element={<ProductDetailPage />} />
             <Route path="/customer/cart" element={<CartPage />} />
             <Route path="/customer/orders" element={<OrdersPage />} />
             <Route path="/customer/orders/:id" element={<div>Order detail</div>} />
 
             {/* Supplier routes */}
-            <Route path="/supplier/dashboard" element={<DashboardPage role={userRole} />} />
+            <Route path="/supplier/dashboard" element={<DashboardPage role={role} />} />
             <Route path="/supplier/products" element={<div>Supplier Products</div>} />
             <Route path="/supplier/orders" element={<OrdersPage />} />
 
             {/* Admin routes */}
-            <Route path="/admin/dashboard" element={<DashboardPage role={userRole} />} />
+            <Route path="/admin/dashboard" element={<DashboardPage role={role} />} />
             <Route path="/admin/products" element={<div>Admin Products</div>} />
             <Route path="/admin/low-stock" element={<div>Low Stock</div>} />
           </Routes>

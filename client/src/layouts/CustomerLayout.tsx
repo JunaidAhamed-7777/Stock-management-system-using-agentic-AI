@@ -1,10 +1,9 @@
 import React from "react";
-import { Container } from "../components/styles";
 import { Outlet } from "react-router-dom";
 
 const CustomerLayout: React.FC = () => {
   return (
-    <Container>
+    <div className="max-w-7xl mx-auto p-4">
       <h2>Customer Portal</h2>
       <nav className="mt-6 space-y-2">
         <a href="#" className="block px-4 py-2 rounded-md text-sm font-medium text-primary-600 hover:bg-primary-50">
@@ -21,7 +20,7 @@ const CustomerLayout: React.FC = () => {
         </a>
       </nav>
       <Outlet />
-    </Container>
+    </div>
   );
 };
 

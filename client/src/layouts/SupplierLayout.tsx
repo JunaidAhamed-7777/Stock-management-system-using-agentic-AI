@@ -1,18 +1,23 @@
 import React from "react";
-import { Container } from "./styles";
 import { Outlet } from "react-router-dom";
 
 const SupplierLayout: React.FC = () => {
   return (
-    <Container>
+    <div className="max-w-7xl mx-auto p-4">
       <h2>Supplier Portal</h2>
-      <nav>
-        <a href="#/supplier/dashboard">Dashboard</a>
-        <a href="#/supplier/products">Products</a>
-        <a href="#/supplier/orders">Orders</a>
+      <nav className="mt-6 space-y-2">
+        <a href="#" className="block px-4 py-2 rounded-md text-sm font-medium text-primary-600 hover:bg-primary-50">
+          Dashboard
+        </a>
+        <a href="/supplier/products" className="block px-4 py-2 rounded-md text-sm font-medium text-primary-600 hover:bg-primary-50">
+          Products
+        </a>
+        <a href="/supplier/orders" className="block px-4 py-2 rounded-md text-sm font-medium text-primary-600 hover:bg-primary-50">
+          Orders
+        </a>
       </nav>
       <Outlet />
-    </Container>
+    </div>
   );
 };
 
