@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
+import { authenticate, AuthenticatedRequest } from "../middleware/auth.js";
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -66,12 +67,35 @@ router.get("/:id", async (req: Request, res: Response) => {
 });
 
 // Create product (admin or supplier)
-router.post("/", async (req: Request, res: Response) => {
+router.post("/", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
     const { name, description, sku, price, quantity, lowStockThreshold, categoryId, supplierId } = req.body;
 
-    if (!name || !sku || price === undefined) {
-      return res.status(400).json({ message: "Name, SKU, and price are required" });
+    if (req.user!.role !== "ADMIN" && req.user!.role !== "SUPPLIER") {
+      return res.status(403).json({ message: "Forbidden" });
+    }
+
+    if (!name || !sku || price === undefined || categoryId === undefined) {
+      return res.status(400).json({ message: "Name, SKU, price, and categoryId are required" });
+    }
+
+    const parsedCategoryId = Number(categoryId);
+    if (!Number.isInteger(parsedCategoryId) || !(await prisma.category.findUnique({ where: { id: parsedCategoryId } }))) {
+      return res.status(400).json({ message: "A valid categoryId is required" });
+    }
+
+    let resolvedSupplierId: number;
+    if (req.user!.role === "SUPPLIER") {
+      const supplier = await prisma.supplier.findUnique({ where: { userId: req.user!.userId } });
+      if (!supplier) {
+        return res.status(400).json({ message: "Supplier profile not found" });
+      }
+      resolvedSupplierId = supplier.id;
+    } else {
+      resolvedSupplierId = Number(supplierId);
+      if (!Number.isInteger(resolvedSupplierId) || !(await prisma.supplier.findUnique({ where: { id: resolvedSupplierId } }))) {
+        return res.status(400).json({ message: "A valid supplierId is required" });
+      }
     }
 
     const product = await prisma.product.create({
@@ -82,8 +106,8 @@ router.post("/", async (req: Request, res: Response) => {
         price: parseFloat(price as string),
         quantity: quantity ?? 0,
         lowStockThreshold: lowStockThreshold ?? 10,
-        categoryId: categoryId ?? undefined,
-        supplierId: supplierId ?? undefined,
+        categoryId: parsedCategoryId,
+        supplierId: resolvedSupplierId,
       },
     });
 
