@@ -1,68 +1,154 @@
-# Project Instructions
+# Stock Management System using Agentic AI
 
-## Project
-Stock Management System using Agentic AI
+## Project Goal
 
-## Architecture
+Build a production-quality stock and inventory management web application called StockFlow.
 
-Frontend:
-- React
-- Vite
-- TypeScript
-- Tailwind CSS
-- Axios
+The application has three roles:
 
-Backend:
-- Node.js
-- Express
-- TypeScript
-- Prisma
-- PostgreSQL
+- CUSTOMER
+- SUPPLIER
+- ADMIN
 
-## Frontend rules
+The frontend is implemented using React, Vite and TypeScript.
 
-- Use TypeScript.
-- Use reusable React components.
-- Do not duplicate UI components unnecessarily.
-- Keep pages separated by user role.
-- Use centralized API services.
-- Do not make raw Axios requests inside page components.
-- Use centralized authentication state.
-- Use protected routes.
-- Use role-based routes.
-- Handle loading, empty and error states.
-- Keep responsive behavior in mind.
+The backend is implemented using Node.js, Express, Prisma and PostgreSQL.
 
-## Backend rules
+---
 
-DO NOT MODIFY SERVER CODE during frontend work.
+## Repository Structure
+
+client/
+    Production React frontend
+
+server/
+    Existing backend API
+
+stitch_stockflow_enterprise_inventory_saas/
+    Stitch-generated visual references.
+    These files are design references and must not be treated as the production frontend.
+
+DESIGN.md
+    Main frontend design system.
+
+---
+
+## Critical Rule
+
+During frontend implementation, DO NOT modify server/ unless explicitly instructed.
+
+The existing backend API is the source of truth.
 
 Do not:
-- change Prisma schema
-- create new API endpoints
-- modify database logic
-- modify authentication logic
+- modify Prisma schema
+- modify database structure
+- create arbitrary new backend endpoints
+- change authentication behavior
+- rewrite backend routes
 
-unless explicitly requested.
+If a frontend feature cannot currently be implemented because the backend does not support it, report the limitation instead of changing the backend.
+
+---
+
+## Frontend Architecture
+
+Use:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Axios
+- React Router
+
+Use reusable components.
+
+Do not duplicate components unnecessarily.
+
+Use centralized API services.
+
+Do not make raw Axios requests directly inside page components.
+
+Use centralized authentication state.
+
+Use protected routes.
+
+Use role-based routes.
+
+---
+
+## Roles
+
+CUSTOMER:
+- Product catalog
+- Product details
+- Cart
+- Orders
+- Profile
+
+SUPPLIER:
+- Dashboard
+- Products
+- Product creation/editing
+- Orders
+- Stock
+- Profile
+
+ADMIN:
+- Dashboard
+- Products
+- Suppliers
+- Customers
+- Orders
+- Inventory
+- Stock transactions
+- AI dashboard
+- Profile
+
+---
+
+## Design
+
+DESIGN.md is the primary design-system reference.
+
+The Stitch-generated screens inside:
+
+stitch_stockflow_enterprise_inventory_saas/
+
+are visual references.
+
+The production React application must reproduce the visual language of these designs while using reusable React components.
+
+Do not blindly copy Stitch HTML.
+
+---
 
 ## AI
 
 AI functionality is not implemented yet.
 
-The frontend should contain UI placeholders for:
-- Low Stock Analysis
-- Demand Prediction
-- Supplier Recommendation
-- Inventory Reports
+The AI dashboard should exist as a UI.
 
-Do not implement fake AI responses.
+Do not fabricate AI responses.
 
-Do not pretend that AI functionality works.
+Do not display fake predictions or fake recommendations.
 
-## Design
+Future AI functionality will be connected through n8n.
 
-Follow DESIGN.md.
+---
 
-Prefer reusable components over page-specific duplication.
+## Quality
 
-The Stitch screenshots are visual references.
+After significant changes:
+
+- run TypeScript checks
+- run the frontend build
+- fix errors
+- check browser console errors
+- check routing
+- check responsive behavior
+- check loading states
+- check empty states
+- check error states
+
+Do not leave known TypeScript or build errors unresolved.
