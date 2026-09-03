@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const client_1 = require("@prisma/client");
+const auth_js_1 = require("../middleware/auth.js");
 const router = (0, express_1.Router)();
 const prisma = new client_1.PrismaClient();
 // Get all products with optional filtering
@@ -57,11 +58,32 @@ router.get("/:id", async (req, res) => {
     }
 });
 // Create product (admin or supplier)
-router.post("/", async (req, res) => {
+router.post("/", auth_js_1.authenticate, async (req, res) => {
     try {
         const { name, description, sku, price, quantity, lowStockThreshold, categoryId, supplierId } = req.body;
-        if (!name || !sku || price === undefined) {
-            return res.status(400).json({ message: "Name, SKU, and price are required" });
+        if (req.user.role !== "ADMIN" && req.user.role !== "SUPPLIER") {
+            return res.status(403).json({ message: "Forbidden" });
+        }
+        if (!name || !sku || price === undefined || categoryId === undefined) {
+            return res.status(400).json({ message: "Name, SKU, price, and categoryId are required" });
+        }
+        const parsedCategoryId = Number(categoryId);
+        if (!Number.isInteger(parsedCategoryId) || !(await prisma.category.findUnique({ where: { id: parsedCategoryId } }))) {
+            return res.status(400).json({ message: "A valid categoryId is required" });
+        }
+        let resolvedSupplierId;
+        if (req.user.role === "SUPPLIER") {
+            const supplier = await prisma.supplier.findUnique({ where: { userId: req.user.userId } });
+            if (!supplier) {
+                return res.status(400).json({ message: "Supplier profile not found" });
+            }
+            resolvedSupplierId = supplier.id;
+        }
+        else {
+            resolvedSupplierId = Number(supplierId);
+            if (!Number.isInteger(resolvedSupplierId) || !(await prisma.supplier.findUnique({ where: { id: resolvedSupplierId } }))) {
+                return res.status(400).json({ message: "A valid supplierId is required" });
+            }
         }
         const product = await prisma.product.create({
             data: {
@@ -71,8 +93,8 @@ router.post("/", async (req, res) => {
                 price: parseFloat(price),
                 quantity: quantity ?? 0,
                 lowStockThreshold: lowStockThreshold ?? 10,
-                categoryId: categoryId ?? undefined,
-                supplierId: supplierId ?? undefined,
+                categoryId: parsedCategoryId,
+                supplierId: resolvedSupplierId,
             },
         });
         return res.status(201).json(product);

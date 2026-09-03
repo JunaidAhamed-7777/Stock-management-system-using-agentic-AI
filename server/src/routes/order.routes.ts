@@ -1,32 +1,50 @@
-import { Request, Router } from "express";
+import { Request, Response, Router } from "express";
 import { PrismaClient } from "@prisma/client";
+import { authenticate, AuthenticatedRequest } from "../middleware/auth.js";
 
 const router = Router();
 const prisma = new PrismaClient();
 
-// Create new order
-router.post("/", async (req, res) => {
+// Create new order - customerId comes from JWT, not request body
+router.post("/", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
-    const { customerId, items } = req.body;
+    // Require CUSTOMER role
+    if (req.user!.role !== "CUSTOMER") {
+      return res.status(403).json({ message: "Only customers can create orders" });
+    }
 
-    if (!customerId || !items || !Array.isArray(items) || items.length === 0) {
-      return res.status(400).json({ message: "Customer ID and items are required" });
+    const { items } = req.body;
+
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ message: "Items are required" });
+    }
+
+    // Validate every productId is a valid integer and every quantity is a positive integer
+    for (const item of items) {
+      const { productId, quantity } = item;
+
+      if (!Number.isInteger(productId)) {
+        return res.status(400).json({ message: `Invalid productId: ${productId}` });
+      }
+
+      if (!Number.isInteger(quantity) || quantity <= 0) {
+        return res.status(400).json({ message: `Invalid quantity: ${quantity}` });
+      }
     }
 
     // Start a transaction
     const order = await prisma.$transaction(async (tx) => {
-      // Create the order
+      // Create the order first
       const newOrder = await tx.order.create({
         data: {
-          customerId,
+          customerId: req.user!.userId,
           status: "PENDING",
-          totalAmount: 0, // Will calculate below
+          totalAmount: 0,
         },
       });
 
       // Calculate total and validate stock
       let total = 0;
-      const orderItemsData = [];
 
       for (const item of items) {
         const { productId, quantity } = item;
@@ -45,11 +63,14 @@ router.post("/", async (req, res) => {
 
         total += product.price * quantity;
 
-        orderItemsData.push({
-          orderId: newOrder.id,
-          productId,
-          quantity,
-          price: product.price,
+        // Create order item connected to the new order
+        await tx.orderItem.create({
+          data: {
+            orderId: newOrder.id,
+            productId,
+            quantity,
+            price: product.price,
+          },
         });
 
         // Reduce product stock
@@ -86,14 +107,24 @@ router.post("/", async (req, res) => {
     });
   } catch (error) {
     console.error("Create order error:", error);
-    return res.status(500).json({ message: error instanceof Error ? error.message : "Internal server error" });
+    // Handle specific error codes
+    if (error instanceof Error) {
+      const message = error.message;
+      if (message.startsWith("Product")) {
+        return res.status(404).json({ message });
+      }
+      if (message.includes("Insufficient stock")) {
+        return res.status(400).json({ message });
+      }
+    }
+    return res.status(500).json({ message: "Internal server error" });
   }
 });
 
-// Get all orders (admin) or user's orders
-router.get("/", async (req, res) => {
+// Get all orders - ADMIN sees all, CUSTOMER sees own, SUPPLIER sees supplier orders
+router.get("/", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
-    const { userId, role } = req as Request & { userId?: number; role?: string };
+    const { userId, role } = req.user!;
 
     if (role === "ADMIN") {
       const orders = await prisma.order.findMany({
@@ -111,10 +142,27 @@ router.get("/", async (req, res) => {
       return res.json(orders);
     }
 
-    if (userId) {
+    if (role === "CUSTOMER") {
       const orders = await prisma.order.findMany({
         where: { customerId: Number(userId) },
         include: {
+          orderItems: {
+            include: {
+              product: true,
+            },
+          },
+        },
+        orderBy: { createdAt: "desc" },
+      });
+
+      return res.json(orders);
+    }
+
+    // SUPPLIER - see all orders (existing behavior extended)
+    if (role === "SUPPLIER") {
+      const orders = await prisma.order.findMany({
+        include: {
+          customer: true,
           orderItems: {
             include: {
               product: true,
@@ -134,13 +182,19 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get order by ID
-router.get("/:id", async (req, res) => {
+// Get order by ID - validate integer ID, enforce authorization
+router.get("/:id", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
     const { id } = req.params;
 
+    // Validate ID is a valid integer
+    const parsedId = parseInt(id);
+    if (isNaN(parsedId)) {
+      return res.status(400).json({ message: "Invalid order ID" });
+    }
+
     const order = await prisma.order.findUnique({
-      where: { id: parseInt(id) },
+      where: { id: parsedId },
       include: {
         customer: true,
         orderItems: {
@@ -155,6 +209,11 @@ router.get("/:id", async (req, res) => {
       return res.status(404).json({ message: "Order not found" });
     }
 
+    // Enforce authorization - CUSTOMER can only access their own orders
+    if (req.user!.role === "CUSTOMER" && order.customerId !== req.user!.userId) {
+      return res.status(403).json({ message: "Access denied: not your order" });
+    }
+
     return res.json(order);
   } catch (error) {
     console.error("Get order error:", error);
@@ -162,23 +221,31 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Update order status (admin only)
-router.patch("/:id/status", async (req, res) => {
+// Update order status - admin only
+router.patch("/:id/status", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
 
-    if (!status) {
-      return res.status(400).json({ message: "Status is required" });
+    // Validate ID is a valid integer
+    const parsedId = parseInt(id);
+    if (isNaN(parsedId)) {
+      return res.status(400).json({ message: "Invalid order ID" });
     }
 
+    // Only ADMIN can change status
+    if (req.user!.role !== "ADMIN") {
+      return res.status(403).json({ message: "Only admins can change order status" });
+    }
+
+    // Validate status
     const validStatuses = ["PENDING", "CONFIRMED", "PROCESSING", "SHIPPED", "DELIVERED", "CANCELLED"];
     if (!validStatuses.includes(status)) {
       return res.status(400).json({ message: "Invalid order status" });
     }
 
     const order = await prisma.order.update({
-      where: { id: parseInt(id) },
+      where: { id: parsedId },
       data: { status },
     });
 
