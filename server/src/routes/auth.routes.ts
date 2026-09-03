@@ -3,6 +3,7 @@ import { Router, Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { PrismaClient } from "@prisma/client";
+import { authenticate, AuthenticatedRequest } from "../middleware/auth.js";
 
 const prisma = new PrismaClient();
 
@@ -87,13 +88,9 @@ router.post("/login", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/me", async (req: Request, res: Response) => {
+router.get("/me", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
-    const { userId } = req.headers["x-user-id"] as any;
-
-    if (!userId) {
-      return res.status(401).json({ message: "Unauthorized" });
-    }
+    const userId = req.user!.userId;
 
     const user = await prisma.user.findUnique({
       where: { id: Number(userId) },
