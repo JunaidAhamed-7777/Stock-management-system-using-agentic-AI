@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#dae2fd","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","on-tertiary-fixed":"#271901","secondary-container":"#4069f2","inverse-primary":"#bec6e0","on-surface":"#0b1c30","surface-container":"#e5eeff","secondary-fixed-dim":"#b7c4ff","on-error-container":"#93000a","secondary":"#1d4ed8","surface":"#f8f9ff","on-background":"#0b1c30","on-primary":"#ffffff","outline":"#76777d","tertiary-container":"#271901","on-surface-variant":"#45464d","error":"#ba1a1a","error-container":"#ffdad6","primary-fixed-dim":"#bec6e0","on-tertiary-container":"#98805d","surface-bright":"#f8f9ff","background":"#f8f9ff","on-secondary":"#ffffff","surface-container-high":"#dce9ff","on-primary-fixed-variant":"#3f465c","on-primary-fixed":"#131b2e","on-primary-container":"#7c839b","tertiary-fixed":"#fcdeb5","on-secondary-container":"#fffbff","primary":"#000000","surface-dim":"#cbdbf5","on-tertiary-fixed-variant":"#574425","on-secondary-fixed":"#001551","surface-tint":"#565e74","secondary-fixed":"#dce1ff","on-error":"#ffffff","outline-variant":"#c6c6cd","tertiary-fixed-dim":"#dec29a","tertiary":"#000000","on-secondary-fixed-variant":"#0039b5","surface-variant":"#d3e4fe","inverse-on-surface":"#eaf1ff","inverse-surface":"#213145","surface-container-highest":"#d3e4fe","surface-container-low":"#eff4ff","primary-container":"#131b2e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1rem","space-md":"0.5rem","space-2xs":"0.125rem","space-2xl":"1.5rem","header-height":"3.25rem","space-sm":"0.375rem","sidebar-width":"15rem","table-row-dense":"2.25rem","space-xl":"1.25rem","space-xs":"0.25rem","table-row-default":"2.75rem","space-3xl":"2rem","space-base":"0.75rem"},"fontFamily":{"body-sm":["geist"],"headline-md":["hankenGrotesk"],"display":["hankenGrotesk"],"headline-sm":["hankenGrotesk"],"mono-data":["geist"],"label-md":["geist"],"body-md":["geist"],"label-sm":["geist"],"caption":["geist"],"headline-lg":["hankenGrotesk"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"display":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.025em","fontWeight":"600"}],"caption":["10px",{"lineHeight":"12px","letterSpacing":"0.03em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col min-h-0 flex-1"><div class="h-14 px-space-base border-b border-outline-variant flex items-center justify-between shrink-0"><div class="flex items-center gap-space-sm min-w-0"><img alt="StockFlow Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">StockFlow</span><span class="font-caption text-caption bg-surface-container-high text-secondary px-1.5 py-0.5 rounded border border-outline-variant">v2.4</span></div></div></div></div><div class="p-space-sm border-b border-outline-variant bg-surface-container-low/50 shrink-0"><div class="w-full flex items-center justify-between px-space-sm py-1.5 bg-surface-container-lowest rounded border border-outline-variant cursor-pointer hover:border-secondary transition-colors"><div class="flex items-center gap-space-sm min-w-0"><div class="w-2 h-2 rounded-full bg-secondary shrink-0"></div><div class="flex flex-col min-w-0 text-left"><span class="font-label-md text-label-md text-on-surface truncate">Admin Portal</span><span class="font-caption text-caption text-on-surface-variant truncate">Global Operations</span></div></div><span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-1 py-0.5 rounded border border-outline-variant shrink-0">Ops</span></div></div><div class="flex-1 overflow-y-auto px-space-xs py-space-sm space-y-space-md"><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">Core</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="truncate">Overview</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-1.5 rounded transition-colors bg-primary-container text-on-primary-container font-medium" data-path="ai-forecasting" href="#"><span class="material-symbols-outlined text-[18px]">auto_graph</span><span class="truncate">AI Forecasting</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="inventory-skus" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="truncate">Inventory &amp; SKUs</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="warehouses-locations" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="truncate">Warehouses &amp; Locations</span></a></nav></div><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">Procurement &amp; Supply</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="truncate">Purchase Orders</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="suppliers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="truncate">Suppliers</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="inbound-shipments" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="truncate">Inbound Shipments</span></a></nav></div><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">Sales &amp; Fulfillment</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="sales-orders" href="#"><span class="material-symbols-outlined text-[18px]">shopping_cart</span><span class="truncate">Sales Orders</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span class="truncate">Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dispatch-tracking" href="#"><span class="material-symbols-outlined text-[18px]">fmd_good</span><span class="truncate">Dispatch &amp; Tracking</span></a></nav></div><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">System &amp; Governance</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="stock-transactions" href="#"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span class="truncate">Stock Transactions</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[18px]">history_toggle_off</span><span class="truncate">Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="roles-permissions" href="#"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span class="truncate">Roles &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="integrations" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="truncate">Integrations</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="truncate">Settings</span></a></nav></div></div></div><div class="p-space-sm border-t border-outline-variant bg-surface-container-low shrink-0"><div class="flex items-center justify-between gap-space-xs"><div class="flex items-center gap-1.5 min-w-0"><span class="relative flex h-2 w-2 shrink-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-caption text-caption text-on-surface-variant truncate font-mono-data">14ms Sync • SAP S/4HANA</span></div><button class="p-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors shrink-0" title="Collapse navigation" type="button"><span class="material-symbols-outlined text-[18px]">side_navigation</span></button></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-14 bg-surface-container-lowest/95 backdrop-blur-sm border-b border-outline-variant z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-base shrink-0"><div class="relative flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-low rounded border border-outline-variant text-on-surface cursor-pointer hover:border-secondary transition-colors"><span class="material-symbols-outlined text-secondary text-[18px]">domain</span><span class="font-label-md text-label-md">All Facilities (6 DCs)</span><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div></div><div class="flex-1 max-w-xl mx-auto"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-2.5 text-outline text-[18px] pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low rounded border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-secondary focus:outline-none transition-colors" placeholder="Quick search SKUs, orders, serials, bins..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 font-caption text-caption text-on-surface-variant bg-surface-container-highest rounded border border-outline-variant pointer-events-none">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><button class="h-8 px-space-base bg-secondary hover:bg-secondary/90 text-on-secondary rounded font-label-md text-label-md flex items-center gap-1.5 transition-colors shrink-0" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>Stock Adjustment</span></button><div class="relative"><button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low border border-outline-variant transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-on-error font-caption text-[10px] rounded-full flex items-center justify-center font-bold">5</span></button></div><div class="h-4 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W25QWQkinr0eELQlciTF15UfYbViSsqSTTAuTfGMrtyAi47y3jlAi_EzgI2MGmPZCwrLIpVE52JH94MZznRAn-GEJVIKFrtqF-UTbCXuoOCvP1QiEnUPgQtf6QfNLUCuJQ-kguzpFH6rKf4PMR36l2FuPl1bgXxkbaPfyTTBwXiY038N4u0mxOBBOY7Ly2XcOd3DWmwlJEWtOHQ1FYmiI76KmxwdpR0XgPu7k4HlY9v5MxzbnbTQb-M2Zc"/><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface truncate leading-tight">Elena Rostova</span><span class="font-caption text-caption text-on-surface-variant truncate leading-tight">Global Operations Admin</span></div></div></div></header><main class="relative pt-14 min-h-screen bg-surface w-full p-space-lg"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Top Predictive Controls Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div class="space-y-space-xs max-w-4xl">
+<div class="flex items-center gap-space-xs">
+<span class="font-caption text-caption text-outline uppercase tracking-wider">Core</span>
+<span class="font-caption text-caption text-outline">/</span>
+<span class="font-caption text-caption text-secondary font-medium tracking-wide">Predictive Analytics</span>
+<span class="font-caption text-caption bg-surface-container-high text-secondary px-2 py-0.5 rounded-full ml-1 font-mono-data">ARE v4.2</span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight">AI Demand Forecasting &amp; Stockout Prediction Hub</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Autonomous machine learning predictive model (StockFlow ARE v4.2) forecasting SKU depletion velocities, supply chain risks, and replenishment schedules across 6 regional distribution centers.
+      </p>
+</div>
+<!-- Actions & Model Telemetry Pill -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded-lg shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-mono-data">Accuracy: 96.8%</span>
+<span class="font-caption text-caption text-outline">(Backtested 180d)</span>
+</div>
+<button class="h-8 px-3.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all active:scale-95" id="retrain-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync</span>
+<span>Retrain Model</span>
+</button>
+<button class="h-8 px-3.5 bg-primary hover:bg-on-surface-variant text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1.5 shadow-md transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Create Manual Override</span>
+</button>
+</div>
+</div>
+<!-- Predictive KPI Metric Tiles (4-Up Matrix) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-base">
+<!-- Card 1: Stockout Risk -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error/5 rounded-bl-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Predicted Stockouts (30d)</span>
+<span class="font-caption text-caption px-2 py-0.5 bg-error-container text-on-error-container rounded font-mono-data font-semibold">URGENT</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display text-display text-on-surface tracking-tight">7 SKUs</span>
+<span class="font-body-sm text-body-sm text-error font-medium">at Risk</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 rounded p-2 text-on-surface-variant">
+<div class="flex items-center justify-between font-caption text-caption">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> 3 Unmitigated</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 4 In Factory Run</span>
+</div>
+</div>
+</div>
+<!-- Card 2: AI Reorder Drafts -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">AI Replenishment Drafts</span>
+<span class="font-caption text-caption px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded font-mono-data font-semibold">READY</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display text-display text-on-surface tracking-tight">14 Draft POs</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 rounded p-2 text-on-surface">
+<div class="flex items-center justify-between font-caption text-caption font-mono-data">
+<span>Valued at <strong class="text-secondary">$642,800</strong></span>
+<span class="text-outline">1-Click Auto-Issue</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Demand Surge Index -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Demand Surge Velocity</span>
+<span class="font-caption text-caption px-2 py-0.5 bg-surface-container-high text-secondary rounded font-mono-data font-semibold">Q4 SURGE</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display text-display text-on-surface tracking-tight">+18.4%</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Peak Season</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 rounded p-2 text-on-surface-variant">
+<p class="font-caption text-caption truncate">Primary Drivers: Industrial Automation &amp; Sensor Clusters</p>
+</div>
+</div>
+<!-- Card 4: Supplier Volatility -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Lead-Time Volatility</span>
+<span class="font-caption text-caption px-2 py-0.5 bg-primary-fixed text-on-primary-fixed-variant rounded font-mono-data font-semibold">OPTIMAL</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display text-display text-on-surface tracking-tight">Low Risk</span>
+<span class="font-caption text-caption text-outline font-mono-data">1.2d avg variance</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low/60 rounded p-2 text-on-surface">
+<div class="flex items-center justify-between font-caption text-caption font-mono-data">
+<span>Supplier SLA: <strong class="text-on-surface">98.6%</strong></span>
+<span class="text-secondary">42 Contracts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Time Series Predictive Visualizer & Engine Status -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-space-base">
+<!-- Left 2 Cols: Interactive Multi-SKU Predictive Trajectory Chart -->
+<div class="xl:col-span-2 bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">30-Day Demand Projection vs. Stock Depletion Trajectory</h2>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Top critical components mapped against forecast bands with 95% Bayesian confidence intervals.</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-2.5 py-1 text-on-surface bg-surface-container-lowest rounded font-label-sm text-label-sm shadow-sm" type="button">30 Days</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">60 Days</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">90 Days</button>
+</div>
+</div>
+<!-- Live Vector Projection Canvas with SVG -->
+<div class="relative w-full h-72 bg-surface-container-low/40 rounded-lg p-space-sm flex flex-col justify-between overflow-hidden">
+<!-- SVG Plot Layer -->
+<svg class="absolute inset-0 w-full h-full p-4" preserveaspectratio="none" viewbox="0 0 700 240">
+<defs>
+<!-- Confidence Interval Gradient -->
+<lineargradient id="ci-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4069f2" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#4069f2" stop-opacity="0.01"></stop>
+</lineargradient>
+<!-- Depletion Area Gradient -->
+<lineargradient id="deplete-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ba1a1a" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#ba1a1a" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#c6c6cd" stroke-dasharray="3,3" stroke-opacity="0.35" x1="40" x2="680" y1="30" y2="30"></line>
+<line stroke="#c6c6cd" stroke-dasharray="3,3" stroke-opacity="0.35" x1="40" x2="680" y1="80" y2="80"></line>
+<line stroke="#c6c6cd" stroke-dasharray="3,3" stroke-opacity="0.35" x1="40" x2="680" y1="130" y2="130"></line>
+<line stroke="#c6c6cd" stroke-dasharray="3,3" stroke-opacity="0.35" x1="40" x2="680" y1="180" y2="180"></line>
+<!-- Stockout Zero Baseline Threshold -->
+<line stroke="#ba1a1a" stroke-dasharray="4,4" stroke-opacity="0.7" stroke-width="1.5" x1="40" x2="680" y1="210" y2="210"></line>
+<!-- Confidence Interval Band (95%) -->
+<polygon fill="url(#ci-gradient)" points="40,90 140,95 240,110 340,125 440,150 540,175 640,195 640,225 540,215 440,185 340,160 240,140 140,115 40,105"></polygon>
+<!-- SKU 1 Trajectory: Infrared Optical Array (Fast Depletion - Reaches 0 at day 12) -->
+<path d="M 40,40 C 120,48 200,90 280,140 C 340,180 390,210 440,210 L 680,210" fill="none" stroke="#ba1a1a" stroke-width="2.5"></path>
+<!-- SKU 2 Trajectory: ARM Cortex-M7 Core (Depletion moderate) -->
+<path d="M 40,70 C 160,80 280,110 420,135 C 520,155 600,175 680,190" fill="none" stroke="#1d4ed8" stroke-width="2"></path>
+<!-- SKU 3 Trajectory: Hydraulic Flow Valve (Stable replenishment arrival) -->
+<path d="M 40,120 C 140,135 240,150 320,165 L 340,75 C 440,88 560,105 680,120" fill="none" stroke="#0b1c30" stroke-dasharray="4,2" stroke-width="2"></path>
+<!-- Reorder Cutoff Marker Line -->
+<line stroke="#1d4ed8" stroke-dasharray="2,2" stroke-width="1.5" x1="330" x2="330" y1="20" y2="210"></line>
+<!-- Runout Intercept Point Marker -->
+<circle cx="440" cy="210" fill="#ba1a1a" r="5" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<!-- Dynamic Overlay Tags on Graph -->
+<div class="relative z-10 flex justify-between items-start pt-1 px-8 text-on-surface-variant font-mono-data font-caption text-caption pointer-events-none">
+<span>Today (Oct 20)</span>
+<span class="text-secondary font-medium">Oct 26 [AI Reorder Cutoff]</span>
+<span class="text-error font-medium">Nov 02 [Predicted Stockout]</span>
+<span>Nov 20 (+30d)</span>
+</div>
+<div class="relative z-10 flex items-center justify-between px-2 pt-2 bg-surface-container-lowest/80 rounded backdrop-blur-sm">
+<div class="flex flex-wrap items-center gap-4 text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-error"></span> Infrared Sensors (Critical runout Nov 02)
+            </span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-secondary"></span> ARM Cortex Microcontrollers (Buffer holds to Nov 17)
+            </span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-on-surface border-b border-dashed"></span> Hydraulic Valves (PO #8491 arriving Oct 28)
+            </span>
+</div>
+<span class="font-caption text-caption text-outline font-mono-data">Confidence: 95% Interval</span>
+</div>
+</div>
+<!-- Highlight Callout Banner -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 bg-error-container/40 rounded-lg gap-space-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<p class="font-body-sm text-body-sm text-on-error-container font-medium">
+            Replenishment Order Cutoff for <strong>Infrared Array (SKU-8921)</strong> is <span class="underline">October 26, 17:00 EST</span>. Delaying will trigger zero inventory for 4.5 operational days.
+          </p>
+</div>
+<button class="px-3 py-1 bg-error text-on-error rounded font-label-sm text-label-sm hover:opacity-90 whitespace-nowrap shadow-sm" type="button">
+          Execute Draft PO Now
+        </button>
+</div>
+</div>
+<!-- Right 1 Col: Autonomous Replenishment Engine (ARE) Policies -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">ARE Autonomous Guardrails</h2>
+<span class="font-caption text-caption px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded font-mono-data">ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time parameters governing automatic replenishment PO generation.</p>
+</div>
+<!-- Policy Rules List -->
+<div class="space-y-space-sm">
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Tier-1 Suppliers Auto-Dispatch</span>
+<span class="font-caption text-caption text-on-surface-variant">Direct EDI 850 transmission enabled</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono-data bg-surface-container-lowest px-2 py-0.5 rounded">ON</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[20px]">payments</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Max Autonomous PO Cap</span>
+<span class="font-caption text-caption text-on-surface-variant">Orders &gt; $100k route to Director approval</span>
+</div>
+</div>
+<span class="font-mono-data text-label-sm text-on-surface font-bold">$100,000</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[20px]">rule_folder</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Uncontracted Price Protection</span>
+<span class="font-caption text-caption text-on-surface-variant">Any cost variance &gt;1.5% halts execution</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-mono-data">Strict</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">precision_manufacturing</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Dynamic Safety Buffer Offset</span>
+<span class="font-caption text-caption text-on-surface-variant">Adaptive ML lead-time margin modifier</span>
+</div>
+</div>
+<span class="font-mono-data text-label-sm text-secondary font-bold">+2.4 Days</span>
+</div>
+</div>
+<!-- Facility Distribution Pulse -->
+<div class="pt-2">
+<div class="flex justify-between items-center text-on-surface-variant font-caption text-caption mb-1.5">
+<span>Automated Replenishment Load by DC</span>
+<span class="font-mono-data text-on-surface">6/6 Operational</span>
+</div>
+<div class="grid grid-cols-6 gap-1 h-2">
+<div class="bg-secondary rounded-sm" title="DC-North: 84%"></div>
+<div class="bg-secondary rounded-sm" title="DC-Central: 92%"></div>
+<div class="bg-secondary rounded-sm" title="DC-South: 76%"></div>
+<div class="bg-secondary rounded-sm" title="DC-East: 89%"></div>
+<div class="bg-secondary-fixed-dim rounded-sm" title="DC-West: 65%"></div>
+<div class="bg-secondary rounded-sm" title="DC-Eurohub: 94%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- High-Risk SKU Prediction Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Controls -->
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-lowest">
+<div class="space-y-0.5">
+<h2 class="font-headline-md text-headline-md text-on-surface">Immediate Stockout Risk Matrix (Next 30 Days)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ranked by projected days until zero depletion under active run rates.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<input class="h-8 pl-3 pr-8 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none transition-colors w-52" id="sku-filter" placeholder="Filter critical items..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-2 text-outline text-[16px] pointer-events-none">search</span>
+</div>
+<button class="h-8 px-3 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Thresholds</span>
+</button>
+<button class="h-8 px-3 bg-secondary hover:bg-secondary/90 text-on-secondary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">flash_on</span>
+<span>Execute All (14 POs)</span>
+</button>
+</div>
+</div>
+<!-- Tabular Grid View -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">SKU &amp; Part Descriptor</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">Category</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider text-right">DC Stock</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider text-right">30d Velocity</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">Days to Zero</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider text-right">Lead Time</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider text-right">Rec. Order Qty</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">ML Confidence</th>
+<th class="py-2.5 px-4 font-label-sm text-label-sm text-outline uppercase tracking-wider text-center">Quick Action</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-surface-container-low">
+<!-- Row 1: Urgent Stockout Risk -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[18px]">sensors</span>
+</div>
+<div>
+<span class="font-mono-data text-label-md font-semibold text-on-surface block">SKU-8921-IR</span>
+<span class="font-caption text-caption text-on-surface-variant truncate block max-w-xs">Infrared Optical Array 100mm Precision Sensor</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="font-caption text-caption px-2 py-0.5 bg-surface-container-high rounded text-on-surface-variant font-medium">Sensors</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">342 pcs</td>
+<td class="py-3 px-4 text-right font-mono-data text-error font-medium">+1,650 pcs</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-mono-data font-semibold text-label-sm">6.2 Days</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">9.0 Days</td>
+<td class="py-3 px-4 text-right font-mono-data font-semibold text-secondary">2,500 pcs</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 98%;"></div>
+</div>
+<span class="font-mono-data text-label-sm font-semibold">98.2%</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2.5 py-1 bg-secondary text-on-secondary rounded font-label-sm text-label-sm hover:bg-secondary/90 transition-all shadow-sm" type="button">
+                  Smart PO
+                </button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="Adjust safety buffer" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="View ML causal factors" type="button">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Critical Depleted -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">memory</span>
+</div>
+<div>
+<span class="font-mono-data text-label-md font-semibold text-on-surface block">SKU-4412-M7</span>
+<span class="font-caption text-caption text-on-surface-variant truncate block max-w-xs">ARM Cortex-M7 Embedded MCU 480MHz</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="font-caption text-caption px-2 py-0.5 bg-surface-container-high rounded text-on-surface-variant font-medium">Semiconductors</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">1,240 pcs</td>
+<td class="py-3 px-4 text-right font-mono-data text-on-surface font-medium">+3,800 pcs</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-mono-data font-semibold text-label-sm">9.8 Days</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">12.0 Days</td>
+<td class="py-3 px-4 text-right font-mono-data font-semibold text-secondary">5,000 pcs</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 95%;"></div>
+</div>
+<span class="font-mono-data text-label-sm font-semibold">95.4%</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2.5 py-1 bg-secondary text-on-secondary rounded font-label-sm text-label-sm hover:bg-secondary/90 transition-all shadow-sm" type="button">
+                  Smart PO
+                </button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="Adjust safety buffer" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="View ML causal factors" type="button">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Warning Threshold -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">valve</span>
+</div>
+<div>
+<span class="font-mono-data text-label-md font-semibold text-on-surface block">SKU-1089-HY</span>
+<span class="font-caption text-caption text-on-surface-variant truncate block max-w-xs">Proportional Hydraulic Flow Control Valve 24V</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="font-caption text-caption px-2 py-0.5 bg-surface-container-high rounded text-on-surface-variant font-medium">Hydraulics</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">580 pcs</td>
+<td class="py-3 px-4 text-right font-mono-data text-on-surface font-medium">+1,100 pcs</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-mono-data font-semibold text-label-sm">15.4 Days</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">14.0 Days</td>
+<td class="py-3 px-4 text-right font-mono-data font-semibold text-secondary">1,200 pcs</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 91%;"></div>
+</div>
+<span class="font-mono-data text-label-sm font-semibold">91.8%</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-sm text-label-sm transition-all shadow-sm" type="button">
+                  Review
+                </button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="Adjust safety buffer" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="View ML causal factors" type="button">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: High Depletion Automation -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">bolt</span>
+</div>
+<div>
+<span class="font-mono-data text-label-md font-semibold text-on-surface block">SKU-7731-PW</span>
+<span class="font-caption text-caption text-on-surface-variant truncate block max-w-xs">Industrial DIN-Rail Power Supply 480W 24VDC</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="font-caption text-caption px-2 py-0.5 bg-surface-container-high rounded text-on-surface-variant font-medium">Power Electronics</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">890 pcs</td>
+<td class="py-3 px-4 text-right font-mono-data text-on-surface font-medium">+1,420 pcs</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-mono-data font-semibold text-label-sm">18.8 Days</span>
+</td>
+<td class="py-3 px-4 text-right font-mono-data">10.0 Days</td>
+<td class="py-3 px-4 text-right font-mono-data font-semibold text-secondary">800 pcs</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 96%;"></div>
+</div>
+<span class="font-mono-data text-label-sm font-semibold">96.7%</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-sm text-label-sm transition-all shadow-sm" type="button">
+                  Review
+                </button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="Adjust safety buffer" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="View ML causal factors" type="button">
+<span class="material-symbols-outlined text-[16px]">insights</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Meta & Quick Summary -->
+<div class="p-space-base bg-surface-container-low/50 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-caption text-caption text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Showing 4 highest risk predictions of 42 monitored items across 6 fulfillment DCs</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-mono-data">Inference latency: 42ms</span>
+<span>•</span>
+<a class="text-secondary font-medium hover:underline flex items-center gap-0.5" href="#">
+<span>View complete 30-day forecast telemetry</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for Retrain Model action feedback
+  document.getElementById('retrain-btn')?.addEventListener('click', function() {
+    const btn = this;
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin text-secondary">refresh</span><span>Retraining Model...</span>';
+    btn.classList.add('opacity-75');
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span><span>Weights Synced!</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+        btn.classList.remove('opacity-75');
+      }, 2000);
+    }, 1200);
+  });
+</script></main></div></body></html>

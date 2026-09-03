@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&family=hankenGrotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#ffffff","primary":"#000000","on-primary-fixed-variant":"#3f465c","surface-variant":"#d3e4fe","error":"#ba1a1a","on-tertiary-fixed":"#271901","tertiary-container":"#271901","surface-dim":"#cbdbf5","primary-fixed":"#dae2fd","inverse-surface":"#213145","on-secondary-container":"#fffbff","on-primary-fixed":"#131b2e","surface-bright":"#f8f9ff","on-background":"#0b1c30","secondary-fixed":"#dce1ff","inverse-primary":"#bec6e0","secondary":"#1d4ed8","surface-container-lowest":"#ffffff","primary-container":"#131b2e","error-container":"#ffdad6","surface":"#f8f9ff","background":"#f8f9ff","on-secondary-fixed-variant":"#0039b5","secondary-container":"#4069f2","surface-container-highest":"#d3e4fe","on-primary-container":"#7c839b","outline":"#76777d","inverse-on-surface":"#eaf1ff","on-tertiary-container":"#98805d","on-secondary-fixed":"#001551","secondary-fixed-dim":"#b7c4ff","surface-container-high":"#dce9ff","surface-container-low":"#eff4ff","on-surface":"#0b1c30","on-primary":"#ffffff","outline-variant":"#c6c6cd","on-tertiary-fixed-variant":"#574425","primary-fixed-dim":"#bec6e0","on-tertiary":"#ffffff","tertiary-fixed":"#fcdeb5","tertiary-fixed-dim":"#dec29a","on-error-container":"#93000a","on-surface-variant":"#45464d","tertiary":"#000000","surface-container":"#e5eeff","surface-tint":"#565e74","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"header-height":"3.25rem","space-sm":"0.375rem","space-xl":"1.25rem","sidebar-width":"15rem","table-row-default":"2.75rem","space-xs":"0.25rem","table-row-dense":"2.25rem","space-2xs":"0.125rem","space-base":"0.75rem","space-md":"0.5rem","space-2xl":"1.5rem","space-3xl":"2rem","space-lg":"1rem"},"fontFamily":{"caption":["geist"],"mono-data":["geist"],"body-md":["geist"],"display":["hankenGrotesk"],"label-md":["geist"],"label-sm":["geist"],"body-sm":["geist"],"headline-sm":["hankenGrotesk"],"headline-md":["hankenGrotesk"],"headline-lg":["hankenGrotesk"]},"fontSize":{"caption":["10px",{"lineHeight":"12px","letterSpacing":"0.03em","fontWeight":"500"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"display":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.025em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-sm text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-header-height px-space-base flex items-center gap-space-sm border-b border-outline-variant"><img alt="Brand logo. - Primary color: #0f172a
+- Font: hankenGrotesk
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">StockFlow</span><span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider">Enterprise Portal</span></div></div><div class="p-space-base border-b border-outline-variant bg-surface-container-low"><div class="flex items-center justify-between gap-space-xs"><div class="flex flex-col overflow-hidden"><span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Active Tenant</span><span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Apex Mfg Corp</span><span class="font-caption text-caption text-secondary font-medium">Tier 1 Account</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">unfold_more</span></div></div><nav class="p-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-secondary text-on-secondary font-semibold"><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg transition-colors bg-secondary text-on-secondary font-semibold" data-path="product-catalog" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-label-md text-label-md">Product Catalog</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="orders-and-shipments" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-label-md text-label-md">Orders & Shipments</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="active-cart-and-reorders" href="#"><span class="material-symbols-outlined text-[18px]">shopping_cart</span><span class="font-label-md text-label-md">Active Cart & Reorders</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="invoices-and-credit-line" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-md text-label-md">Invoices & Credit Line</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="account-and-facility-settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-label-md text-label-md">Account & Facility Settings</span></a></nav></div><div class="p-space-base border-t border-outline-variant bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-caption text-caption text-on-surface-variant font-medium">Operational</span></div><div class="flex items-center gap-space-2xs text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">sync</span><span class="font-mono-data text-caption">Live: 14ms</span></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface-container-lowest border-b border-outline-variant z-40 px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-low border border-outline-variant rounded-lg"><span class="material-symbols-outlined text-[16px] text-secondary">warehouse</span><span class="font-label-sm text-label-sm text-on-surface">Chicago Central DC-01</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span></div><div class="relative max-w-md w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-8 pr-3 py-1 bg-surface border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/20" placeholder="Search catalog, SKUs, POs... ⌘K" readonly="" type="text"/></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-base py-space-2xs rounded-lg border border-outline-variant bg-surface-container-low"><span class="font-caption text-caption text-on-surface-variant uppercase font-medium">Credit Net-30</span><span class="font-label-sm text-label-sm text-on-surface font-semibold tabular-nums">$184.5k / $250k</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span></div><button class="flex items-center gap-space-xs px-space-base py-space-2xs rounded-lg bg-surface-container border border-outline-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">shopping_bag</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Cart: 3 items • $42,860</span></button><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full flex items-center justify-center font-caption text-caption">2</span></button><div class="h-5 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AEtjO1W25QWQkinr0eELQlciTF15UfYbViSsqSTTAuTfGMrtyAi47y3jlAi_EzgI2MGmPZCwrLIpVE52JH94MZznRAn-GEJVIKFrtqF-UTbCXuoOCvP1QiEnUPgQtf6QfNLUCuJQ-kguzpFH6rKf4PMR36l2FuPl1bgXxkbaPfyTTBwXiY038N4u0mxOBBOY7Ly2XcOd3DWmwlJEWtOHQ1FYmiI76KmxwdpR0XgPu7k4HlY9v5MxzbnbTQb-M2Zc"/><div class="hidden xl:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Elena Rostova</span><span class="font-caption text-caption text-on-surface-variant">Apex Mfg Procurement</span></div></div></div></header><main class="w-full pt-header-height min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Command Header & Breadcrumb Surface -->
+<section class="w-full bg-surface-container-low px-space-2xl py-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<a class="flex items-center gap-space-xs font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant transition-colors group" href="#">
+<span class="material-symbols-outlined text-[16px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span>Back to Catalog</span>
+</a>
+<span class="text-outline-variant select-none">/</span>
+<nav class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant min-w-0">
+<span class="hover:text-on-surface transition-colors cursor-pointer">Catalog</span>
+<span>/</span>
+<span class="hover:text-on-surface transition-colors cursor-pointer">Sensors & IoT Nodes</span>
+<span>/</span>
+<span class="font-mono-data text-on-surface font-semibold truncate bg-surface-container px-space-xs py-space-2xs rounded-lg">SKU-9932-SN (Infrared Sensor 850nm Array)</span>
+</nav>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-lg bg-surface-container font-caption text-caption text-on-surface font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Global Active Part
+      </span>
+<div class="flex items-center gap-space-xs font-mono-data text-caption text-on-surface-variant bg-surface-container-lowest px-space-sm py-space-2xs rounded-lg shadow-sm">
+<span>PO-REV:</span>
+<span class="text-on-surface font-semibold">2024.11-E</span>
+</div>
+</div>
+</section>
+<!-- Main Content Stage -->
+<div class="p-space-2xl flex flex-col gap-space-2xl">
+<!-- Split 2-Column Product Engine -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Technical Blueprint & Visual Gallery (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Schematic Blueprint Canvas Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">memory</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Schematic Reference & Pinout</span>
+</div>
+<span class="font-mono-data text-caption text-on-surface-variant">DIM: 42.0mm × 18.0mm</span>
+</div>
+<!-- Product Technical Visual -->
+<div class="relative w-full aspect-[4/3] bg-surface-container flex items-center justify-center overflow-hidden group">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-95 group-hover:scale-105 transition-transform duration-500" data-alt="Technical macro photography of an industrial infrared sensor circuit module on an obsidian inspection bench. Pristine matte black PCB with gold pin headers, visible optical lens casing at 850nm wavelength, laser etched trace markings, ultra-sharp studio lighting highlighting technical components with high precision engineering aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR_18DTrBSgQV-qJwSLiLbRLjrvFlsN4oFnnLuLWKYXsMPy7kIX0bg09E8I6vJxtQJ1ftmiv1THW-1C7RqFdem89NJmhbl2B65QEzSlamaJ1xuQ3ucBG2jhftmwk53nJ_ueD7HvWAKSCp-3joHkrr9esRjGCbmK-ydgkTO_tsunHwQKlqwplqjmfFRldWmfgk90MPkQwdLPoIyqJ98jzMKH2W-HU31xqnYGIanO49A5ffHPyEHfB3gCw"/>
+<!-- Pinout Overlay HUD -->
+<div class="absolute inset-0 p-space-base pointer-events-none flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-mono-data text-caption bg-surface-container-lowest/90 backdrop-blur text-on-surface px-space-xs py-space-2xs rounded-lg shadow-sm">PIN 1: VDD (3.3-5V)</span>
+<span class="font-mono-data text-caption bg-surface-container-lowest/90 backdrop-blur text-secondary px-space-xs py-space-2xs rounded-lg shadow-sm font-semibold">OP-TEMP: -40°C → +85°C</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-mono-data text-caption bg-surface-container-lowest/90 backdrop-blur text-on-surface px-space-xs py-space-2xs rounded-lg shadow-sm">I2C BUS (SDA/SCL)</span>
+<span class="font-mono-data text-caption bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant px-space-xs py-space-2xs rounded-lg shadow-sm">TOL: ±0.05mm</span>
+</div>
+</div>
+</div>
+<!-- Compliance Certification Strip -->
+<div class="p-space-base bg-surface-container-low flex items-center justify-between flex-wrap gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded-lg bg-surface-container-lowest font-label-sm text-caption text-on-surface font-semibold shadow-sm flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                RoHS COMPLIANT
+              </span>
+<span class="px-space-xs py-space-2xs rounded-lg bg-surface-container-lowest font-label-sm text-caption text-on-surface font-semibold shadow-sm">
+                CE DIRECTIVE
+              </span>
+<span class="px-space-xs py-space-2xs rounded-lg bg-surface-container-lowest font-label-sm text-caption text-on-surface font-semibold shadow-sm">
+                ISO 9001:2015
+              </span>
+</div>
+<span class="font-mono-data text-caption text-on-surface-variant">LOT: SG-990-Q4</span>
+</div>
+<!-- Documentation & CAD Actions -->
+<div class="p-space-base grid grid-cols-2 gap-space-sm bg-surface-container-lowest">
+<a class="flex items-center justify-center gap-space-xs px-space-base py-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold" href="#">
+<span class="material-symbols-outlined text-secondary text-[18px]">picture_as_pdf</span>
+<span>Datasheet (2.4 MB)</span>
+</a>
+<a class="flex items-center justify-center gap-space-xs px-space-base py-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold" href="#">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">view_in_ar</span>
+<span>CAD Model (.STP)</span>
+</a>
+</div>
+</div>
+<!-- Comprehensive Specification Matrix -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-base">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Factory Telemetry Specifications</h2>
+<span class="font-mono-data text-caption text-on-surface-variant">SPEC-REV 3.1</span>
+</div>
+<div class="flex flex-col rounded-lg overflow-hidden">
+<div class="flex items-center justify-between px-space-base py-space-xs bg-surface-container-low font-label-sm text-caption text-on-surface-variant">
+<span>PARAMETER</span>
+<span>SPECIFICATION</span>
+</div>
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Input Voltage</span>
+<span class="font-mono-data text-body-sm text-on-surface font-semibold">3.3V – 5.0V DC</span>
+</div>
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Spectral Bandwidth</span>
+<span class="font-mono-data text-body-sm text-on-surface font-semibold">850nm ± 10nm Peak</span>
+</div>
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Interface Protocol</span>
+<span class="font-mono-data text-body-sm text-on-surface font-semibold">I2C (400kHz) / SPI (10MHz)</span>
+</div>
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Operating Temperature</span>
+<span class="font-mono-data text-body-sm text-on-surface font-semibold">-40°C to +85°C Industrial</span>
+</div>
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Packaging Format</span>
+<span class="font-mono-data text-body-sm text-on-surface font-semibold">Tape & Reel (250 Units / Reel)</span>
+</div>
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Moisture Sensitivity</span>
+<span class="font-mono-data text-body-sm text-on-surface font-semibold">MSL-3 Certified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Wholesale Pricing, Allocation & Order Configuration (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Header Information Panel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xl flex flex-col gap-space-base">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs bg-surface-container text-secondary font-mono-data text-caption rounded-lg font-bold">SKU-9932-SN</span>
+<span class="font-caption text-caption text-on-surface-variant">UPC: 098231012004</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-sm py-space-2xs rounded-lg">Manufacturer: <strong class="text-on-surface">Semico Global Corp</strong></span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Infrared Ambient Sensor 850nm Precision Array</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              High-throughput optical array designed for robotic assembly sensing, automated conveyance, and industrial telemetry. Factory calibrated with pre-flashed parity check EEPROM.
+            </p>
+</div>
+<!-- Live B2B Tiered Volume Pricing Table -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">price_change</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">B2B Tiered Volume Matrix</span>
+</div>
+<span class="font-caption text-caption text-secondary font-semibold">Tier 1 Contract Applied</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs">
+<!-- Tier 1 -->
+<div class="tier-card p-space-base rounded-lg bg-surface-container-low flex flex-col justify-between gap-space-sm transition-all cursor-pointer" id="tier-card-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption font-semibold uppercase text-on-surface-variant">Tier 1</span>
+<span class="font-caption text-caption text-outline">Base</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block mt-space-2xs">10 – 99 units</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tabular-nums">$18.25</span>
+<span class="font-caption text-caption text-on-surface-variant block">/ unit</span>
+</div>
+</div>
+<!-- Tier 2 (Active based on default 250) -->
+<div class="tier-card p-space-base rounded-lg bg-secondary text-on-secondary shadow-md flex flex-col justify-between gap-space-sm transition-all cursor-pointer" id="tier-card-2">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption font-semibold uppercase opacity-80">Tier 2</span>
+<span class="font-caption text-caption bg-surface-container-lowest/20 px-space-2xs rounded-lg font-bold">ACTIVE</span>
+</div>
+<span class="font-label-md text-label-md font-semibold block mt-space-2xs">100 – 499 units</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold tabular-nums">$16.50</span>
+<span class="font-caption text-caption opacity-80 block">Save 9.5%</span>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="tier-card p-space-base rounded-lg bg-surface-container-low flex flex-col justify-between gap-space-sm transition-all cursor-pointer" id="tier-card-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption font-semibold uppercase text-on-surface-variant">Tier 3</span>
+<span class="font-caption text-caption text-secondary font-bold">18.9% off</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block mt-space-2xs">500 – 1,999</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tabular-nums">$14.80</span>
+<span class="font-caption text-caption text-on-surface-variant block">/ unit</span>
+</div>
+</div>
+<!-- Tier 4 -->
+<div class="tier-card p-space-base rounded-lg bg-surface-container-low flex flex-col justify-between gap-space-sm transition-all cursor-pointer" id="tier-card-4">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption font-semibold uppercase text-on-surface-variant">Enterprise</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">bolt</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block mt-space-2xs">2,000+ units</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tabular-nums">$13.20</span>
+<span class="font-caption text-caption text-on-surface-variant block">Release sched.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-Time DC Availability Widget -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-base">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">hub</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Warehouse Telemetry & Allocation</span>
+</div>
+<span class="font-mono-data text-caption text-on-surface-variant flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Live Sync: 594 Total Available
+            </span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Facility 1 -->
+<div class="flex items-center justify-between p-space-base rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-base">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">warehouse</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Chicago Central DC-01</span>
+<span class="font-caption text-caption bg-surface-container px-space-xs py-space-2xs rounded-lg text-secondary font-semibold">PRIMARY</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Dock Door 14 • Immediate Local Dispatch</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-data text-body-sm font-bold text-on-surface">24 units</span>
+<span class="font-caption text-caption text-secondary block font-semibold">Ready for dispatch today</span>
+</div>
+</div>
+<!-- Facility 2 -->
+<div class="flex items-center justify-between p-space-base rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-base">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dallas South DC-02</span>
+<span class="font-caption text-caption text-on-surface-variant">Cross-dock Inbound Route #TX-489</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-data text-body-sm font-bold text-on-surface">120 units</span>
+<span class="font-caption text-caption text-on-surface-variant block">Arriving Oct 28 (3 days)</span>
+</div>
+</div>
+<!-- Facility 3 -->
+<div class="flex items-center justify-between p-space-base rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-base">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[20px]">directions_boat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Rotterdam Global Terminal Hub</span>
+<span class="font-caption text-caption text-on-surface-variant">Palletized Euro-Freight & Air Lading</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-data text-body-sm font-bold text-on-surface">450 units</span>
+<span class="font-caption text-caption text-on-surface-variant block">Bulk Ocean/Air Freight</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quantity Configuration & Order Panel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Procurement Quantity & Billing</span>
+<div class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span>Standard packaging:</span>
+<strong class="text-on-surface font-mono-data">1 Reel = 250 Units</strong>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center">
+<!-- Stepper Container (5 cols) -->
+<div class="md:col-span-5 flex flex-col gap-space-xs">
+<label class="font-label-sm text-caption uppercase text-on-surface-variant font-semibold">Order Quantity (Units)</label>
+<div class="flex items-center bg-surface-container-low rounded-lg p-space-2xs">
+<button class="w-10 h-10 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container-high transition-colors" id="btn-qty-dec" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-full text-center bg-transparent font-mono-data text-headline-sm font-bold text-on-surface focus:outline-none" id="input-qty" min="10" step="10" type="number" value="250"/>
+<button class="w-10 h-10 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container-high transition-colors" id="btn-qty-inc" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="flex justify-between items-center px-space-2xs">
+<span class="font-caption text-caption text-on-surface-variant">Min: 10 units</span>
+<button class="font-caption text-caption text-secondary font-semibold hover:underline" id="btn-snap-reel">Snap to 1 Reel (250)</button>
+</div>
+</div>
+<!-- Total Price Calculation Display (7 cols) -->
+<div class="md:col-span-7 bg-surface-container-low rounded-lg p-space-base flex flex-col justify-between">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Calculated Unit Rate</span>
+<span class="font-mono-data text-body-sm font-semibold text-on-surface tabular-nums" id="display-unit-price">$16.50 / unit</span>
+</div>
+<div class="flex justify-between items-center mt-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Estimated Delivery</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">event_available</span>
+                  Oct 29, 2024
+                </span>
+</div>
+<div class="h-px bg-outline-variant/30 my-space-xs"></div>
+<div class="flex justify-between items-baseline">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold block">Total Estimated Subtotal</span>
+<span class="font-caption text-caption text-on-surface-variant">Excl. Sales Tax & Customs Duty</span>
+</div>
+<span class="font-display text-headline-lg text-on-surface font-extrabold tabular-nums" id="display-subtotal">$4,125.00</span>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col sm:flex-row gap-space-base">
+<button class="flex-1 py-space-base px-space-xl rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold hover:bg-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99]" id="btn-add-cart">
+<span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
+<span id="btn-add-cart-label">+ Add to Wholesale Cart ($4,125.00)</span>
+</button>
+<button class="py-space-base px-space-lg rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-variant transition-colors flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">update</span>
+<span>Set Recurring Monthly Replenishment</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+              Net-30 Corporate Terms Approved
+            </span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+              FOB Chicago / Insured Freight
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- RECOMMENDED COMPLEMENTARY PARTS & MATCHED COMPONENTS SECTION -->
+<section class="flex flex-col gap-space-lg mt-space-base">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Recommended Complementary Components</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Matched pin-compatible peripherals, wire harnesses, and DIN power sources.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-caption text-caption text-on-surface-variant font-medium">BOM Auto-Pairing Active</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Component 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex flex-col gap-space-base">
+<div class="relative w-full aspect-[16/9] rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up studio shot of heavy duty M12 ribbon cable connector with waterproof gold plated brass contacts, flexible black shielding braid, industrial automation equipment context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdVX8HxjPKVavaeA9YlQd3fe6Dzy8WwHkmExJLhLbnGPDyMFugOJ1CM-_htL8feyMDLYBvJiYMxu0IW-wFTENrtgdNSxVpPEpqz_gy_7dmSCDyMZegytJQhebl7eOc6qnQZYg2RRc5HJQ7P2iwGcuMqUTX8YuGCKPnsM7KUO89Dfj7QAq2G_u0mw3CFWs9VyS72-0euLXwDKC9KwRfbvRK1TYVZED5m4TZHSZ3UR6zm6bMg2F91-5rHw"/>
+<span class="absolute top-2 left-2 px-space-xs py-space-2xs rounded bg-surface-container-lowest/90 backdrop-blur font-mono-data text-caption text-on-surface font-semibold shadow-sm">
+                SKU-CBL-ETH-05
+              </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-secondary font-semibold uppercase">Shielded Cable</span>
+<span class="font-mono-data text-caption text-on-surface-variant">In Stock: 1,240</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs">Ribbon Cable M12 Connector (0.5m)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-space-2xs">
+                IP67 rated oil-resistant multi-core cable for hostile robotics environments. Low latency signal integrity.
+              </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-base mt-space-base bg-surface-container-low -mx-space-lg -mb-space-lg px-space-lg py-space-base rounded-b-xl">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tabular-nums">$9.40</span>
+<span class="font-caption text-caption text-on-surface-variant">/ unit</span>
+</div>
+<button class="add-complementary-btn px-space-base py-space-xs rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary transition-colors font-label-sm text-label-sm font-semibold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- Component 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex flex-col gap-space-base">
+<div class="relative w-full aspect-[16/9] rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Top-down high tech macro shot of an industrial signal conditioner board, populated with microchips, surface mount capacitors, and green terminal blocks on a clean workbench." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcWGSuZPUtR8E8VJQSuytBergLlNOGeNH-m_MNFlNyZ6URSySIsViPwfrHKxayA5uYnmcujViqST6u5etCsL4WkRtXN1uRW-xTJWp9gL-R5A3LT3IULf89r_aA2l7Q5fAfIAjqAonDzw7o5aRAc671--BLaSNR-AsUlV-Nc5oEevXBcH8Vqj_r_UN4G4e2X5J9kFLnbPC21-cx6H52s-RV4wkJ7NNz7L0gzXLxF_KCHdlAI-eXEOePYg"/>
+<span class="absolute top-2 left-2 px-space-xs py-space-2xs rounded bg-surface-container-lowest/90 backdrop-blur font-mono-data text-caption text-on-surface font-semibold shadow-sm">
+                SKU-SIG-CND-02
+              </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-secondary font-semibold uppercase">Interface Board</span>
+<span class="font-mono-data text-caption text-on-surface-variant">In Stock: 380</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs">Active Signal Conditioner Board</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-space-2xs">
+                Filters noise from high-interference conveyor drives, converts differential line signal into RS-485/Modbus.
+              </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-base mt-space-base bg-surface-container-low -mx-space-lg -mb-space-lg px-space-lg py-space-base rounded-b-xl">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tabular-nums">$34.50</span>
+<span class="font-caption text-caption text-on-surface-variant">/ unit</span>
+</div>
+<button class="add-complementary-btn px-space-base py-space-xs rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary transition-colors font-label-sm text-label-sm font-semibold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+<!-- Component 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex flex-col gap-space-base">
+<div class="relative w-full aspect-[16/9] rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Industrial 24V DIN rail power supply module mounted on galvanized steel rail with LED status indicators illuminated in green and blue in an enterprise control cabinet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0pryERODAn1GsODLcJqGFuOX980x1LwKIqc9QLFVastx7yNfKVxHAEOR-GQTxzkW8QUY9FpNyqELyW7oWfAa_uStuJrS5FtEM-xmg9g3l0rsMVBiXd16osycjrZzBWplihZ9oQJ7qu-J9rAKDcCduRg8MzgF-sZc89U6o4dTRQD0ZmpVYPVIoOCpbGVQ1NnQypehrZfbrD2lyfTqVfaqptItSlpOCT5O4wgkp2oqaFGQePR9YX-Mv6Q"/>
+<span class="absolute top-2 left-2 px-space-xs py-space-2xs rounded bg-surface-container-lowest/90 backdrop-blur font-mono-data text-caption text-on-surface font-semibold shadow-sm">
+                SKU-PSU-DIN24
+              </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-secondary font-semibold uppercase">Power Conditioning</span>
+<span class="font-mono-data text-caption text-on-surface-variant">In Stock: 512</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs">24V Ultra-Compact DIN Rail PSU (60W)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-space-2xs">
+                Ultra-slim footprint with overload and surge protection, 92% efficiency rating, universal AC input.
+              </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-base mt-space-base bg-surface-container-low -mx-space-lg -mb-space-lg px-space-lg py-space-base rounded-b-xl">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tabular-nums">$28.90</span>
+<span class="font-caption text-caption text-on-surface-variant">/ unit</span>
+</div>
+<button class="add-complementary-btn px-space-base py-space-xs rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary hover:text-on-secondary transition-colors font-label-sm text-label-sm font-semibold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Stepper and Dynamic Tier Logic -->
+<script>
+    (function() {
+      const qtyInput = document.getElementById('input-qty');
+      const btnDec = document.getElementById('btn-qty-dec');
+      const btnInc = document.getElementById('btn-qty-inc');
+      const btnSnap = document.getElementById('btn-snap-reel');
+      const unitPriceDisplay = document.getElementById('display-unit-price');
+      const subtotalDisplay = document.getElementById('display-subtotal');
+      const cartLabel = document.getElementById('btn-add-cart-label');
+
+      const tierCards = [
+        document.getElementById('tier-card-1'),
+        document.getElementById('tier-card-2'),
+        document.getElementById('tier-card-3'),
+        document.getElementById('tier-card-4')
+      ];
+
+      function calculateTier(qty) {
+        if (qty >= 2000) return { price: 13.20, index: 3 };
+        if (qty >= 500) return { price: 14.80, index: 2 };
+        if (qty >= 100) return { price: 16.50, index: 1 };
+        return { price: 18.25, index: 0 };
+      }
+
+      function updateUI() {
+        let qty = parseInt(qtyInput.value, 10);
+        if (isNaN(qty) || qty < 10) qty = 10;
+        
+        const tier = calculateTier(qty);
+        const subtotal = (qty * tier.price).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        const unitFormatted = tier.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' / unit';
+
+        unitPriceDisplay.textContent = unitFormatted;
+        subtotalDisplay.textContent = subtotal;
+        cartLabel.textContent = `+ Add to Wholesale Cart (${subtotal})`;
+
+        // Update Tier Card active styles
+        tierCards.forEach((card, idx) => {
+          if (!card) return;
+          if (idx === tier.index) {
+            card.className = 'tier-card p-space-base rounded-lg bg-secondary text-on-secondary shadow-md flex flex-col justify-between gap-space-sm transition-all cursor-pointer';
+            const statusTag = card.querySelector('span:last-child');
+            if (statusTag && idx === 1) statusTag.className = 'font-caption text-caption bg-surface-container-lowest/20 px-space-2xs rounded-lg font-bold';
+          } else {
+            card.className = 'tier-card p-space-base rounded-lg bg-surface-container-low text-on-surface flex flex-col justify-between gap-space-sm transition-all cursor-pointer hover:bg-surface-container';
+          }
+        });
+      }
+
+      btnDec.addEventListener('click', () => {
+        let current = parseInt(qtyInput.value, 10) || 10;
+        if (current > 10) {
+          qtyInput.value = Math.max(10, current - 10);
+          updateUI();
+        }
+      });
+
+      btnInc.addEventListener('click', () => {
+        let current = parseInt(qtyInput.value, 10) || 10;
+        qtyInput.value = current + 10;
+        updateUI();
+      });
+
+      btnSnap.addEventListener('click', () => {
+        qtyInput.value = 250;
+        updateUI();
+      });
+
+      qtyInput.addEventListener('input', updateUI);
+
+      // Add to cart click interaction animation
+      const addCartBtn = document.getElementById('btn-add-cart');
+      addCartBtn.addEventListener('click', () => {
+        const originalText = cartLabel.textContent;
+        cartLabel.textContent = 'Allocating Order...';
+        addCartBtn.classList.add('bg-secondary');
+        setTimeout(() => {
+          cartLabel.textContent = '✓ Allocated to Cart PO';
+          setTimeout(() => {
+            cartLabel.textContent = originalText;
+            addCartBtn.classList.remove('bg-secondary');
+          }, 1800);
+        }, 600);
+      });
+
+      // Complementary components quick add
+      document.querySelectorAll('.add-complementary-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const span = this.querySelector('span:last-child');
+          const original = span.textContent;
+          span.textContent = 'Added';
+          this.classList.add('bg-secondary', 'text-on-secondary');
+          setTimeout(() => {
+            span.textContent = original;
+            this.classList.remove('bg-secondary', 'text-on-secondary');
+          }, 1500);
+        });
+      });
+    })();
+  </script>
+</div></main></div></body></html>

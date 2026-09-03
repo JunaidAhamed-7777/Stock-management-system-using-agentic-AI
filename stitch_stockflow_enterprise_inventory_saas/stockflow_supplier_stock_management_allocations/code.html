@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&family=hankenGrotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#bec6e0", "on-primary-fixed": "#131b2e", "surface-container-high": "#dce9ff", "on-error-container": "#93000a", "background": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed": "#001551", "error": "#ba1a1a", "on-tertiary-container": "#98805d", "inverse-surface": "#213145", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#574425", "tertiary": "#000000", "on-tertiary": "#ffffff", "on-surface": "#0b1c30", "on-surface-variant": "#45464d", "on-background": "#0b1c30", "error-container": "#ffdad6", "secondary": "#1d4ed8", "secondary-fixed": "#dce1ff", "on-secondary-fixed-variant": "#0039b5", "surface-container-highest": "#d3e4fe", "surface-container-lowest": "#ffffff", "surface-container-low": "#eff4ff", "outline": "#76777d", "surface-dim": "#cbdbf5", "on-tertiary-fixed": "#271901", "primary-container": "#131b2e", "on-primary": "#ffffff", "on-error": "#ffffff", "outline-variant": "#c6c6cd", "secondary-fixed-dim": "#b7c4ff", "surface-container": "#e5eeff", "surface": "#f8f9ff", "primary": "#000000", "inverse-primary": "#bec6e0", "surface-tint": "#565e74", "on-primary-container": "#7c839b", "surface-variant": "#d3e4fe", "on-secondary-container": "#fffbff", "surface-bright": "#f8f9ff", "secondary-container": "#4069f2", "on-primary-fixed-variant": "#3f465c", "primary-fixed": "#dae2fd", "tertiary-fixed-dim": "#dec29a", "tertiary-fixed": "#fcdeb5", "tertiary-container": "#271901" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-2xs": "0.125rem", "space-sm": "0.375rem", "space-md": "0.5rem", "space-xl": "1.25rem", "sidebar-width": "15rem", "header-height": "3.25rem", "space-lg": "1rem", "table-row-dense": "2.25rem", "space-base": "0.75rem", "space-3xl": "2rem", "table-row-default": "2.75rem", "space-xs": "0.25rem", "space-2xl": "1.5rem" }, "fontFamily": { "headline-sm": ["hankenGrotesk"], "label-sm": ["geist"], "display": ["hankenGrotesk"], "headline-md": ["hankenGrotesk"], "caption": ["geist"], "mono-data": ["geist"], "body-sm": ["geist"], "label-md": ["geist"], "body-md": ["geist"], "headline-lg": ["hankenGrotesk"] }, "fontSize": { "headline-sm": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "caption": ["10px", { "lineHeight": "12px", "letterSpacing": "0.03em", "fontWeight": "500" }], "mono-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-sm text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface-container-lowest flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50"><div class="p-space-base flex flex-col gap-space-sm bg-surface-container-low"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Active Portal</span><span class="inline-flex items-center px-space-xs py-space-2xs rounded-DEFAULT bg-surface-container-highest text-secondary font-caption text-caption">AS2 / EDI Verified</span></div><div class="flex items-center justify-between text-on-surface"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">hub</span><span class="font-headline-sm text-headline-sm tracking-tight">Supplier Portal</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">unfold_more</span></div></div><div class="p-space-base bg-surface-container-lowest"><div class="flex flex-col gap-space-2xs"><span class="font-label-sm text-label-sm font-semibold text-on-surface truncate" title="Precision Components Global Ltd">Precision Components Global</span><div class="flex items-center justify-between font-caption text-caption text-on-surface-variant"><span class="font-mono-data text-mono-data">#VND-8842</span><span class="px-space-xs py-space-2xs rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Gold Tier SLA</span></div></div></div><nav class="flex-1 px-space-sm py-space-base space-y-space-2xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold"><div class="px-space-sm pb-space-xs font-caption text-caption uppercase tracking-wider text-outline font-semibold">Fulfillment & Inventory</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="supplier-products" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-label-md text-label-md">Supplier Products</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="add-edit-product" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span><span class="font-label-md text-label-md">Add / Edit Product</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="supplier-orders" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-label-md text-label-md">Supplier Orders</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-DEFAULT transition-colors bg-primary-container text-on-primary font-semibold" data-path="stock-management" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="font-label-md text-label-md">Stock Management</span></a><div class="pt-space-md px-space-sm pb-space-xs font-caption text-caption uppercase tracking-wider text-outline font-semibold">Integration</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="compliance-settings" href="#"><span class="material-symbols-outlined text-[18px]">verified</span><span class="font-label-md text-label-md">Compliance & Settings</span></a></nav><div class="p-space-base bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-caption text-caption text-on-surface-variant">EDI Active</span></div><span class="font-caption text-caption font-mono-data text-outline">18ms</span></div><div class="flex items-center justify-between pt-space-xs"><span class="font-caption text-caption text-outline">Gateway Sync v4.2</span><button class="text-on-surface-variant hover:text-on-surface flex items-center" title="Collapse navigation rail" type="button"><span class="material-symbols-outlined text-[16px]">keyboard_double_arrow_left</span></button></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f172a - Font: hankenGrotesk - Mode: light - Roundness: rounded-sm " class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">StockFlow Enterprise</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-DEFAULT"><span class="material-symbols-outlined text-secondary text-[16px]">pin_drop</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Chicago Central DC-01 Receiving Dock</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-base py-space-xs rounded-DEFAULT w-80 justify-between"><div class="flex items-center gap-space-xs text-outline"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm text-outline">Omnisearch SKUs, POs, ASNs...</span></div><span class="font-caption text-caption px-space-xs py-space-2xs bg-surface-container-highest text-on-surface-variant rounded-DEFAULT font-mono-data">⌘K</span></div><button class="flex items-center gap-space-xs px-space-base py-space-xs bg-primary text-on-primary rounded-DEFAULT font-label-md text-label-md hover:bg-on-primary-fixed transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">add_box</span><span>+ Submit ASN</span></button><div class="relative flex items-center justify-center"><button class="text-on-surface-variant hover:text-on-surface p-space-2xs relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button></div><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W25QWQkinr0eELQlciTF15UfYbViSsqSTTAuTfGMrtyAi47y3jlAi_EzgI2MGmPZCwrLIpVE52JH94MZznRAn-GEJVIKFrtqF-UTbCXuoOCvP1QiEnUPgQtf6QfNLUCuJQ-kguzpFH6rKf4PMR36l2FuPl1bgXxkbaPfyTTBwXiY038N4u0mxOBBOY7Ly2XcOd3DWmwlJEWtOHQ1FYmiI76KmxwdpR0XgPu7k4HlY9v5MxzbnbTQb-M2Zc"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-none">Elena Rostova</span><span class="font-caption text-caption text-outline leading-tight">VP Logistics / Supplier Desk</span></div></div></div></header><main class="relative w-full pt-header-height bg-background min-h-screen px-space-xl py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Dynamic Notification Bar / Telemetry Ticker -->
+<div class="w-full bg-surface-container-low px-space-lg py-space-xs rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="inline-flex relative items-center justify-center">
+<span class="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Live EDI 846 Inventory Ingestion</span>
+<span class="text-outline">/</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">Last synchronized: Today at 14:02:18 UTC (Delta latency: 340ms)</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[15px] text-secondary">cloud_done</span>
+<span>EDI 855 Automated Flow: <strong class="text-on-surface">Enabled</strong></span>
+</div>
+<span class="px-space-xs py-space-2xs rounded-DEFAULT bg-surface-container-high text-on-surface font-mono-data text-caption">VND-8842-CHIC-GATEWAY</span>
+</div>
+</div>
+<!-- Header Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-base pb-space-xs">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Inbound Stock Allocation & Warehouse Safety Buffers</h1>
+<span class="px-space-sm py-space-2xs rounded-DEFAULT bg-surface-container-highest text-secondary font-caption text-caption font-semibold">Tier-1 Multi-DC Synchronized</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time inventory visibility across StockFlow regional distribution centers and vendor factory warehouses.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-space-xs px-space-base py-space-xs rounded-DEFAULT bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">receipt_long</span>
+<span>Download Inventory Delta Report</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-base py-space-xs rounded-DEFAULT bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_driving_apps_wheel</span>
+<span>Request Stock Rebalance</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-base py-space-xs rounded-DEFAULT bg-primary text-on-primary shadow-sm hover:bg-on-primary-fixed transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]">add_task</span>
+<span>+ Schedule Inbound Dock Delivery</span>
+</button>
+</div>
+</div>
+<!-- Multi-Facility Stock Valuation Metrics (4-KPI Bento Bar) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-base">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Inbound Staged at Factory</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">factory</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-mono-data">18,240</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Units</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-2xs">
+<span>Ready for palletization</span>
+<span class="font-mono-data font-semibold text-on-surface">$312,400 est. val</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">In-Transit to StockFlow DCs</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">local_shipping</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-mono-data">4,600</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Units</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-2xs">
+<span>En route via freight</span>
+<span class="px-space-xs py-space-2xs rounded-DEFAULT bg-surface-container-high text-secondary font-mono-data font-semibold">3 LTL Carriers</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">On-Hand at StockFlow Hubs</span>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">warehouse</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-mono-data">42,800</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Units</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption pt-space-2xs font-mono-data">
+<span>CHI: 24.5k</span>
+<span class="text-outline">·</span>
+<span>DAL: 12.1k</span>
+<span class="text-outline">·</span>
+<span>RTM: 6.2k</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Buffer Health Index</span>
+<span class="px-space-xs py-space-2xs rounded-DEFAULT bg-error-container text-on-error-container font-caption text-caption font-semibold">2 At Risk</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-mono-data">96.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Safe Margin</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-2xs">
+<span class="text-error font-medium">2 SKUs below safety floor</span>
+<span class="font-mono-data">EDI Auto-PO pending</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 96.2%;"></div>
+</div>
+</div>
+</div>
+<!-- Main Stock Control & Bin Allocation Matrix -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm flex flex-col overflow-hidden">
+<!-- Filter Toolbar -->
+<div class="p-space-base bg-surface-container-lowest flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-base">
+<div class="flex items-center gap-space-sm flex-1 max-w-xl">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-[16px] text-outline">search</span>
+<input class="w-full pl-8 pr-space-base py-space-xs bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-DEFAULT focus:bg-surface-container-lowest outline-none placeholder:text-outline" id="skuSearchInput" placeholder="Search SKU, component name, internal bin ref..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs">
+<select class="bg-surface-container-low text-on-surface font-label-md text-label-md px-space-base py-space-xs rounded-DEFAULT outline-none cursor-pointer" id="facilityFilter">
+<option value="all">All Facilities (All DCs)</option>
+<option value="chicago">Chicago DC-01 Receiving</option>
+<option value="dallas">Dallas DC-02 Receiving</option>
+<option value="rotterdam">Rotterdam Hub EMEA</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center bg-surface-container-low p-space-2xs rounded-DEFAULT">
+<button class="px-space-base py-space-2xs font-label-sm text-label-sm rounded-DEFAULT bg-surface-container-lowest text-on-surface shadow-sm font-semibold" type="button">All Items (4)</button>
+<button class="px-space-base py-space-2xs font-label-sm text-label-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface" type="button">Depleted / Alert (1)</button>
+<button class="px-space-base py-space-2xs font-label-sm text-label-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface" type="button">Near Threshold (1)</button>
+<button class="px-space-base py-space-2xs font-label-sm text-label-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface" type="button">Adequate (2)</button>
+</div>
+<button class="p-space-xs bg-surface-container-low rounded-DEFAULT text-on-surface-variant hover:text-on-surface" title="Table Display Columns" type="button">
+<span class="material-symbols-outlined text-[18px]">view_column</span>
+</button>
+<button class="p-space-xs bg-surface-container-low rounded-DEFAULT text-on-surface-variant hover:text-on-surface" title="Refresh Table Feed" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-space-base px-space-base font-semibold">SKU & Component</th>
+<th class="py-space-base px-space-base font-semibold min-w-[170px]">Chicago DC-01 (Buffer)</th>
+<th class="py-space-base px-space-base font-semibold min-w-[170px]">Dallas DC-02 (Buffer)</th>
+<th class="py-space-base px-space-base font-semibold min-w-[170px]">Rotterdam Hub (Buffer)</th>
+<th class="py-space-base px-space-base font-semibold text-right">Factory Ready</th>
+<th class="py-space-base px-space-base font-semibold text-right">Burn Rate</th>
+<th class="py-space-base px-space-base font-semibold">Days of Supply</th>
+<th class="py-space-base px-space-base font-semibold text-right">Inbound Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1: Critical Depleted Chicago -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-DEFAULT bg-surface-container-high flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Infrared Optical Sensor Array</span>
+<div class="flex items-center gap-space-xs font-mono-data text-caption text-on-surface-variant">
+<span class="text-primary font-semibold">SKU-9932-SN</span>
+<span class="text-outline">·</span>
+<span>Class A Precision</span>
+</div>
+</div>
+</div>
+</td>
+<!-- Chicago: 24 / 150 Critical -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-error font-semibold">24 <span class="text-outline font-normal">/ 150 min</span></span>
+<span class="text-error font-semibold">16.0%</span>
+</div>
+<div class="w-full bg-error-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 16%;"></div>
+</div>
+<span class="font-caption text-caption text-error font-medium">Critical Depletion</span>
+</div>
+</td>
+<!-- Dallas: 120 / 100 Healthy -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">120 <span class="text-outline font-normal">/ 100 min</span></span>
+<span class="text-on-surface-variant">120%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Sufficient reserve</span>
+</div>
+</td>
+<!-- Rotterdam: 450 / 300 Healthy -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">450 <span class="text-outline font-normal">/ 300 min</span></span>
+<span class="text-on-surface-variant">150%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Optimal stocking</span>
+</div>
+</td>
+<!-- Factory Ready -->
+<td class="py-space-base px-space-base text-right font-mono-data font-semibold">
+<div class="flex flex-col items-end">
+<span class="text-on-surface">2,400 u</span>
+<span class="font-caption text-caption text-outline font-normal">Detroit Plant #2</span>
+</div>
+</td>
+<!-- Burn Rate -->
+<td class="py-space-base px-space-base text-right font-mono-data">
+<div class="flex flex-col items-end">
+<span class="text-on-surface font-semibold">42 u/day</span>
+<span class="font-caption text-caption text-error">↑ 18% 7d surge</span>
+</div>
+</td>
+<!-- Projected Days -->
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-space-sm py-space-2xs rounded-DEFAULT bg-error-container text-on-error-container font-mono-data text-caption font-semibold">3.4 Days</span>
+<span class="material-symbols-outlined text-[16px] text-error" title="Stock out within 82 hours without emergency delivery">warning</span>
+</div>
+</td>
+<!-- Inbound Actions -->
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-2xs bg-primary text-on-primary rounded-DEFAULT font-label-sm text-label-sm font-semibold hover:bg-on-primary-fixed transition-colors" type="button">
+                  Emergency Transfer
+                </button>
+<button class="p-space-2xs bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-DEFAULT" title="Buffer Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Optocoupler IC (Near Threshold) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-DEFAULT bg-surface-container-high flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Optocoupler Logic IC (Quad-Ch)</span>
+<div class="flex items-center gap-space-xs font-mono-data text-caption text-on-surface-variant">
+<span class="text-primary font-semibold">SKU-9021-EL</span>
+<span class="text-outline">·</span>
+<span>SMD Reel-5000</span>
+</div>
+</div>
+</div>
+</td>
+<!-- Chicago: 540 / 500 Safe -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">540 <span class="text-outline font-normal">/ 500 min</span></span>
+<span class="text-on-surface-variant">108%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Adequate</span>
+</div>
+</td>
+<!-- Dallas: 210 / 400 Near Threshold -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-tertiary-container font-semibold">210 <span class="text-outline font-normal">/ 400 min</span></span>
+<span class="text-tertiary-container font-semibold">52.5%</span>
+</div>
+<div class="w-full bg-tertiary-fixed h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 52.5%;"></div>
+</div>
+<span class="font-caption text-caption text-tertiary-container font-medium">Near Safety Floor</span>
+</div>
+</td>
+<!-- Rotterdam: 800 / 600 Healthy -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">800 <span class="text-outline font-normal">/ 600 min</span></span>
+<span class="text-on-surface-variant">133%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Surplus</span>
+</div>
+</td>
+<!-- Factory Ready -->
+<td class="py-space-base px-space-base text-right font-mono-data font-semibold">
+<div class="flex flex-col items-end">
+<span class="text-on-surface">12,500 u</span>
+<span class="font-caption text-caption text-outline font-normal">San Jose Micro Hub</span>
+</div>
+</td>
+<!-- Burn Rate -->
+<td class="py-space-base px-space-base text-right font-mono-data">
+<div class="flex flex-col items-end">
+<span class="text-on-surface font-semibold">88 u/day</span>
+<span class="font-caption text-caption text-on-surface-variant">Stable</span>
+</div>
+</td>
+<!-- Projected Days -->
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-space-sm py-space-2xs rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-mono-data text-caption font-semibold">17.6 Days</span>
+</div>
+</td>
+<!-- Inbound Actions -->
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-2xs bg-surface-container-low text-on-surface rounded-DEFAULT font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors" type="button">
+                  Schedule Freight
+                </button>
+<button class="p-space-2xs bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-DEFAULT" title="Buffer Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Hydraulic Cylinder (Optimal) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-DEFAULT bg-surface-container-high flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">build</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Double-Acting Hydraulic Cylinder</span>
+<div class="flex items-center gap-space-xs font-mono-data text-caption text-on-surface-variant">
+<span class="text-primary font-semibold">SKU-5582-HD</span>
+<span class="text-outline">·</span>
+<span>Heavy Machinery</span>
+</div>
+</div>
+</div>
+</td>
+<!-- Chicago: 420 / 300 -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">420 <span class="text-outline font-normal">/ 300 min</span></span>
+<span class="text-on-surface-variant">140%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Healthy</span>
+</div>
+</td>
+<!-- Dallas: 280 / 250 -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">280 <span class="text-outline font-normal">/ 250 min</span></span>
+<span class="text-on-surface-variant">112%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Healthy</span>
+</div>
+</td>
+<!-- Rotterdam: 190 / 150 -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">190 <span class="text-outline font-normal">/ 150 min</span></span>
+<span class="text-on-surface-variant">126%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Healthy</span>
+</div>
+</td>
+<!-- Factory Ready -->
+<td class="py-space-base px-space-base text-right font-mono-data font-semibold">
+<div class="flex flex-col items-end">
+<span class="text-on-surface">1,100 u</span>
+<span class="font-caption text-caption text-outline font-normal">Milwaukee Foundry</span>
+</div>
+</td>
+<!-- Burn Rate -->
+<td class="py-space-base px-space-base text-right font-mono-data">
+<div class="flex flex-col items-end">
+<span class="text-on-surface font-semibold">14 u/day</span>
+<span class="font-caption text-caption text-on-surface-variant">Nominal</span>
+</div>
+</td>
+<!-- Projected Days -->
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-space-sm py-space-2xs rounded-DEFAULT bg-surface-container-high text-secondary font-mono-data text-caption font-semibold">63.5 Days</span>
+</div>
+</td>
+<!-- Inbound Actions -->
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-2xs bg-surface-container-low text-on-surface rounded-DEFAULT font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors" type="button">
+                  Adjust Buffer
+                </button>
+<button class="p-space-2xs bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-DEFAULT" title="Buffer Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Hex Bolt Fastener (Adequate / Bulk) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-DEFAULT bg-surface-container-high flex items-center justify-center flex-shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">h_mobiledata</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">M12 Grade 8.8 Galvanized Hex Bolt</span>
+<div class="flex items-center gap-space-xs font-mono-data text-caption text-on-surface-variant">
+<span class="text-primary font-semibold">SKU-1823-TX</span>
+<span class="text-outline">·</span>
+<span>Fasteners 100pk</span>
+</div>
+</div>
+</div>
+</td>
+<!-- Chicago: 18,200 / 12,000 -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">18.2k <span class="text-outline font-normal">/ 12k min</span></span>
+<span class="text-on-surface-variant">151%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Optimal</span>
+</div>
+</td>
+<!-- Dallas: 9,800 / 8,000 -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">9.8k <span class="text-outline font-normal">/ 8k min</span></span>
+<span class="text-on-surface-variant">122%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Adequate</span>
+</div>
+</td>
+<!-- Rotterdam: 5,400 / 4,000 -->
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-mono-data text-caption">
+<span class="text-on-surface font-semibold">5.4k <span class="text-outline font-normal">/ 4k min</span></span>
+<span class="text-on-surface-variant">135%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Adequate</span>
+</div>
+</td>
+<!-- Factory Ready -->
+<td class="py-space-base px-space-base text-right font-mono-data font-semibold">
+<div class="flex flex-col items-end">
+<span class="text-on-surface">45,000 u</span>
+<span class="font-caption text-caption text-outline font-normal">Cleveland Warehouse</span>
+</div>
+</td>
+<!-- Burn Rate -->
+<td class="py-space-base px-space-base text-right font-mono-data">
+<div class="flex flex-col items-end">
+<span class="text-on-surface font-semibold">320 u/day</span>
+<span class="font-caption text-caption text-on-surface-variant">Stable</span>
+</div>
+</td>
+<!-- Projected Days -->
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-space-sm py-space-2xs rounded-DEFAULT bg-surface-container-high text-secondary font-mono-data text-caption font-semibold">104.3 Days</span>
+</div>
+</td>
+<!-- Inbound Actions -->
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-2xs bg-surface-container-low text-on-surface rounded-DEFAULT font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors" type="button">
+                  Adjust Buffer
+                </button>
+<button class="p-space-2xs bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-DEFAULT" title="Buffer Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-base py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-space-base">
+<span>Showing <strong class="text-on-surface font-mono-data">4</strong> of <strong class="text-on-surface font-mono-data">4</strong> Active Contract Components</span>
+<span class="text-outline">|</span>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Red: <50% Safety</span>
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container ml-space-xs"></span>
+<span>Amber: 50-75% Safety</span>
+<span class="w-2 h-2 rounded-full bg-secondary ml-space-xs"></span>
+<span>Blue: Optimal >100%</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="mr-space-xs">Rows per page: <strong>25</strong></span>
+<button class="p-space-2xs rounded-DEFAULT opacity-40 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-space-sm py-space-2xs bg-surface-container-lowest rounded-DEFAULT font-mono-data font-semibold text-on-surface">1</span>
+<button class="p-space-2xs rounded-DEFAULT opacity-40 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Visual Intelligence & Automated Reorder Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-base">
+<!-- Automated Reorder Rules Card (2 cols) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-space-xl rounded-lg shadow-sm flex flex-col justify-between gap-space-base">
+<div class="flex items-start justify-between gap-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">smart_toy</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">StockFlow Automated Replenishment Engine (ARE v3.8)</h2>
+<span class="px-space-xs py-space-2xs rounded-DEFAULT bg-surface-container-high text-secondary font-caption text-caption font-semibold">Autonomous EDI Trigger</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configured EDI 855 protocol triggers when regional DC inventory drops below the 14-day supply floor.</p>
+</div>
+</div>
+<button class="px-space-base py-space-xs bg-surface-container-low text-on-surface rounded-DEFAULT font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Configure Policy</span>
+</button>
+</div>
+<!-- Logic Pipeline Steps -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-low p-space-base rounded-DEFAULT flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline">
+<span class="font-mono-data text-caption font-semibold uppercase">Step 01: Detection</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">analytics</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Days of Supply < 14d</span>
+<p class="font-caption text-caption text-on-surface-variant">Aggregated velocity burn calculations trigger safety floor breach status in Chicago / Dallas / Rotterdam.</p>
+</div>
+<div class="bg-surface-container-low p-space-base rounded-DEFAULT flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline">
+<span class="font-mono-data text-caption font-semibold uppercase">Step 02: Verification</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">fact_check</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Factory Ready Check</span>
+<p class="font-caption text-caption text-on-surface-variant">Validates Detroit / San Jose warehouse pallet availability without requiring manual vendor sign-off.</p>
+</div>
+<div class="bg-surface-container-low p-space-base rounded-DEFAULT flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline">
+<span class="font-mono-data text-caption font-semibold uppercase">Step 03: Dispatch</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">departure_board</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Carrier EDI 856 ASN</span>
+<p class="font-caption text-caption text-on-surface-variant">Generates automated BOL dock appointment reservation at target DC within 4 hours of threshold warning.</p>
+</div>
+</div>
+<!-- Alert Callout for SKU-9932-SN -->
+<div class="p-space-base bg-error-container rounded-DEFAULT flex items-center justify-between text-on-error-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">priority_high</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold">Active Rule Fired: SKU-9932-SN Infrared Sensor (Chicago DC-01)</span>
+<span class="font-caption text-caption">Current reserve is 3.4 days. Auto-EDI 855 order draft #ORD-99182 generated for 2,400 units awaiting factory dock release confirmation.</span>
+</div>
+</div>
+<button class="px-space-base py-space-xs bg-error text-on-error font-label-md text-label-md rounded-DEFAULT hover:opacity-90 transition-opacity font-semibold flex-shrink-0" type="button">
+          Approve Release ASN
+        </button>
+</div>
+</div>
+<!-- Live Regional Allocation Visual Distribution (1 col) -->
+<div class="bg-surface-container-lowest p-space-xl rounded-lg shadow-sm flex flex-col justify-between gap-space-base">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Network Buffer Ratio</span>
+<span class="font-caption text-caption text-on-surface-variant">Current multi-DC balance distribution</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-outline">pie_chart</span>
+</div>
+<!-- Donut & Breakdown Visualization -->
+<div class="flex items-center justify-center py-space-sm">
+<div class="relative w-36 h-36 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<!-- Background circle -->
+<circle cx="18" cy="18" fill="none" r="15.915" stroke="#e5eeff" stroke-width="3"></circle>
+<!-- Chicago segment (57%) -->
+<circle cx="18" cy="18" fill="none" r="15.915" stroke="#1d4ed8" stroke-dasharray="57, 100" stroke-dashoffset="0" stroke-width="3.2"></circle>
+<!-- Dallas segment (28%) -->
+<circle cx="18" cy="18" fill="none" r="15.915" stroke="#4069f2" stroke-dasharray="28, 100" stroke-dashoffset="-57" stroke-width="3.2"></circle>
+<!-- Rotterdam segment (15%) -->
+<circle cx="18" cy="18" fill="none" r="15.915" stroke="#131b2e" stroke-dasharray="15, 100" stroke-dashoffset="-85" stroke-width="3.2"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-mono-data text-headline-sm font-semibold text-on-surface leading-none">65.6k</span>
+<span class="font-caption text-caption text-outline">Total Units</span>
+</div>
+</div>
+</div>
+<!-- Legend & Rebalance status -->
+<div class="flex flex-col gap-space-xs font-caption text-caption">
+<div class="flex items-center justify-between p-space-xs rounded-DEFAULT bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="text-on-surface font-medium">Chicago DC-01 Hub</span>
+</div>
+<span class="font-mono-data text-on-surface font-semibold">24,500 u (57%)</span>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded-DEFAULT bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="text-on-surface font-medium">Dallas DC-02 Hub</span>
+</div>
+<span class="font-mono-data text-on-surface font-semibold">12,100 u (28%)</span>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded-DEFAULT bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface font-medium">Rotterdam Hub EMEA</span>
+</div>
+<span class="font-mono-data text-on-surface font-semibold">6,200 u (15%)</span>
+</div>
+</div>
+<div class="pt-space-xs text-center font-caption text-caption text-on-surface-variant flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-secondary">tune</span>
+<span>Rebalance recommendation: +1.2k u Dallas → Chicago</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Quick search interactive behavior
+    const searchInput = document.getElementById('skuSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
+
+    // Facility filter simulation
+    const facilitySelect = document.getElementById('facilityFilter');
+    if (facilitySelect) {
+      facilitySelect.addEventListener('change', function(e) {
+        const val = e.target.value;
+        const thCells = document.querySelectorAll('thead th');
+        // Flash visual indicator of active focus
+        if (val !== 'all') {
+          console.log(`Filtering view by facility: ${val}`);
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>

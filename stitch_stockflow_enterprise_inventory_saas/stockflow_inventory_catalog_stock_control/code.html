@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&family=hankenGrotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#bec6e0","on-tertiary":"#ffffff","on-surface":"#0b1c30","inverse-surface":"#213145","background":"#f8f9ff","surface-container-highest":"#d3e4fe","surface-tint":"#565e74","on-secondary-container":"#fffbff","on-surface-variant":"#45464d","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#3f465c","inverse-on-surface":"#eaf1ff","secondary-container":"#4069f2","on-error-container":"#93000a","on-primary-fixed":"#131b2e","error":"#ba1a1a","surface-container":"#e5eeff","surface":"#f8f9ff","on-secondary-fixed":"#001551","on-background":"#0b1c30","inverse-primary":"#bec6e0","tertiary-container":"#271901","primary-fixed":"#dae2fd","surface-bright":"#f8f9ff","surface-variant":"#d3e4fe","on-tertiary-container":"#98805d","tertiary":"#000000","primary-container":"#131b2e","on-primary-container":"#7c839b","tertiary-fixed-dim":"#dec29a","surface-dim":"#cbdbf5","tertiary-fixed":"#fcdeb5","on-secondary":"#ffffff","secondary":"#1d4ed8","primary":"#000000","surface-container-high":"#dce9ff","on-primary":"#ffffff","outline-variant":"#c6c6cd","on-error":"#ffffff","on-tertiary-fixed-variant":"#574425","on-secondary-fixed-variant":"#0039b5","error-container":"#ffdad6","on-tertiary-fixed":"#271901","outline":"#76777d","secondary-fixed":"#dce1ff","surface-container-low":"#eff4ff","secondary-fixed-dim":"#b7c4ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-3xl":"2rem","space-sm":"0.375rem","space-lg":"1rem","space-xl":"1.25rem","space-base":"0.75rem","space-2xs":"0.125rem","header-height":"3.25rem","table-row-default":"2.75rem","table-row-dense":"2.25rem","space-xs":"0.25rem","sidebar-width":"15rem","space-2xl":"1.5rem","space-md":"0.5rem"},"fontFamily":{"body-sm":["geist"],"label-md":["geist"],"label-sm":["geist"],"display":["hankenGrotesk"],"headline-sm":["hankenGrotesk"],"caption":["geist"],"headline-md":["hankenGrotesk"],"mono-data":["geist"],"body-md":["geist"],"headline-lg":["hankenGrotesk"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.025em","fontWeight":"600"}],"display":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["10px",{"lineHeight":"12px","letterSpacing":"0.03em","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-sm text-body-sm text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-header-height px-space-base flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="StockFlow Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">StockFlow</span></div><span class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant font-caption text-caption rounded">v2.4 Enterprise</span></div><div class="px-space-base py-space-xs"><div class="bg-surface-container-low p-space-xs rounded flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-label-md text-secondary">shield_person</span><div class="flex flex-col"><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Active Role</span><span class="font-label-sm text-label-sm text-on-surface">Admin Portal</span></div></div><span class="material-symbols-outlined text-label-md text-on-surface-variant">unfold_more</span></div></div><nav class="flex-1 px-space-xs py-space-xs space-y-space-md" data-active-classes="bg-surface-container text-secondary font-label-sm font-semibold"><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">Core</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-label-md">dashboard</span><span>Overview</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inventory-and-skus" href="#"><span class="material-symbols-outlined text-label-md">inventory_2</span><span>Inventory & SKUs</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="warehouses-and-locations" href="#"><span class="material-symbols-outlined text-label-md">warehouse</span><span>Warehouses & Locations</span></a></div><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">Procurement & Supply</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-label-md">receipt_long</span><span>Purchase Orders</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="suppliers" href="#"><span class="material-symbols-outlined text-label-md">local_shipping</span><span>Suppliers</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inbound-shipments" href="#"><span class="material-symbols-outlined text-label-md">move_to_inbox</span><span>Inbound Shipments</span></a></div><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">Sales & Fulfillment</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="sales-orders" href="#"><span class="material-symbols-outlined text-label-md">shopping_bag</span><span>Sales Orders</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-label-md">groups</span><span>Customers</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dispatch-and-tracking" href="#"><span class="material-symbols-outlined text-label-md">radar</span><span>Dispatch & Tracking</span></a></div><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">System & Governance</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-label-md">history_edu</span><span>Audit Logs</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><span class="material-symbols-outlined text-label-md">admin_panel_settings</span><span>Roles & Permissions</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="integrations" href="#"><span class="material-symbols-outlined text-label-md">hub</span><span>Integrations</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-label-md">tune</span><span>Settings</span></a></div></nav></div><div class="p-space-base bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-caption text-caption text-on-surface font-semibold">Operational</span></div><span class="font-caption text-caption text-on-surface-variant">14ms Sync</span></div><div class="flex items-center justify-between pt-space-xs"><span class="font-caption text-caption text-on-surface-variant">Collapse Sidebar</span><span class="material-symbols-outlined text-label-md text-on-surface-variant">first_page</span></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface-container-lowest/95 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="hover:text-on-surface cursor-pointer">StockFlow</span><span class="material-symbols-outlined text-caption">chevron_right</span><span class="text-on-surface font-semibold">Central Region</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-low"><span class="material-symbols-outlined text-label-md text-secondary">location_on</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Chicago Central DC-01</span><span class="material-symbols-outlined text-caption text-on-surface-variant">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded"><span class="material-symbols-outlined text-label-md text-on-surface-variant">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Quick search SKUs, orders, bins...</span><span class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant font-caption text-caption rounded">⌘K</span></div><button class="flex items-center gap-space-2xs px-space-sm py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-label-md">add</span><span>Quick PO</span></button><div class="relative flex items-center"><span class="material-symbols-outlined text-headline-sm text-on-surface-variant hover:text-on-surface cursor-pointer">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-error text-on-error font-caption text-caption flex items-center justify-center font-bold">3</span></div><span class="material-symbols-outlined text-headline-sm text-on-surface-variant hover:text-on-surface cursor-pointer">help_outline</span><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF85d-QlJvlaqIoeHZJQtZypKJI579KS45_-Ut0Bbjaw2fq3rh4gUB5MBg8rKIGUo7p1G65BncJRplC4jbNJsYFPp_9f1U2XR8a_9RpBceRxeYMbiSp9WJazNntg-7MS2i-3okiFaELNGQliSfqC4JzJRNZo5PBeJBLdC2SgMjzSH-WyfcL-u04M3fyb8FIWNeWmHVQIbBLQgK64ABjAL_7HScGQ6wjLkdy5KniZ42RcUIzpddE5oExw"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary"></span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Elena Rostova</span><span class="font-caption text-caption text-on-surface-variant">Operations Admin</span></div></div></div></header><main class="relative pt-header-height w-full bg-background min-h-screen px-space-xl py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Command & Action Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption uppercase tracking-wider mb-space-2xs">
+<span>Home</span>
+<span>/</span>
+<span>Inventory</span>
+<span>/</span>
+<span class="text-secondary font-semibold">All Catalog SKUs</span>
+<span class="ml-space-xs px-space-xs py-space-2xs bg-surface-container rounded font-mono-data text-caption text-on-surface">SYS-LOC: REGION-US-CENTRAL</span>
+</div>
+<div class="flex items-baseline gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Inventory & SKU Master Management</h1>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">Real-Time Sync 0.4s ago</span>
+</div>
+</div>
+<!-- Actions Group -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-lowest text-on-surface font-label-sm text-label-sm rounded shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-label-md">upload_file</span>
+<span>Bulk Upload CSV</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-lowest text-on-surface font-label-sm text-label-sm rounded shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-label-md">rule_settings</span>
+<span>Stock Adjustment Audit</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-lowest text-on-surface font-label-sm text-label-sm rounded shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-label-md">barcode_scanner</span>
+<span>Print Barcode Labels</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-all" onclick="document.getElementById('stock-adjust-drawer').classList.toggle('translate-x-full')" type="button">
+<span class="material-symbols-outlined text-label-md">add</span>
+<span>+ Create New Product SKU</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Strip / Status Chips Bar -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-sm mb-space-base">
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider">Total Catalog SKUs</span>
+<span class="font-headline-md text-headline-md text-on-surface font-mono-data font-bold">2,418</span>
+</div>
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-headline-sm">category</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex items-center justify-between border-l-4 border-error">
+<div class="flex flex-col">
+<span class="font-caption text-caption uppercase text-error tracking-wider">Out of Stock</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-error font-mono-data font-bold">8</span>
+<span class="font-caption text-caption text-error font-semibold">Critical</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-headline-sm">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex items-center justify-between border-l-4 border-tertiary-fixed-dim">
+<div class="flex flex-col">
+<span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider">Low Stock Warning</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-mono-data font-bold">24</span>
+<span class="font-caption text-caption text-on-surface-variant font-semibold">Req PO</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-headline-sm">trending_down</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider">Surplus / Overstock</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-mono-data font-bold">112</span>
+<span class="font-caption text-caption text-secondary font-semibold">Rebalance</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-headline-sm">archive</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex items-center justify-between col-span-2 md:col-span-1 border-l-4 border-secondary">
+<div class="flex flex-col">
+<span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider">Healthy Stock Level</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-secondary font-mono-data font-bold">2,274</span>
+<span class="font-caption text-caption text-secondary font-semibold">94.04%</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-headline-sm">verified</span>
+</div>
+</div>
+</div>
+<!-- Operational Diagnostics / Network Notice (Dismissible) -->
+<div class="bg-surface-container-low px-space-base py-space-xs rounded shadow-sm flex items-center justify-between mb-space-base" id="notice-banner">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">EDI Auto-Sync Protocol v4:</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Chicago Central Hub reported 3 cycle count variances on Aisle 04. Automatic hold in effect.</span>
+<span class="px-space-xs py-space-2xs bg-surface-container font-caption text-caption text-secondary rounded uppercase font-bold cursor-pointer hover:bg-surface-container-high">Audit Delta Bins</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('notice-banner').remove()" type="button">
+<span class="material-symbols-outlined text-label-md">close</span>
+</button>
+</div>
+</div>
+<!-- Filters & Omni-Search Toolbar -->
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm mb-space-base flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm">
+<!-- Search and Quick Pills -->
+<div class="flex flex-1 flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-label-md">search</span>
+<input class="w-full bg-surface-container-low pl-8 pr-space-xl py-space-xs rounded font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Omni-search SKU, Barcode, Serial (e.g. MOT-8802, UPC-04192)..." type="text"/>
+<span class="absolute right-space-xs top-1/2 -translate-y-1/2 font-caption text-caption text-on-surface-variant bg-surface-container px-space-2xs rounded">⌘K</span>
+</div>
+<div class="flex items-center gap-space-2xs overflow-x-auto pb-space-2xs sm:pb-0">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider whitespace-nowrap mr-space-2xs">Presets:</span>
+<button class="px-space-xs py-space-2xs bg-surface-container rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container-high whitespace-nowrap" type="button">Fast Moving</button>
+<button class="px-space-xs py-space-2xs bg-surface-container rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container-high whitespace-nowrap" type="button">Quarantine (14)</button>
+<button class="px-space-xs py-space-2xs bg-surface-container-highest text-secondary font-label-sm text-label-sm rounded whitespace-nowrap font-semibold" type="button">Allocated > 80%</button>
+</div>
+</div>
+<!-- Dropdown Facets -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="flex items-center gap-space-2xs bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface">
+<span class="material-symbols-outlined text-label-md text-on-surface-variant">warehouse</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>Chicago Central DC-01</option>
+<option>Newark Gateway WH-04</option>
+<option>Austin Micro-Hub 02</option>
+<option>All Facilities</option>
+</select>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface">
+<span class="material-symbols-outlined text-label-md text-on-surface-variant">tune</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>Stock Level: All</option>
+<option>Below Safety Buffer (<10%)</option>
+<option>Excess Stock (>180d)</option>
+<option>Zero Free-to-Promise</option>
+<option>Dead Stock</option>
+</select>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface">
+<span class="material-symbols-outlined text-label-md text-on-surface-variant">precision_manufacturing</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>Supplier: All Vendors</option>
+<option>Siemens AG Dynamics</option>
+<option>Omron Automation</option>
+<option>Schneider Sensors</option>
+<option>Honeywell Logistics</option>
+</select>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface">
+<span class="material-symbols-outlined text-label-md text-on-surface-variant">category</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>Category: All Divisions</option>
+<option>Industrial Automation</option>
+<option>Photoelectric Sensors</option>
+<option>Pneumatic Actuators</option>
+<option>Embedded Compute</option>
+</select>
+</div>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded" title="Clear Facets" type="button">
+<span class="material-symbols-outlined text-label-md">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Primary Enterprise Table Canvas -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Info Bar -->
+<div class="px-space-base py-space-xs bg-surface-container-low flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<span class="font-semibold text-on-surface">Showing 10 of 2,418 SKUs</span>
+<span class="hidden sm:inline">Sort: <span class="text-on-surface font-semibold">Priority Lead / Buffer Deficit</span></span>
+<span class="hidden md:inline">Active Filter: <span class="text-secondary font-mono-data">Facility = CHI-01</span></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="cursor-pointer hover:text-on-surface">Dense Mode (44px)</span>
+<span>•</span>
+<span class="cursor-pointer hover:text-on-surface">Column Config (10/12)</span>
+<span>•</span>
+<span class="material-symbols-outlined text-caption cursor-pointer hover:text-on-surface">table_chart</span>
+</div>
+</div>
+<!-- The Dense Grid -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider h-8">
+<th class="w-10 px-space-sm text-center">
+<input class="rounded bg-surface-container-lowest text-secondary focus:ring-0" type="checkbox"/>
+</th>
+<th class="px-space-sm font-semibold">SKU & UPC-A Barcode</th>
+<th class="px-space-sm font-semibold">Product Description</th>
+<th class="px-space-sm font-semibold">Category</th>
+<th class="px-space-sm font-semibold">Bin / Rack</th>
+<th class="px-space-sm font-semibold text-right">On Hand</th>
+<th class="px-space-sm font-semibold text-right">Allocated</th>
+<th class="px-space-sm font-semibold text-right">Free-to-Promise</th>
+<th class="px-space-sm font-semibold text-center">Stock Buffer Status</th>
+<th class="px-space-sm font-semibold text-right">Lead Time</th>
+<th class="px-space-sm font-semibold">Supplier</th>
+<th class="px-space-sm font-semibold text-right">Unit Cost</th>
+<th class="px-space-sm font-semibold text-center">Inventory State</th>
+<th class="w-12 px-space-sm text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Critical Depleted -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">AUT-SEN-9921</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">078942109921</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">sensors</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Omron E3Z Laser Diffuse Sensor 300mm PNP">Omron E3Z Laser Diffuse 300mm PNP</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Photoelectric</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">B-04-A-12</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-error">4</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">4</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-error">0</td>
+<td class="px-space-sm">
+<!-- Buffer Progress Bar -->
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 5%"></div>
+</div>
+<span class="font-caption text-caption text-error font-mono-data">5%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">14d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Omron Electronics</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$148.50</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-error-container text-error rounded font-label-sm text-label-sm font-semibold">Depleted</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('AUT-SEN-9921', 'Omron E3Z Laser Diffuse', 4)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Low Stock Warning -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">DRV-SRV-400W</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">041928004008</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">bolt</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Delta AC Servo Drive 400W 220V EtherCAT">Delta AC Servo Drive 400W EtherCAT</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Motion Control</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">C-11-F-02</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">18</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">12</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-tertiary-fixed-dim">6</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 22%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface font-mono-data">22%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">21d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Delta Automation US</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$340.00</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-surface-container-high text-on-surface-variant rounded font-label-sm text-label-sm font-semibold">Low Buffer</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('DRV-SRV-400W', 'Delta AC Servo Drive 400W', 18)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Healthy Active -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">PLC-SIEM-1200</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">098231012004</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">memory</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Siemens SIMATIC S7-1200 CPU 1214C DC/DC/DC">SIMATIC S7-1200 CPU 1214C DC</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Programmable Logic</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">A-02-C-01</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">142</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">36</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-secondary">106</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 78%"></div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono-data">78%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">7d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Siemens Industry</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$512.20</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-secondary-fixed text-on-secondary-fixed rounded font-label-sm text-label-sm font-semibold">Optimal</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('PLC-SIEM-1200', 'SIMATIC S7-1200 CPU', 142)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Surplus Overstock -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">FST-PNU-V50</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">038104050012</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">compress</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Festo Solenoid Valve VUVS-L25-M52-MD-G14">Festo Solenoid Valve VUVS 5/2-Way</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Pneumatics</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">D-08-B-07</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">620</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">45</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-on-surface">575</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">145%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">5d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Festo Direct North</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$89.00</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-surface-container-highest text-secondary rounded font-label-sm text-label-sm font-semibold">Overstock</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('FST-PNU-V50', 'Festo Solenoid Valve', 620)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Healthy Active -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">CBL-ETH-M12-05</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">066319001205</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">cable</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Turck Industrial M12 D-Code to RJ45 Cat5e Shielded 5m">Turck M12 D-Code to RJ45 5m</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Cabling & Harness</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">E-01-A-04</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">880</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">190</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-secondary">690</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 82%"></div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono-data">82%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">3d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Turck USA Corp</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$32.40</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-secondary-fixed text-on-secondary-fixed rounded font-label-sm text-label-sm font-semibold">Optimal</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('CBL-ETH-M12-05', 'Turck M12 to RJ45', 880)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 6: Healthy Active -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">PWR-SUP-24V10A</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">055201024108</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">power</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Mean Well DIN Rail Power Supply 24V 10A 240W">Mean Well DIN Rail 24V 10A</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Power Distribution</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">B-07-E-10</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">75</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">25</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-secondary">50</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 65%"></div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono-data">65%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">4d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Mean Well Logistics</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$68.90</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-secondary-fixed text-on-secondary-fixed rounded font-label-sm text-label-sm font-semibold">Optimal</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('PWR-SUP-24V10A', 'Mean Well DIN Rail 24V', 75)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 7: Low Stock Warning -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">ENC-OPT-1024P</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">081293010245</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">rotate_right</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Autonics Incremental Rotary Encoder 1024 PPR 50mm">Autonics Rotary Encoder 1024 PPR</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Sensors & Feedback</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">B-09-C-03</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">11</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">8</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-tertiary-fixed-dim">3</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 14%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface font-mono-data">14%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">18d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Autonics Corp</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$115.00</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-surface-container-high text-on-surface-variant rounded font-label-sm text-label-sm font-semibold">Low Buffer</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('ENC-OPT-1024P', 'Autonics Rotary Encoder', 11)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 8: Depleted -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">RLY-SFT-4NO1NC</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">034091004117</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">lock</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Pilz PNOZ X3 Safety Relay 24VAC/DC 3n/o 1n/c">Pilz PNOZ X3 Safety Relay 24V</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Safety Controls</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">A-01-D-09</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-error">0</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">0</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-error">0</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 0%"></div>
+</div>
+<span class="font-caption text-caption text-error font-mono-data">0%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">28d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Pilz Automation Safety</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$210.00</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-error-container text-error rounded font-label-sm text-label-sm font-semibold">Zero Free</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('RLY-SFT-4NO1NC', 'Pilz PNOZ X3 Relay', 0)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 9: Optimal -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">IPC-EMB-J6412</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">091823064120</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">computer</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Advantech Fanless Embedded Box PC Elkhart Lake J6412">Advantech Fanless Box PC J6412</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Embedded Compute</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">F-03-A-01</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">42</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">6</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-secondary">36</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 72%"></div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono-data">72%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">12d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Advantech Industrial</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$645.00</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-secondary-fixed text-on-secondary-fixed rounded font-label-sm text-label-sm font-semibold">Optimal</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('IPC-EMB-J6412', 'Advantech Box PC J6412', 42)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 10: Optimal -->
+<tr class="h-[44px] hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="px-space-sm text-center">
+<input class="rounded bg-surface-container text-secondary" type="checkbox"/>
+</td>
+<td class="px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data font-bold text-on-surface text-label-sm">SWT-IND-8PORT</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">049102008013</span>
+</div>
+</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-surface-container flex-shrink-0 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-caption">router</span>
+</span>
+<span class="truncate max-w-[210px] font-medium text-on-surface" title="Moxa EDS-208A Unmanaged 8-Port Industrial Ethernet Switch">Moxa EDS-208A Unmanaged 8-Port</span>
+</div>
+</td>
+<td class="px-space-sm">
+<span class="px-space-xs py-space-2xs bg-surface-container rounded font-caption text-caption text-on-surface whitespace-nowrap">Networking</span>
+</td>
+<td class="px-space-sm">
+<span class="font-mono-data text-label-sm text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">E-04-C-02</span>
+</td>
+<td class="px-space-sm text-right font-mono-data font-semibold text-on-surface">94</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface-variant">14</td>
+<td class="px-space-sm text-right font-mono-data font-bold text-secondary">80</td>
+<td class="px-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 85%"></div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono-data">85%</span>
+</div>
+</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface">6d</td>
+<td class="px-space-sm font-label-sm text-label-sm text-on-surface truncate max-w-[130px]">Moxa Technologies</td>
+<td class="px-space-sm text-right font-mono-data text-on-surface font-semibold">$184.00</td>
+<td class="px-space-sm text-center">
+<span class="inline-flex items-center px-space-xs py-space-2xs bg-secondary-fixed text-on-secondary-fixed rounded font-label-sm text-label-sm font-semibold">Optimal</span>
+</td>
+<td class="px-space-sm text-center">
+<button class="p-space-2xs hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="openAdjustModal('SWT-IND-8PORT', 'Moxa EDS-208A Switch', 94)" type="button">
+<span class="material-symbols-outlined text-label-md">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-space-base py-space-xs bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm font-caption text-caption text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span>Rows per page:</span>
+<select class="bg-surface-container-lowest px-space-xs py-space-2xs rounded font-mono-data text-on-surface focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span>Displaying SKUs 1-10 of 2,418 total</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-xs py-space-2xs bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-label-md">first_page</span>
+</button>
+<button class="px-space-xs py-space-2xs bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-label-md">chevron_left</span>
+</button>
+<div class="flex items-center gap-space-2xs font-mono-data">
+<span class="px-space-xs py-space-2xs bg-secondary text-on-secondary rounded font-bold">1</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-lowest text-on-surface rounded cursor-pointer hover:bg-surface-container">2</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-lowest text-on-surface rounded cursor-pointer hover:bg-surface-container">3</span>
+<span>...</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-lowest text-on-surface rounded cursor-pointer hover:bg-surface-container">242</span>
+</div>
+<button class="px-space-xs py-space-2xs bg-surface-container-lowest rounded text-on-surface hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-label-md">chevron_right</span>
+</button>
+<button class="px-space-xs py-space-2xs bg-surface-container-lowest rounded text-on-surface hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-label-md">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty / Zero Results & Network Recovery Mockup Drawer (Integrated as UX Reference) -->
+<div class="mt-space-lg grid grid-cols-1 md:grid-cols-2 gap-space-base">
+<!-- State Card 1: Zero-Results State Preview -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">State Showcase: No Search Results</span>
+<span class="px-space-xs py-space-2xs bg-surface-container font-caption text-caption rounded text-on-surface">Interactive Preview</span>
+</div>
+<div class="p-space-lg bg-surface-container-low rounded flex flex-col items-center justify-center text-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-space-xs">
+<span class="material-symbols-outlined text-headline-md">search_off</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-2xs">No matching SKUs or serials found</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-space-base">
+          No records matched the query for facility <span class="font-mono-data text-on-surface font-semibold">"CHI-01"</span>. Verify barcode check-digits or clear current safety filters.
+        </p>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-xs bg-surface-container-lowest text-on-surface font-label-sm text-label-sm rounded shadow-sm hover:bg-surface-container" type="button">Reset All Filters</button>
+<button class="px-space-sm py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded shadow-sm hover:bg-primary-container" type="button">+ New Custom SKU</button>
+</div>
+</div>
+</div>
+<!-- State Card 2: Resilience / Warehouse Edge Offline Notice -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Edge Gateway Telemetry Status</span>
+<span class="flex items-center gap-space-2xs font-caption text-caption text-secondary font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 99.98% Healthy
+        </span>
+</div>
+<div class="p-space-base bg-surface-container-low rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Aisle 04 IoT Weight Scalers:</span>
+<span class="font-mono-data text-secondary font-bold">Live Stream Active</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">SAP S/4HANA Connector:</span>
+<span class="font-mono-data text-on-surface-variant">Last poll: 14s ago</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Zebra Barcode Print Engine:</span>
+<span class="font-mono-data text-secondary font-semibold">Online (Ready)</span>
+</div>
+<div class="mt-space-xs pt-space-xs border-t-0 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Sync Queue: 0 pending deltas</span>
+<button class="font-caption text-caption text-secondary font-bold hover:underline flex items-center gap-space-2xs" type="button">
+<span class="material-symbols-outlined text-caption">refresh</span> Force Sync Now
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Stock Adjustment Slide-over Drawer (Fixed overlay preview) -->
+<div class="fixed top-0 right-0 h-screen w-full sm:w-[460px] bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between" id="stock-adjust-drawer">
+<div class="flex flex-col flex-1 overflow-y-auto">
+<!-- Drawer Header -->
+<div class="h-header-height px-space-base bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-headline-sm">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Quick Stock Adjustment</span>
+</div>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('stock-adjust-drawer').classList.add('translate-x-full')" type="button">
+<span class="material-symbols-outlined text-headline-sm">close</span>
+</button>
+</div>
+<!-- Drawer Body -->
+<div class="p-space-base flex flex-col gap-space-base">
+<!-- Target SKU Profile -->
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider font-semibold">Active Inventory Record</span>
+<div class="flex items-start justify-between mt-space-2xs">
+<div>
+<span class="font-mono-data font-bold text-headline-sm text-on-surface" id="drawer-sku-id">AUT-SEN-9921</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="drawer-sku-name">Omron E3Z Laser Diffuse Sensor 300mm PNP</p>
+</div>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-secondary font-mono-data font-bold text-caption rounded">BIN: B-04-A-12</span>
+</div>
+</div>
+<!-- Metric Delta Visualizer -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Current On-Hand</span>
+<div class="font-mono-data text-headline-md font-bold text-on-surface mt-space-2xs" id="drawer-current-stock">4 units</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-caption text-caption text-on-surface-variant uppercase">New Projected Level</span>
+<div class="font-mono-data text-headline-md font-bold text-secondary mt-space-2xs" id="drawer-projected-stock">14 units</div>
+</div>
+</div>
+<!-- Adjustment Form Fields -->
+<div class="flex flex-col gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm font-semibold text-on-surface mb-space-2xs block">Adjustment Type</label>
+<div class="grid grid-cols-2 gap-space-2xs">
+<label class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low cursor-pointer hover:bg-surface-container">
+<input checked="" class="text-secondary focus:ring-0" name="adjust_type" onchange="calculateDelta()" type="radio" value="add"/>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">+ Quantity Add</span>
+</label>
+<label class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low cursor-pointer hover:bg-surface-container">
+<input class="text-secondary focus:ring-0" name="adjust_type" onchange="calculateDelta()" type="radio" value="sub"/>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">- Quantity Deduct</span>
+</label>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-semibold text-on-surface mb-space-2xs block">Variance Quantity</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low px-space-sm py-space-xs rounded font-mono-data text-headline-sm font-bold text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" id="adjust-qty-input" min="1" oninput="calculateDelta()" type="number" value="10"/>
+<span class="absolute right-space-sm top-1/2 -translate-y-1/2 font-caption text-caption text-on-surface-variant uppercase font-bold">Pcs</span>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-semibold text-on-surface mb-space-2xs block">Compliance Reason Code (Mandatory)</label>
+<select class="w-full bg-surface-container-low px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer" id="reason-code">
+<option value="CYCLE_COUNT">Cycle Count Variance (Aisle Audit)</option>
+<option value="DAMAGE">In-Transit or Handling Damage</option>
+<option value="RETURN">Customer RMA Restock Inspection</option>
+<option value="EXPIRY">Manufacturer Obsolete / Scrapped</option>
+<option value="TRANSFER">Internal Warehouse Repositioning</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm font-semibold text-on-surface mb-space-2xs block">Audit Documentation / Note</label>
+<textarea class="w-full bg-surface-container-low p-space-sm rounded font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Reference PO, RMA tracking or physical recount supervisor badge ID..." rows="3"></textarea>
+</div>
+<div class="bg-surface-container-high/60 p-space-xs rounded flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-label-md text-secondary">verified_user</span>
+<span class="font-caption text-caption">Changes are logged immediately into immutable audit trail under operator Elena Rostova.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-space-base bg-surface-container-low flex items-center justify-between gap-space-xs">
+<button class="px-space-base py-space-xs bg-surface-container text-on-surface font-label-sm text-label-sm rounded hover:bg-surface-container-high transition-colors" onclick="document.getElementById('stock-adjust-drawer').classList.add('translate-x-full')" type="button">
+        Cancel
+      </button>
+<button class="flex-1 px-space-base py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded shadow hover:bg-primary-container transition-all flex items-center justify-center gap-space-2xs" onclick="submitAdjustment()" type="button">
+<span class="material-symbols-outlined text-label-md">check_circle</span>
+<span>Commit Audit Adjustment</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  let activeCurrentStock = 4;
+
+  function openAdjustModal(sku, name, onHand) {
+    activeCurrentStock = onHand;
+    document.getElementById('drawer-sku-id').textContent = sku;
+    document.getElementById('drawer-sku-name').textContent = name;
+    document.getElementById('drawer-current-stock').textContent = onHand + ' units';
+    calculateDelta();
+    document.getElementById('stock-adjust-drawer').classList.remove('translate-x-full');
+  }
+
+  function calculateDelta() {
+    const inputVal = parseInt(document.getElementById('adjust-qty-input').value) || 0;
+    const isAdd = document.querySelector('input[name="adjust_type"]:checked').value === 'add';
+    const projected = isAdd ? (activeCurrentStock + inputVal) : Math.max(0, activeCurrentStock - inputVal);
+    document.getElementById('drawer-projected-stock').textContent = projected + ' units';
+  }
+
+  function submitAdjustment() {
+    const drawer = document.getElementById('stock-adjust-drawer');
+    const sku = document.getElementById('drawer-sku-id').textContent;
+    drawer.classList.add('translate-x-full');
+    
+    // Quick notification banner flash
+    const notice = document.getElementById('notice-banner');
+    if (notice) {
+      notice.innerHTML = `
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-secondary text-headline-sm">task_alt</span>
+          <span class="font-label-sm text-label-sm text-on-surface font-semibold">Stock Reconciled:</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">SKU ${sku} balance updated successfully and logged in SysLog.</span>
+        </div>
+        <button type="button" onclick="document.getElementById('notice-banner').remove()" class="text-on-surface-variant hover:text-on-surface">
+          <span class="material-symbols-outlined text-label-md">close</span>
+        </button>
+      `;
+    }
+  }
+</script></main></div></body></html>

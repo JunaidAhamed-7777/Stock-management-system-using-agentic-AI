@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#dae2fd","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","on-tertiary-fixed":"#271901","secondary-container":"#4069f2","inverse-primary":"#bec6e0","on-surface":"#0b1c30","surface-container":"#e5eeff","secondary-fixed-dim":"#b7c4ff","on-error-container":"#93000a","secondary":"#1d4ed8","surface":"#f8f9ff","on-background":"#0b1c30","on-primary":"#ffffff","outline":"#76777d","tertiary-container":"#271901","on-surface-variant":"#45464d","error":"#ba1a1a","error-container":"#ffdad6","primary-fixed-dim":"#bec6e0","on-tertiary-container":"#98805d","surface-bright":"#f8f9ff","background":"#f8f9ff","on-secondary":"#ffffff","surface-container-high":"#dce9ff","on-primary-fixed-variant":"#3f465c","on-primary-fixed":"#131b2e","on-primary-container":"#7c839b","tertiary-fixed":"#fcdeb5","on-secondary-container":"#fffbff","primary":"#000000","surface-dim":"#cbdbf5","on-tertiary-fixed-variant":"#574425","on-secondary-fixed":"#001551","surface-tint":"#565e74","secondary-fixed":"#dce1ff","on-error":"#ffffff","outline-variant":"#c6c6cd","tertiary-fixed-dim":"#dec29a","tertiary":"#000000","on-secondary-fixed-variant":"#0039b5","surface-variant":"#d3e4fe","inverse-on-surface":"#eaf1ff","inverse-surface":"#213145","surface-container-highest":"#d3e4fe","surface-container-low":"#eff4ff","primary-container":"#131b2e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1rem","space-md":"0.5rem","space-2xs":"0.125rem","space-2xl":"1.5rem","header-height":"3.25rem","space-sm":"0.375rem","sidebar-width":"15rem","table-row-dense":"2.25rem","space-xl":"1.25rem","space-xs":"0.25rem","table-row-default":"2.75rem","space-3xl":"2rem","space-base":"0.75rem"},"fontFamily":{"body-sm":["geist"],"headline-md":["hankenGrotesk"],"display":["hankenGrotesk"],"headline-sm":["hankenGrotesk"],"mono-data":["geist"],"label-md":["geist"],"body-md":["geist"],"label-sm":["geist"],"caption":["geist"],"headline-lg":["hankenGrotesk"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"display":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.025em","fontWeight":"600"}],"caption":["10px",{"lineHeight":"12px","letterSpacing":"0.03em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col min-h-0 flex-1"><div class="h-14 px-space-base border-b border-outline-variant flex items-center justify-between shrink-0"><div class="flex items-center gap-space-sm min-w-0"><img alt="StockFlow Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">StockFlow</span><span class="font-caption text-caption bg-surface-container-high text-secondary px-1.5 py-0.5 rounded border border-outline-variant">v2.4</span></div></div></div></div><div class="p-space-sm border-b border-outline-variant bg-surface-container-low/50 shrink-0"><div class="w-full flex items-center justify-between px-space-sm py-1.5 bg-surface-container-lowest rounded border border-outline-variant cursor-pointer hover:border-secondary transition-colors"><div class="flex items-center gap-space-sm min-w-0"><div class="w-2 h-2 rounded-full bg-secondary shrink-0"></div><div class="flex flex-col min-w-0 text-left"><span class="font-label-md text-label-md text-on-surface truncate">Admin Portal</span><span class="font-caption text-caption text-on-surface-variant truncate">Global Operations</span></div></div><span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-1 py-0.5 rounded border border-outline-variant shrink-0">Ops</span></div></div><div class="flex-1 overflow-y-auto px-space-xs py-space-sm space-y-space-md"><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">Core</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="truncate">Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="ai-forecasting" href="#"><span class="material-symbols-outlined text-[18px]">auto_graph</span><span class="truncate">AI Forecasting</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="inventory-skus" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="truncate">Inventory &amp; SKUs</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="warehouses-locations" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="truncate">Warehouses &amp; Locations</span></a></nav></div><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">Procurement &amp; Supply</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="truncate">Purchase Orders</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="suppliers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="truncate">Suppliers</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="inbound-shipments" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="truncate">Inbound Shipments</span></a></nav></div><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">Sales &amp; Fulfillment</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="sales-orders" href="#"><span class="material-symbols-outlined text-[18px]">shopping_cart</span><span class="truncate">Sales Orders</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span class="truncate">Customers</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dispatch-tracking" href="#"><span class="material-symbols-outlined text-[18px]">fmd_good</span><span class="truncate">Dispatch &amp; Tracking</span></a></nav></div><div class="space-y-space-2xs"><div class="px-space-sm py-1 font-caption text-caption text-outline uppercase tracking-wider">System &amp; Governance</div><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-medium"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-1.5 rounded transition-colors bg-primary-container text-on-primary-container font-medium" data-path="stock-transactions" href="#"><span class="material-symbols-outlined text-[18px]">swap_horiz</span><span class="truncate">Stock Transactions</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[18px]">history_toggle_off</span><span class="truncate">Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="roles-permissions" href="#"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span class="truncate">Roles &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="integrations" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="truncate">Integrations</span></a><a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="truncate">Settings</span></a></nav></div></div></div><div class="p-space-sm border-t border-outline-variant bg-surface-container-low shrink-0"><div class="flex items-center justify-between gap-space-xs"><div class="flex items-center gap-1.5 min-w-0"><span class="relative flex h-2 w-2 shrink-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-caption text-caption text-on-surface-variant truncate font-mono-data">14ms Sync • SAP S/4HANA</span></div><button class="p-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors shrink-0" title="Collapse navigation" type="button"><span class="material-symbols-outlined text-[18px]">side_navigation</span></button></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-14 bg-surface-container-lowest/95 backdrop-blur-sm border-b border-outline-variant z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-base shrink-0"><div class="relative flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-low rounded border border-outline-variant text-on-surface cursor-pointer hover:border-secondary transition-colors"><span class="material-symbols-outlined text-secondary text-[18px]">domain</span><span class="font-label-md text-label-md">All Facilities (6 DCs)</span><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div></div><div class="flex-1 max-w-xl mx-auto"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-2.5 text-outline text-[18px] pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low rounded border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-secondary focus:outline-none transition-colors" placeholder="Quick search SKUs, orders, serials, bins..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 font-caption text-caption text-on-surface-variant bg-surface-container-highest rounded border border-outline-variant pointer-events-none">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><button class="h-8 px-space-base bg-secondary hover:bg-secondary/90 text-on-secondary rounded font-label-md text-label-md flex items-center gap-1.5 transition-colors shrink-0" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>Stock Adjustment</span></button><div class="relative"><button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low border border-outline-variant transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-on-error font-caption text-[10px] rounded-full flex items-center justify-center font-bold">5</span></button></div><div class="h-4 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W25QWQkinr0eELQlciTF15UfYbViSsqSTTAuTfGMrtyAi47y3jlAi_EzgI2MGmPZCwrLIpVE52JH94MZznRAn-GEJVIKFrtqF-UTbCXuoOCvP1QiEnUPgQtf6QfNLUCuJQ-kguzpFH6rKf4PMR36l2FuPl1bgXxkbaPfyTTBwXiY038N4u0mxOBBOY7Ly2XcOd3DWmwlJEWtOHQ1FYmiI76KmxwdpR0XgPu7k4HlY9v5MxzbnbTQb-M2Zc"/><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface truncate leading-tight">Elena Rostova</span><span class="font-caption text-caption text-on-surface-variant truncate leading-tight">Global Operations Admin</span></div></div></div></header><main class="relative pt-14 min-h-screen bg-surface w-full p-space-lg"><div class="flex flex-col w-full">
+<!-- Ledger Status Ticker -->
+<div class="flex items-center justify-between px-space-base py-1.5 bg-surface-container-high rounded-t text-on-surface mb-space-sm">
+<div class="flex items-center gap-space-sm font-caption text-caption">
+<span class="inline-flex items-center gap-1 text-secondary font-mono-data">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        CHAIN-STATE: SYNCHRONIZED
+      </span>
+<span class="text-outline">/</span>
+<span class="font-mono-data text-on-surface-variant">BLOCK #1,098,421</span>
+<span class="text-outline">/</span>
+<span class="font-mono-data text-on-surface-variant">ROOT: 8f4b2c...a190ef</span>
+</div>
+<div class="flex items-center gap-space-base font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-1 font-mono-data">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+        HMAC-SHA256 STRICT AUDIT MODE
+      </span>
+<span class="text-outline">|</span>
+<span>TOLERANCE THRESHOLD: ±0.05%</span>
+</div>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-base mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-0.5">
+<span>System &amp; Governance</span>
+<span class="text-outline text-[12px] material-symbols-outlined">chevron_right</span>
+<span class="text-secondary font-medium">Immutable Ledger</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Stock Transactions &amp; Inventory Audit Ledger</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-3xl">
+        Real-time cryptographic audit trail of physical stock movements, receipts, dispatches, adjustments, and automated cycle counts.
+      </p>
+</div>
+<!-- Header Quick Actions -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="h-8 px-space-base bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Full Log (.CSV)</span>
+</button>
+<div class="relative flex items-center bg-surface-container px-space-base h-8 rounded text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline mr-1.5">calendar_today</span>
+<span>Last 7 Days (UTC)</span>
+<span class="material-symbols-outlined text-[16px] text-outline ml-1.5">expand_more</span>
+</div>
+<button class="h-8 px-space-base bg-primary hover:bg-surface-container-highest hover:text-on-surface text-on-primary rounded font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>+ Manual Adjustment</span>
+</button>
+</div>
+</div>
+<!-- Summary Metric Bento Grid (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-base mb-space-lg">
+<!-- Card 1 -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded p-space-base shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Ledger Entries (24h)</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">receipt_long</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-lg text-headline-lg font-mono-data text-on-surface">3,842</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded font-mono-data">+12.4%</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-sm font-caption text-caption text-on-surface-variant">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>100% verified via Edge RFID &amp; Scanners</span>
+</div>
+<div class="w-full h-1 bg-surface-container mt-space-base rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded p-space-base shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Inbound Receipts (EDI 861)</span>
+<span class="material-symbols-outlined text-on-surface text-[20px]">move_to_inbox</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-lg text-headline-lg font-mono-data text-on-surface">18,420</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">units</span>
+</div>
+<div class="flex items-center justify-between mt-space-sm font-caption text-caption text-on-surface-variant">
+<span>$412,800 Received Valuation</span>
+<span class="font-mono-data text-secondary">28 Inbounds</span>
+</div>
+<div class="w-full h-1 bg-surface-container mt-space-base rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 74%;"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded p-space-base shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Outbound Dispatches (B2B)</span>
+<span class="material-symbols-outlined text-on-surface text-[20px]">local_shipping</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-lg text-headline-lg font-mono-data text-on-surface">14,290</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono-data">units</span>
+</div>
+<div class="flex items-center justify-between mt-space-sm font-caption text-caption text-on-surface-variant">
+<span>142 Completed Freight Shipments</span>
+<span class="font-mono-data text-on-surface">99.8% SLA</span>
+</div>
+<div class="w-full h-1 bg-surface-container mt-space-base rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded p-space-base shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Net Variance (Cycle Count)</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">balance</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-lg text-headline-lg font-mono-data text-on-surface">-$184.50</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded font-mono-data">0.002% net</span>
+</div>
+<div class="flex items-center justify-between mt-space-sm font-caption text-caption text-on-surface-variant">
+<span>3 Counts Flagged for Sign-off</span>
+<span class="text-secondary font-medium">Within Tol.</span>
+</div>
+<div class="w-full h-1 bg-surface-container mt-space-base rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 14%;"></div>
+</div>
+</div>
+</div>
+<!-- Advanced Filtering & Audit Controls Panel -->
+<div class="bg-surface-container-lowest rounded p-space-base shadow-sm mb-space-base">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-base">
+<!-- Preset Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+<button class="px-space-base h-7 rounded font-label-sm text-label-sm bg-primary text-on-primary shrink-0 transition-colors" type="button">
+          All Transactions
+        </button>
+<button class="px-space-base h-7 rounded font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high shrink-0 transition-colors flex items-center gap-1" type="button">
+<span>Inbound PO Receipts</span>
+<span class="font-mono-data text-[10px] text-on-surface-variant bg-surface-container-highest px-1 rounded">1,420</span>
+</button>
+<button class="px-space-base h-7 rounded font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high shrink-0 transition-colors flex items-center gap-1" type="button">
+<span>Sales Orders Picked</span>
+<span class="font-mono-data text-[10px] text-on-surface-variant bg-surface-container-highest px-1 rounded">1,894</span>
+</button>
+<button class="px-space-base h-7 rounded font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high shrink-0 transition-colors" type="button">
+          Inter-DC Transfers
+        </button>
+<button class="px-space-base h-7 rounded font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high shrink-0 transition-colors" type="button">
+          Cycle Counts
+        </button>
+<button class="px-space-base h-7 rounded font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high shrink-0 transition-colors" type="button">
+          Damaged / Scrapped
+        </button>
+</div>
+<!-- Facility & Parameter Selectors -->
+<div class="flex items-center gap-space-sm shrink-0 flex-wrap">
+<div class="flex items-center bg-surface-container px-2.5 h-7 rounded text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-outline mr-1.5">store</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer pr-2">
+<option>All Facilities (6 DCs)</option>
+<option selected="">Chicago Central DC-01</option>
+<option>Austin MegaHub DC-02</option>
+<option>Rotterdam Hub EUR-01</option>
+</select>
+</div>
+<div class="flex items-center bg-surface-container px-2.5 h-7 rounded text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-outline mr-1.5">person</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer pr-2">
+<option selected="">Actor: All (Humans &amp; Auto)</option>
+<option>Elena Rostova (Admin)</option>
+<option>Zebra RFID Automated</option>
+<option>System ARE Trigger</option>
+</select>
+</div>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Immutable Ledger Table Surface -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col mb-space-base">
+<!-- Header of the Table container with live count -->
+<div class="px-space-base py-2.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[18px] text-secondary">database</span>
+<span>Cryptographic Transaction Blocks</span>
+<span class="font-mono-data text-caption text-secondary bg-surface-container-high px-1.5 py-0.5 rounded font-normal">Indexed 10,480 total</span>
+</div>
+<div class="flex items-center gap-space-base font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-1 font-mono-data">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          LEDGER CONSENSUS: 100% OK
+        </span>
+<span class="text-outline">|</span>
+<span class="font-mono-data">LATENCY: 11ms</span>
+</div>
+</div>
+<!-- Data Grid (High density, 40px row rhythm) -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-2 px-space-base">Tx ID &amp; Verify</th>
+<th class="py-2 px-space-base font-mono-data">Timestamp (UTC)</th>
+<th class="py-2 px-space-base">Type</th>
+<th class="py-2 px-space-base">SKU &amp; Description</th>
+<th class="py-2 px-space-base">Origin → Destination</th>
+<th class="py-2 px-space-base text-right font-mono-data">Delta</th>
+<th class="py-2 px-space-base text-right font-mono-data">Balance</th>
+<th class="py-2 px-space-base">Executed By</th>
+<th class="py-2 px-space-base font-mono-data">Ref Doc</th>
+<th class="py-2 px-space-base text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors h-10">
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-mono-data font-semibold text-secondary">#TX-984211</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="SHA-256 Verified">verified</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption text-on-surface-variant">
+              2024-10-24 14:32:08
+            </td>
+<td class="py-1 px-space-base">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-secondary font-medium">
+                Inbound PO Receipt
+              </span>
+</td>
+<td class="py-1 px-space-base">
+<div class="flex flex-col">
+<span class="font-mono-data font-semibold text-on-surface">SKU-9932-SN</span>
+<span class="font-caption text-caption text-on-surface-variant truncate max-w-[160px]">Infrared Ambient Sensor</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono-data text-on-surface">
+<span class="truncate max-w-[110px]">VND-8842</span>
+<span class="text-secondary">→</span>
+<span class="font-medium truncate max-w-[120px]">CHI-DC-01 Dock 4</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-right font-mono-data font-semibold text-secondary">
+              +500 units
+            </td>
+<td class="py-1 px-space-base text-right font-mono-data tabular-nums font-medium text-on-surface">
+              1,420
+            </td>
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-caption text-caption text-secondary font-bold">ER</div>
+<span class="font-label-sm text-label-sm truncate max-w-[90px]">E. Rostova</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption">
+<span class="px-1.5 py-0.5 bg-surface-container rounded text-on-surface">PO-8891</span>
+</td>
+<td class="py-1 px-space-base text-center">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-secondary transition-colors" title="View Hash Signature" type="button">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors h-10 bg-surface-container-lowest">
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-mono-data font-semibold text-secondary">#TX-984210</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="SHA-256 Verified">verified</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption text-on-surface-variant">
+              2024-10-24 14:28:15
+            </td>
+<td class="py-1 px-space-base">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+                Sales Order Pick
+              </span>
+</td>
+<td class="py-1 px-space-base">
+<div class="flex flex-col">
+<span class="font-mono-data font-semibold text-on-surface">SKU-4401-BX</span>
+<span class="font-caption text-caption text-on-surface-variant truncate max-w-[160px]">Optical Fiber Core 10G</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono-data text-on-surface">
+<span class="truncate max-w-[110px]">Zone B Aisle 12</span>
+<span class="text-secondary">→</span>
+<span class="font-medium truncate max-w-[120px]">Packing Bay 02</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-right font-mono-data font-semibold text-on-surface">
+              -120 units
+            </td>
+<td class="py-1 px-space-base text-right font-mono-data tabular-nums font-medium text-on-surface">
+              880
+            </td>
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant font-mono-data">
+<span class="material-symbols-outlined text-[14px] text-secondary">sensors</span>
+<span>RFID-Gate-04</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption">
+<span class="px-1.5 py-0.5 bg-surface-container rounded text-on-surface">SO-99214</span>
+</td>
+<td class="py-1 px-space-base text-center">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-secondary transition-colors" title="View Hash Signature" type="button">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors h-10">
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-mono-data font-semibold text-secondary">#TX-984209</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="SHA-256 Verified">verified</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption text-on-surface-variant">
+              2024-10-24 14:19:42
+            </td>
+<td class="py-1 px-space-base">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-secondary font-medium">
+                DC Transfer Out
+              </span>
+</td>
+<td class="py-1 px-space-base">
+<div class="flex flex-col">
+<span class="font-mono-data font-semibold text-on-surface">SKU-1082-PL</span>
+<span class="font-caption text-caption text-on-surface-variant truncate max-w-[160px]">PLC Logic Relay Array</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono-data text-on-surface">
+<span class="truncate max-w-[110px]">CHI DC-01</span>
+<span class="text-secondary">→</span>
+<span class="font-medium truncate max-w-[120px]">Austin DC-02</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-right font-mono-data font-semibold text-on-surface">
+              -350 units
+            </td>
+<td class="py-1 px-space-base text-right font-mono-data tabular-nums font-medium text-on-surface">
+              2,100
+            </td>
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant font-mono-data">
+<span class="material-symbols-outlined text-[14px] text-on-surface">smart_toy</span>
+<span>System-ARE</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption">
+<span class="px-1.5 py-0.5 bg-surface-container rounded text-on-surface">BOL-492019</span>
+</td>
+<td class="py-1 px-space-base text-center">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-secondary transition-colors" title="View Hash Signature" type="button">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors h-10 bg-surface-container-lowest">
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-mono-data font-semibold text-secondary">#TX-984208</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="SHA-256 Verified">verified</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption text-on-surface-variant">
+              2024-10-24 14:02:11
+            </td>
+<td class="py-1 px-space-base">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+                Cycle Count Adjust
+              </span>
+</td>
+<td class="py-1 px-space-base">
+<div class="flex flex-col">
+<span class="font-mono-data font-semibold text-on-surface">SKU-3120-HD</span>
+<span class="font-caption text-caption text-on-surface-variant truncate max-w-[160px]">Hydraulic Seals 45mm</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono-data text-on-surface">
+<span class="truncate max-w-[110px]">Bin D-14-R3</span>
+<span class="text-secondary">→</span>
+<span class="font-medium truncate max-w-[120px]">Physical Count Adj</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-right font-mono-data font-semibold text-on-surface">
+              -4 units
+            </td>
+<td class="py-1 px-space-base text-right font-mono-data tabular-nums font-medium text-on-surface">
+              642
+            </td>
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-caption text-caption text-secondary font-bold">MK</div>
+<span class="font-label-sm text-label-sm truncate max-w-[90px]">M. Kowalski</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption">
+<span class="px-1.5 py-0.5 bg-surface-container rounded text-on-surface">CC-1029</span>
+</td>
+<td class="py-1 px-space-base text-center">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-secondary transition-colors" title="View Hash Signature" type="button">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors h-10">
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-mono-data font-semibold text-secondary">#TX-984207</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="SHA-256 Verified">verified</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption text-on-surface-variant">
+              2024-10-24 13:51:00
+            </td>
+<td class="py-1 px-space-base">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-secondary font-medium">
+                Inbound PO Receipt
+              </span>
+</td>
+<td class="py-1 px-space-base">
+<div class="flex flex-col">
+<span class="font-mono-data font-semibold text-on-surface">SKU-7729-CA</span>
+<span class="font-caption text-caption text-on-surface-variant truncate max-w-[160px]">Shielded Cat7 Cable Roll</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono-data text-on-surface">
+<span class="truncate max-w-[110px]">Belden Global</span>
+<span class="text-secondary">→</span>
+<span class="font-medium truncate max-w-[120px]">CHI-DC-01 Staging 2</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-right font-mono-data font-semibold text-secondary">
+              +1,200 units
+            </td>
+<td class="py-1 px-space-base text-right font-mono-data tabular-nums font-medium text-on-surface">
+              3,450
+            </td>
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant font-mono-data">
+<span class="material-symbols-outlined text-[14px] text-secondary">qr_code_scanner</span>
+<span>Dock-Scan-01</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption">
+<span class="px-1.5 py-0.5 bg-surface-container rounded text-on-surface">PO-8889</span>
+</td>
+<td class="py-1 px-space-base text-center">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-secondary transition-colors" title="View Hash Signature" type="button">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors h-10 bg-surface-container-lowest">
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1">
+<span class="font-mono-data text-mono-data font-semibold text-secondary">#TX-984206</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="SHA-256 Verified">verified</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption text-on-surface-variant">
+              2024-10-24 13:44:20
+            </td>
+<td class="py-1 px-space-base">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+                Damaged / Scrapped
+              </span>
+</td>
+<td class="py-1 px-space-base">
+<div class="flex flex-col">
+<span class="font-mono-data font-semibold text-on-surface">SKU-8021-GL</span>
+<span class="font-caption text-caption text-on-surface-variant truncate max-w-[160px]">Tempered Inspection Glass</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-mono-data text-on-surface">
+<span class="truncate max-w-[110px]">Aisle 3 Shelf 2</span>
+<span class="text-secondary">→</span>
+<span class="font-medium truncate max-w-[120px]">Quarantine / Scrap</span>
+</div>
+</td>
+<td class="py-1 px-space-base text-right font-mono-data font-semibold text-on-surface">
+              -12 units
+            </td>
+<td class="py-1 px-space-base text-right font-mono-data tabular-nums font-medium text-on-surface">
+              188
+            </td>
+<td class="py-1 px-space-base">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-caption text-caption text-secondary font-bold">ER</div>
+<span class="font-label-sm text-label-sm truncate max-w-[90px]">E. Rostova</span>
+</div>
+</td>
+<td class="py-1 px-space-base font-mono-data text-caption">
+<span class="px-1.5 py-0.5 bg-surface-container rounded text-on-surface">SCR-0914</span>
+</td>
+<td class="py-1 px-space-base text-center">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-secondary transition-colors" title="View Hash Signature" type="button">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Data Table Footer Pagination -->
+<div class="px-space-base py-2 bg-surface-container-low flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span>Rows per page:</span>
+<select class="bg-surface-container font-mono-data text-caption text-on-surface px-1.5 py-0.5 rounded focus:outline-none cursor-pointer">
+<option>25</option>
+<option selected="">50</option>
+<option>100</option>
+</select>
+<span>Showing 1 – 50 of 3,842 entries</span>
+</div>
+<div class="flex items-center gap-1 font-mono-data">
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">Prev</button>
+<button class="px-2 py-0.5 rounded bg-primary text-on-primary font-bold" type="button">1</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">2</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">3</button>
+<span class="px-1">...</span>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">77</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- Bottom Cryptographic Ledger Inspection Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-base">
+<!-- Block Integrity Status Card -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded p-space-base shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">enhanced_encryption</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Cryptographic Integrity Status</span>
+</div>
+<span class="font-caption text-caption font-mono-data text-secondary bg-surface-container px-2 py-0.5 rounded font-medium">
+            STATE VALID
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-base">
+          Every physical stock mutation generates a canonical SHA-256 block chained to the preceding entry across all 6 connected facility nodes.
+        </p>
+<!-- Technical Telemetry Data Points -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm font-mono-data text-caption">
+<div class="bg-surface-container p-space-sm rounded">
+<span class="text-outline block text-[10px] uppercase">Node Consensus</span>
+<span class="text-on-surface font-semibold text-[12px]">6 of 6 DC Synced</span>
+<span class="text-secondary block text-[10px]">Zero drift</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded">
+<span class="text-outline block text-[10px] uppercase">Merkle Root Hash</span>
+<span class="text-on-surface font-semibold text-[11px] truncate block" title="8f4b2c1199ee4501ba873910cde4">8f4b2c...cde4</span>
+<span class="text-on-surface-variant block text-[10px]">Calculated 4s ago</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded">
+<span class="text-outline block text-[10px] uppercase">Discrepancy Flags</span>
+<span class="text-secondary font-semibold text-[12px]">0 Critical Alerts</span>
+<span class="text-on-surface-variant block text-[10px]">3 Soft Approvals</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-base mt-space-base font-caption text-caption text-on-surface-variant">
+<span class="font-mono-data">Last Snapshot: 2024-10-24 14:35:00 UTC • Verified by S/4HANA Connector</span>
+<button class="text-secondary font-label-sm text-label-sm font-medium hover:underline flex items-center gap-1" type="button">
+<span>Run Deep Verification Scan</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quick Bin Variance & Cycle Count Shortcut -->
+<div class="bg-surface-container-lowest rounded p-space-base shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Bin Variance Log</span>
+<span class="material-symbols-outlined text-outline text-[18px]">rule</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-base">
+          Recent count reconciliation jobs flagged for warehouse supervisor signature.
+        </p>
+<div class="space-y-space-sm">
+<div class="p-space-sm bg-surface-container rounded flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-mono-data text-on-surface">Bin D-14-R3 (Chicago)</span>
+<span class="font-caption text-caption text-on-surface-variant">SKU-3120-HD • Δ -4 units</span>
+</div>
+<span class="font-mono-data text-caption text-secondary font-semibold bg-surface-container-high px-1.5 py-0.5 rounded">-$18.40</span>
+</div>
+<div class="p-space-sm bg-surface-container rounded flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-mono-data text-on-surface">Bin A-02-P1 (Austin)</span>
+<span class="font-caption text-caption text-on-surface-variant">SKU-9901-LK • Δ +1 unit</span>
+</div>
+<span class="font-mono-data text-caption text-secondary font-semibold bg-surface-container-high px-1.5 py-0.5 rounded">+$42.10</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-space-base h-8 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span>View Full Cycle Count Ledger</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div></main></div></body></html>

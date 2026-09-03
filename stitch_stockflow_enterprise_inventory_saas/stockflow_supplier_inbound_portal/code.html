@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&family=hankenGrotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#bec6e0","on-tertiary":"#ffffff","on-surface":"#0b1c30","inverse-surface":"#213145","background":"#f8f9ff","surface-container-highest":"#d3e4fe","surface-tint":"#565e74","on-secondary-container":"#fffbff","on-surface-variant":"#45464d","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#3f465c","inverse-on-surface":"#eaf1ff","secondary-container":"#4069f2","on-error-container":"#93000a","on-primary-fixed":"#131b2e","error":"#ba1a1a","surface-container":"#e5eeff","surface":"#f8f9ff","on-secondary-fixed":"#001551","on-background":"#0b1c30","inverse-primary":"#bec6e0","tertiary-container":"#271901","primary-fixed":"#dae2fd","surface-bright":"#f8f9ff","surface-variant":"#d3e4fe","on-tertiary-container":"#98805d","tertiary":"#000000","primary-container":"#131b2e","on-primary-container":"#7c839b","tertiary-fixed-dim":"#dec29a","surface-dim":"#cbdbf5","tertiary-fixed":"#fcdeb5","on-secondary":"#ffffff","secondary":"#1d4ed8","primary":"#000000","surface-container-high":"#dce9ff","on-primary":"#ffffff","outline-variant":"#c6c6cd","on-error":"#ffffff","on-tertiary-fixed-variant":"#574425","on-secondary-fixed-variant":"#0039b5","error-container":"#ffdad6","on-tertiary-fixed":"#271901","outline":"#76777d","secondary-fixed":"#dce1ff","surface-container-low":"#eff4ff","secondary-fixed-dim":"#b7c4ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-3xl":"2rem","space-sm":"0.375rem","space-lg":"1rem","space-xl":"1.25rem","space-base":"0.75rem","space-2xs":"0.125rem","header-height":"3.25rem","table-row-default":"2.75rem","table-row-dense":"2.25rem","space-xs":"0.25rem","sidebar-width":"15rem","space-2xl":"1.5rem","space-md":"0.5rem"},"fontFamily":{"body-sm":["geist"],"label-md":["geist"],"label-sm":["geist"],"display":["hankenGrotesk"],"headline-sm":["hankenGrotesk"],"caption":["geist"],"headline-md":["hankenGrotesk"],"mono-data":["geist"],"body-md":["geist"],"headline-lg":["hankenGrotesk"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.025em","fontWeight":"600"}],"display":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["10px",{"lineHeight":"12px","letterSpacing":"0.03em","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-sm text-body-sm text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-header-height px-space-base flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="StockFlow Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">StockFlow</span></div><span class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant font-caption text-caption rounded">v2.4 Enterprise</span></div><div class="px-space-base py-space-xs"><div class="bg-surface-container-low p-space-xs rounded flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-label-md text-secondary">shield_person</span><div class="flex flex-col"><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Active Role</span><span class="font-label-sm text-label-sm text-on-surface">Admin Portal</span></div></div><span class="material-symbols-outlined text-label-md text-on-surface-variant">unfold_more</span></div></div><nav class="flex-1 px-space-xs py-space-xs space-y-space-md" data-active-classes="bg-surface-container text-secondary font-label-sm font-semibold"><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">Core</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-label-md">dashboard</span><span>Overview</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inventory-and-skus" href="#"><span class="material-symbols-outlined text-label-md">inventory_2</span><span>Inventory & SKUs</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="warehouses-and-locations" href="#"><span class="material-symbols-outlined text-label-md">warehouse</span><span>Warehouses & Locations</span></a></div><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">Procurement & Supply</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-label-md">receipt_long</span><span>Purchase Orders</span></a><a aria-current="page" class="flex items-center gap-space-xs px-space-xs py-space-xs rounded transition-colors bg-surface-container text-secondary font-label-sm font-semibold" data-path="suppliers" href="#"><span class="material-symbols-outlined text-label-md">local_shipping</span><span>Suppliers</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inbound-shipments" href="#"><span class="material-symbols-outlined text-label-md">move_to_inbox</span><span>Inbound Shipments</span></a></div><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">Sales & Fulfillment</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="sales-orders" href="#"><span class="material-symbols-outlined text-label-md">shopping_bag</span><span>Sales Orders</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="customers" href="#"><span class="material-symbols-outlined text-label-md">groups</span><span>Customers</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dispatch-and-tracking" href="#"><span class="material-symbols-outlined text-label-md">radar</span><span>Dispatch & Tracking</span></a></div><div class="space-y-space-2xs"><div class="px-space-xs font-caption text-caption uppercase text-on-surface-variant tracking-wider">System & Governance</div><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-label-md">history_edu</span><span>Audit Logs</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><span class="material-symbols-outlined text-label-md">admin_panel_settings</span><span>Roles & Permissions</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="integrations" href="#"><span class="material-symbols-outlined text-label-md">hub</span><span>Integrations</span></a><a class="flex items-center gap-space-xs px-space-xs py-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-label-md">tune</span><span>Settings</span></a></div></nav></div><div class="p-space-base bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-caption text-caption text-on-surface font-semibold">Operational</span></div><span class="font-caption text-caption text-on-surface-variant">14ms Sync</span></div><div class="flex items-center justify-between pt-space-xs"><span class="font-caption text-caption text-on-surface-variant">Collapse Sidebar</span><span class="material-symbols-outlined text-label-md text-on-surface-variant">first_page</span></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface-container-lowest/95 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="hover:text-on-surface cursor-pointer">StockFlow</span><span class="material-symbols-outlined text-caption">chevron_right</span><span class="text-on-surface font-semibold">Central Region</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-low"><span class="material-symbols-outlined text-label-md text-secondary">location_on</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Chicago Central DC-01</span><span class="material-symbols-outlined text-caption text-on-surface-variant">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded"><span class="material-symbols-outlined text-label-md text-on-surface-variant">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Quick search SKUs, orders, bins...</span><span class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant font-caption text-caption rounded">⌘K</span></div><button class="flex items-center gap-space-2xs px-space-sm py-space-xs bg-primary text-on-primary font-label-sm text-label-sm rounded hover:bg-primary-container hover:text-on-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-label-md">add</span><span>Quick PO</span></button><div class="relative flex items-center"><span class="material-symbols-outlined text-headline-sm text-on-surface-variant hover:text-on-surface cursor-pointer">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-error text-on-error font-caption text-caption flex items-center justify-center font-bold">3</span></div><span class="material-symbols-outlined text-headline-sm text-on-surface-variant hover:text-on-surface cursor-pointer">help_outline</span><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF85d-QlJvlaqIoeHZJQtZypKJI579KS45_-Ut0Bbjaw2fq3rh4gUB5MBg8rKIGUo7p1G65BncJRplC4jbNJsYFPp_9f1U2XR8a_9RpBceRxeYMbiSp9WJazNntg-7MS2i-3okiFaELNGQliSfqC4JzJRNZo5PBeJBLdC2SgMjzSH-WyfcL-u04M3fyb8FIWNeWmHVQIbBLQgK64ABjAL_7HScGQ6wjLkdy5KniZ42RcUIzpddE5oExw"/><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary"></span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Elena Rostova</span><span class="font-caption text-caption text-on-surface-variant">Operations Admin</span></div></div></div></header><main class="relative pt-header-height w-full bg-background min-h-screen px-space-xl py-space-lg"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full">
+<!-- Top Action & Title Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-space-sm py-space-2xs bg-secondary text-on-secondary font-label-sm text-label-sm rounded flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-label-sm">verified_user</span>
+<span>Supplier Portal</span>
+</span>
+<span class="text-on-surface-variant font-mono-data text-mono-data">Precision Components Global Ltd</span>
+<span class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant font-caption text-caption rounded tracking-wide">ID #VND-8842</span>
+<span class="inline-flex items-center gap-1 font-caption text-caption text-secondary font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>EDI Active (AS2 Linked)
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Purchase Orders & Inbound Fulfillment</h1>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-center">
+<button class="flex items-center gap-space-2xs px-space-base py-space-xs bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md rounded shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-label-md text-on-surface-variant">file_download</span>
+<span>Download Open PO Schedule</span>
+</button>
+<button class="flex items-center gap-space-2xs px-space-base py-space-xs bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md rounded shadow-sm transition-colors" id="open-asn-drawer" type="button">
+<span class="material-symbols-outlined text-label-md">local_shipping</span>
+<span>+ Submit Advance Shipping Notice (ASN)</span>
+</button>
+</div>
+</div>
+<!-- Telemetry & KPI Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Open Purchase Orders</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-low text-secondary font-caption text-caption rounded font-semibold">Live Pipeline</span>
+</div>
+<div class="flex flex-col gap-space-2xs my-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-on-surface font-semibold">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Orders</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant tabular-nums">$418,900.00 pending fulfillment</span>
+</div>
+<div class="w-full bg-surface-container-low h-1 rounded overflow-hidden mt-space-2xs">
+<div class="bg-secondary h-full" style="width: 74%;"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">ASN In Transit</span>
+<span class="px-space-xs py-space-2xs bg-surface-container text-on-surface font-caption text-caption rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-caption text-secondary">schedule</span>ETA < 72h
+          </span>
+</div>
+<div class="flex flex-col gap-space-2xs my-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-on-surface font-semibold">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Shipments Dispatched</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant tabular-nums">28 Pallets / 14,200 total units</span>
+</div>
+<div class="w-full bg-surface-container-low h-1 rounded overflow-hidden mt-space-2xs">
+<div class="bg-secondary h-full" style="width: 48%;"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">On-Time Delivery Score</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-high text-on-surface font-caption text-caption rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-caption">military_tech</span>Gold Tier
+          </span>
+</div>
+<div class="flex flex-col gap-space-2xs my-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-on-surface font-semibold tabular-nums">98.7%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">+0.4% MoM</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">SLA Compliant (Target > 96.5%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-1 rounded overflow-hidden mt-space-2xs">
+<div class="bg-secondary h-full" style="width: 98.7%;"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Quality Acceptance Rate</span>
+<span class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant font-caption text-caption rounded">QC Gate 1</span>
+</div>
+<div class="flex flex-col gap-space-2xs my-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display text-display text-on-surface font-semibold tabular-nums">99.4%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0.6% RMA</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">1,491 / 1,500 Lots Accepted Clean</span>
+</div>
+<div class="w-full bg-surface-container-low h-1 rounded overflow-hidden mt-space-2xs">
+<div class="bg-secondary h-full" style="width: 99.4%;"></div>
+</div>
+</div>
+</div>
+<!-- Data Table & Filter Surface -->
+<div class="bg-surface-container-lowest rounded shadow-sm flex flex-col">
+<!-- Table Header Action Controls -->
+<div class="p-space-base flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-label-md text-on-surface-variant">search</span>
+<input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-52 md:w-64" id="table-search-input" placeholder="Search PO #, tracking, bay..." type="text"/>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container-low p-space-2xs rounded">
+<button class="filter-tab px-space-sm py-space-2xs rounded text-label-sm font-label-sm bg-surface-container-lowest text-on-surface font-semibold shadow-sm" data-filter="all">All (12)</button>
+<button class="filter-tab px-space-sm py-space-2xs rounded text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface" data-filter="pending">Awaiting Acceptance (2)</button>
+<button class="filter-tab px-space-sm py-space-2xs rounded text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface" data-filter="transit">Shipped / In Transit (4)</button>
+<button class="filter-tab px-space-sm py-space-2xs rounded text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface" data-filter="confirmed">Confirmed (4)</button>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-auto">
+<span class="font-caption text-caption text-on-surface-variant">Showing 6 of 12 records</span>
+<button class="p-space-xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded">
+<span class="material-symbols-outlined text-label-md">tune</span>
+</button>
+<button class="p-space-xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded">
+<span class="material-symbols-outlined text-label-md">refresh</span>
+</button>
+</div>
+</div>
+<!-- High-Density Responsive Table Viewport -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="px-space-base py-space-xs font-semibold">PO Number</th>
+<th class="px-space-base py-space-xs font-semibold">Issue Date</th>
+<th class="px-space-base py-space-xs font-semibold">Target Delivery</th>
+<th class="px-space-base py-space-xs font-semibold">Destination Facility</th>
+<th class="px-space-base py-space-xs font-semibold text-center">Lines</th>
+<th class="px-space-base py-space-xs font-semibold text-right">Total Amount</th>
+<th class="px-space-base py-space-xs font-semibold">Fulfillment Status</th>
+<th class="px-space-base py-space-xs font-semibold text-right">Row Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface" id="po-table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-status="pending">
+<td class="px-space-base py-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-semibold text-secondary hover:underline cursor-pointer">#PO-2024-8891</span>
+<span class="font-caption text-caption text-on-surface-variant">SKU-BRG-7710 Core Assembly</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 24, 2024</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-error font-semibold">Oct 29, 2024 (5d)</td>
+<td class="px-space-base py-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-caption text-on-surface-variant">warehouse</span>
+<span class="font-body-sm text-body-sm">Chicago DC-01 <span class="font-mono-data text-mono-data text-on-surface-variant">(Bay 4)</span></span>
+</div>
+</td>
+<td class="px-space-base py-space-sm text-center font-mono-data text-mono-data tabular-nums">4</td>
+<td class="px-space-base py-space-sm text-right font-mono-data text-mono-data tabular-nums font-semibold">$54,820.00</td>
+<td class="px-space-base py-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Pending Vendor Acceptance
+                </span>
+</td>
+<td class="px-space-base py-space-sm text-right">
+<div class="flex items-center justify-end gap-space-2xs">
+<button class="ack-btn px-space-sm py-space-2xs bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm rounded transition-colors" data-po="#PO-2024-8891" type="button">
+                    Acknowledge PO
+                  </button>
+<button class="p-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded" title="View Lines" type="button">
+<span class="material-symbols-outlined text-label-md">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-status="transit">
+<td class="px-space-base py-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-semibold text-secondary hover:underline cursor-pointer">#PO-2024-8890</span>
+<span class="font-caption text-caption text-on-surface-variant">ASN-99021 • FedEx Freight</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 21, 2024</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data">Oct 26, 2024 (Tomorrow)</td>
+<td class="px-space-base py-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-caption text-on-surface-variant">warehouse</span>
+<span class="font-body-sm text-body-sm">Chicago DC-01 <span class="font-mono-data text-mono-data text-on-surface-variant">(Bay 12)</span></span>
+</div>
+</td>
+<td class="px-space-base py-space-sm text-center font-mono-data text-mono-data tabular-nums">12</td>
+<td class="px-space-base py-space-sm text-right font-mono-data text-mono-data tabular-nums font-semibold">$112,400.00</td>
+<td class="px-space-base py-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs bg-surface-container text-secondary font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Shipped - In Transit
+                </span>
+</td>
+<td class="px-space-base py-space-sm text-right">
+<div class="flex items-center justify-end gap-space-2xs">
+<button class="track-btn px-space-sm py-space-2xs bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded transition-colors" data-tracking="FX-881923091" type="button">
+                    Update Tracking
+                  </button>
+<button class="upload-btn p-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded" title="Upload BOL" type="button">
+<span class="material-symbols-outlined text-label-md">receipt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-status="confirmed">
+<td class="px-space-base py-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-semibold text-secondary hover:underline cursor-pointer">#PO-2024-8884</span>
+<span class="font-caption text-caption text-on-surface-variant">Precision Drive Motors Series X</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 19, 2024</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data">Nov 02, 2024</td>
+<td class="px-space-base py-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-caption text-on-surface-variant">warehouse</span>
+<span class="font-body-sm text-body-sm">Dallas Hub <span class="font-mono-data text-mono-data text-on-surface-variant">(Dk 3)</span></span>
+</div>
+</td>
+<td class="px-space-base py-space-sm text-center font-mono-data text-mono-data tabular-nums">2</td>
+<td class="px-space-base py-space-sm text-right font-mono-data text-mono-data tabular-nums font-semibold">$88,500.00</td>
+<td class="px-space-base py-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs bg-surface-container-low text-on-surface font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-caption">check_circle</span>Confirmed
+                </span>
+</td>
+<td class="px-space-base py-space-sm text-right">
+<div class="flex items-center justify-end gap-space-2xs">
+<button class="asn-dispatch-btn px-space-sm py-space-2xs bg-secondary text-on-secondary hover:bg-secondary-container font-label-sm text-label-sm rounded transition-colors" data-po="#PO-2024-8884" type="button">
+                    Create ASN
+                  </button>
+<button class="upload-btn px-space-sm py-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm rounded transition-colors" type="button">
+                    Upload BOL
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-status="transit">
+<td class="px-space-base py-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-semibold text-secondary hover:underline cursor-pointer">#PO-2024-8879</span>
+<span class="font-caption text-caption text-on-surface-variant">ASN-98990 • Old Dominion LTL</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 16, 2024</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data">Oct 28, 2024</td>
+<td class="px-space-base py-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-caption text-on-surface-variant">warehouse</span>
+<span class="font-body-sm text-body-sm">Chicago DC-01 <span class="font-mono-data text-mono-data text-on-surface-variant">(Bay 4)</span></span>
+</div>
+</td>
+<td class="px-space-base py-space-sm text-center font-mono-data text-mono-data tabular-nums">8</td>
+<td class="px-space-base py-space-sm text-right font-mono-data text-mono-data tabular-nums font-semibold">$39,240.00</td>
+<td class="px-space-base py-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs bg-surface-container text-secondary font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Shipped - In Transit
+                </span>
+</td>
+<td class="px-space-base py-space-sm text-right">
+<div class="flex items-center justify-end gap-space-2xs">
+<button class="track-btn px-space-sm py-space-2xs bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded transition-colors" data-tracking="ODFL-40019283" type="button">
+                    Update Tracking
+                  </button>
+<button class="upload-btn p-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded" title="Upload BOL" type="button">
+<span class="material-symbols-outlined text-label-md">receipt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-status="partially-received">
+<td class="px-space-base py-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-semibold text-secondary hover:underline cursor-pointer">#PO-2024-8862</span>
+<span class="font-caption text-caption text-on-surface-variant">Rotary Bearing Spindles 40mm</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 12, 2024</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 24, 2024</td>
+<td class="px-space-base py-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-caption text-on-surface-variant">warehouse</span>
+<span class="font-body-sm text-body-sm">Chicago DC-01 <span class="font-mono-data text-mono-data text-on-surface-variant">(Bay 1)</span></span>
+</div>
+</td>
+<td class="px-space-base py-space-sm text-center font-mono-data text-mono-data tabular-nums">6</td>
+<td class="px-space-base py-space-sm text-right font-mono-data text-mono-data tabular-nums font-semibold">$62,100.00</td>
+<td class="px-space-base py-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-caption">splitscreen</span>Partially Received (60%)
+                </span>
+</td>
+<td class="px-space-base py-space-sm text-right">
+<div class="flex items-center justify-end gap-space-2xs">
+<button class="asn-dispatch-btn px-space-sm py-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm rounded transition-colors" data-po="#PO-2024-8862" type="button">
+                    Ship Balance
+                  </button>
+<button class="upload-btn p-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded" title="View Discrepancy" type="button">
+<span class="material-symbols-outlined text-label-md">fact_check</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-status="pending">
+<td class="px-space-base py-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data font-semibold text-secondary hover:underline cursor-pointer">#PO-2024-8859</span>
+<span class="font-caption text-caption text-on-surface-variant">Precision Titanium Fasteners Pack</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data text-on-surface-variant">Oct 10, 2024</td>
+<td class="px-space-base py-space-sm font-mono-data text-mono-data">Nov 05, 2024</td>
+<td class="px-space-base py-space-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-caption text-on-surface-variant">warehouse</span>
+<span class="font-body-sm text-body-sm">Atlanta Southeast DC</span>
+</div>
+</td>
+<td class="px-space-base py-space-sm text-center font-mono-data text-mono-data tabular-nums">3</td>
+<td class="px-space-base py-space-sm text-right font-mono-data text-mono-data tabular-nums font-semibold">$61,840.00</td>
+<td class="px-space-base py-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Pending Vendor Acceptance
+                </span>
+</td>
+<td class="px-space-base py-space-sm text-right">
+<div class="flex items-center justify-end gap-space-2xs">
+<button class="ack-btn px-space-sm py-space-2xs bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm rounded transition-colors" data-po="#PO-2024-8859" type="button">
+                    Acknowledge PO
+                  </button>
+<button class="upload-btn p-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded" title="View Lines" type="button">
+<span class="material-symbols-outlined text-label-md">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-base bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-caption text-caption text-on-surface-variant">Rows per page:</span>
+<select class="bg-surface-container-low text-on-surface font-mono-data text-caption px-space-xs py-space-2xs rounded focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+<span class="font-caption text-caption text-on-surface-variant pl-space-sm">1-6 of 12 orders</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm rounded disabled:opacity-40" disabled="">Previous</button>
+<button class="px-space-sm py-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm rounded">Next</button>
+</div>
+</div>
+</div>
+<!-- Active Compliance & Inbound Logistics Protocol Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex items-start gap-space-base">
+<div class="p-space-xs bg-surface-container rounded text-secondary">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">GS1-128 Barcoding Required</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">All outer master cartons and pallets delivered to Chicago DC-01 must feature valid SSCC labels prior to dispatch.</p>
+</div>
+</div>
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex items-start gap-space-base">
+<div class="p-space-xs bg-surface-container rounded text-secondary">
+<span class="material-symbols-outlined">alarm_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">24-Hour ASN Rule</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">ASNs submitted within 24 hours of dock arrival receive priority appointment slot allocations automatically.</p>
+</div>
+</div>
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex items-start gap-space-base">
+<div class="p-space-xs bg-surface-container rounded text-secondary">
+<span class="material-symbols-outlined">contact_support</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Procurement Desk Contact</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Inbound logistics desk: <span class="font-mono-data text-mono-data text-secondary">inbound-chicago@stockflow.io</span> or radio Channel 04 at Gate 2.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Slide-over Drawer: Advance Shipping Notice (ASN) Submission -->
+<div class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300 opacity-0 invisible" id="asn-drawer">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-[1px] transition-opacity duration-300" id="asn-backdrop"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-space-3xl">
+<div class="w-screen max-w-xl bg-surface-container-lowest shadow-2xl pointer-events-auto flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="asn-panel">
+<!-- Drawer Header -->
+<div class="px-space-xl py-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary">local_shipping</span>
+<span class="font-headline-md text-headline-md text-on-surface">Submit Advance Shipping Notice</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mt-space-2xs">Carrier Telemetry & BOL Documentation</span>
+</div>
+<button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded bg-surface-container hover:bg-surface-container-high" id="close-asn-drawer" type="button">
+<span class="material-symbols-outlined text-headline-sm">close</span>
+</button>
+</div>
+<!-- Drawer Content Form -->
+<div class="flex-1 overflow-y-auto p-space-xl space-y-space-lg">
+<!-- Associated PO Selector -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between">
+<span>Target Purchase Order</span>
+<span class="font-caption text-caption text-secondary">Auto-linked items</span>
+</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-sm py-space-xs rounded focus:outline-none focus:bg-surface-container" id="drawer-po-select">
+<option value="#PO-2024-8891">#PO-2024-8891 — Chicago Central DC-01 ($54,820.00)</option>
+<option selected="" value="#PO-2024-8884">#PO-2024-8884 — Dallas Hub ($88,500.00)</option>
+<option value="#PO-2024-8862">#PO-2024-8862 — Chicago Central DC-01 ($62,100.00)</option>
+<option value="#PO-2024-8859">#PO-2024-8859 — Atlanta Southeast DC ($61,840.00)</option>
+</select>
+</div>
+<!-- Carrier & Tracking Info -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Freight Carrier</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-sm py-space-xs rounded focus:outline-none" id="drawer-carrier-select">
+<option>FedEx Freight Direct</option>
+<option>Old Dominion Freight Line</option>
+<option>XPO Logistics Inc</option>
+<option>Estes Express Lines</option>
+<option>Dedicated Supplier Fleet</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">PRO / Tracking #</label>
+<input class="w-full bg-surface-container-low text-on-surface font-mono-data text-mono-data px-space-sm py-space-xs rounded focus:outline-none" id="drawer-tracking-input" placeholder="e.g. FX-992019488" type="text" value="FX-984401928"/>
+</div>
+</div>
+<!-- Logistics Schedule & Quantities -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Est. Dock Arrival (EDT)</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm px-space-sm py-space-xs rounded focus:outline-none" type="datetime-local" value="2024-10-28T09:00"/>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Total Pallet Count</label>
+<input class="w-full bg-surface-container-low text-on-surface font-mono-data text-mono-data px-space-sm py-space-xs rounded focus:outline-none" max="100" min="1" type="number" value="6"/>
+</div>
+</div>
+<!-- Master BOL Upload Drag Zone -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Bill of Lading (BOL) & Packing List</label>
+<div class="p-space-lg bg-surface-container-low rounded flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-display text-secondary">cloud_upload</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-space-2xs">Click to upload BOL or drag and drop</span>
+<span class="font-caption text-caption text-on-surface-variant">PDF, TIFF or PNG format (Max 25MB). Auto-OCR enabled.</span>
+</div>
+</div>
+<!-- Item Manifest Mini Table -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Manifest Allocation</span>
+<div class="bg-surface-container-low rounded p-space-sm text-body-sm space-y-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant pb-space-2xs border-b border-surface-container">
+<span>SKU / Description</span>
+<span class="font-mono-data">Ship Qty / PO Qty</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-mono-data text-mono-data">SKU-BRG-7710 (Precision Bearings)</span>
+<span class="font-mono-data text-mono-data font-semibold">5,000 / 5,000</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-mono-data text-mono-data">SKU-MTR-4040 (Motor Sub-frame)</span>
+<span class="font-mono-data text-mono-data font-semibold">2,500 / 2,500</span>
+</div>
+</div>
+</div>
+<!-- Electronic Signature Statement -->
+<div class="p-space-sm bg-surface-container-high rounded flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-label-md text-secondary">verified</span>
+<span class="font-caption text-caption text-on-surface">By submitting this notice, Precision Components Global Ltd certifies cargo has met physical QC inspection criteria and palletized under ISO packaging standard 40x48.</span>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="px-space-xl py-space-md bg-surface-container-low flex items-center justify-between">
+<button class="px-space-base py-space-xs bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md rounded transition-colors" id="cancel-asn-drawer" type="button">
+            Cancel
+          </button>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-base py-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded transition-colors" type="button">
+              Save Draft
+            </button>
+<button class="px-space-lg py-space-xs bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md rounded transition-colors flex items-center gap-space-2xs" id="submit-asn-btn" type="button">
+<span class="material-symbols-outlined text-label-md">send</span>
+<span>Transmit ASN</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-space-xl right-space-xl z-50 bg-primary text-on-primary px-space-base py-space-sm rounded shadow-xl flex items-center gap-space-sm transition-all duration-300 translate-y-24 opacity-0 pointer-events-none" id="toast-banner">
+<span class="material-symbols-outlined text-secondary" id="toast-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold" id="toast-title">Action Confirmed</span>
+<span class="font-caption text-caption text-surface-variant" id="toast-message">PO #PO-2024-8891 acknowledged successfully.</span>
+</div>
+</div>
+<!-- Client-side Logic for Drawer, Filters, and Actions -->
+<script>
+    (function() {
+      const openBtn = document.getElementById('open-asn-drawer');
+      const closeBtn = document.getElementById('close-asn-drawer');
+      const cancelBtn = document.getElementById('cancel-asn-drawer');
+      const drawer = document.getElementById('asn-drawer');
+      const panel = document.getElementById('asn-panel');
+      const backdrop = document.getElementById('asn-backdrop');
+      const submitAsnBtn = document.getElementById('submit-asn-btn');
+      const toast = document.getElementById('toast-banner');
+      const toastTitle = document.getElementById('toast-title');
+      const toastMessage = document.getElementById('toast-message');
+
+      function showToast(title, message) {
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+        toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        }, 4000);
+      }
+
+      function openDrawer(targetPO) {
+        if (targetPO) {
+          const select = document.getElementById('drawer-po-select');
+          if (select) {
+            for (let i = 0; i < select.options.length; i++) {
+              if (select.options[i].value === targetPO) {
+                select.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        }
+        drawer.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
+        panel.classList.remove('translate-x-full');
+      }
+
+      function closeDrawer() {
+        panel.classList.add('translate-x-full');
+        setTimeout(() => {
+          drawer.classList.add('invisible', 'opacity-0', 'pointer-events-none');
+        }, 250);
+      }
+
+      if (openBtn) openBtn.addEventListener('click', () => openDrawer());
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (cancelBtn) cancelBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+      if (submitAsnBtn) {
+        submitAsnBtn.addEventListener('click', () => {
+          closeDrawer();
+          showToast('Advance Shipping Notice Transmitted', 'EDI 856 dispatched to Chicago DC-01 receiving gate.');
+        });
+      }
+
+      // Filter Tabs
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const rows = document.querySelectorAll('#po-table-body tr');
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => {
+            t.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+          tab.classList.remove('text-on-surface-variant');
+
+          const filter = tab.getAttribute('data-filter');
+          rows.forEach(row => {
+            if (filter === 'all') {
+              row.style.display = '';
+            } else if (filter === 'pending') {
+              row.style.display = row.getAttribute('data-status') === 'pending' ? '' : 'none';
+            } else if (filter === 'transit') {
+              row.style.display = row.getAttribute('data-status') === 'transit' ? '' : 'none';
+            } else if (filter === 'confirmed') {
+              row.style.display = row.getAttribute('data-status') === 'confirmed' ? '' : 'none';
+            }
+          });
+        });
+      });
+
+      // Quick Actions per row
+      document.querySelectorAll('.ack-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const po = e.currentTarget.getAttribute('data-po');
+          btn.textContent = 'Acknowledged';
+          btn.disabled = true;
+          btn.classList.remove('bg-primary', 'text-on-primary', 'hover:bg-primary-container');
+          btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          showToast('Purchase Order Confirmed', `${po} has been formally acknowledged.`);
+        });
+      });
+
+      document.querySelectorAll('.asn-dispatch-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const po = e.currentTarget.getAttribute('data-po');
+          openDrawer(po);
+        });
+      });
+
+      document.querySelectorAll('.track-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const track = e.currentTarget.getAttribute('data-tracking');
+          showToast('Live Tracking Polled', `Synchronizing EDI carrier feed for PRO ${track}`);
+        });
+      });
+
+      document.querySelectorAll('.upload-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          showToast('Document Portal Opened', 'Drag and drop BOL or Customs Declarations to upload.');
+        });
+      });
+
+      // Table search
+      const searchInput = document.getElementById('table-search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase();
+          rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(val) ? '' : 'none';
+          });
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

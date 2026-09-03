@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&family=hankenGrotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#ffffff","primary":"#000000","on-primary-fixed-variant":"#3f465c","surface-variant":"#d3e4fe","error":"#ba1a1a","on-tertiary-fixed":"#271901","tertiary-container":"#271901","surface-dim":"#cbdbf5","primary-fixed":"#dae2fd","inverse-surface":"#213145","on-secondary-container":"#fffbff","on-primary-fixed":"#131b2e","surface-bright":"#f8f9ff","on-background":"#0b1c30","secondary-fixed":"#dce1ff","inverse-primary":"#bec6e0","secondary":"#1d4ed8","surface-container-lowest":"#ffffff","primary-container":"#131b2e","error-container":"#ffdad6","surface":"#f8f9ff","background":"#f8f9ff","on-secondary-fixed-variant":"#0039b5","secondary-container":"#4069f2","surface-container-highest":"#d3e4fe","on-primary-container":"#7c839b","outline":"#76777d","inverse-on-surface":"#eaf1ff","on-tertiary-container":"#98805d","on-secondary-fixed":"#001551","secondary-fixed-dim":"#b7c4ff","surface-container-high":"#dce9ff","surface-container-low":"#eff4ff","on-surface":"#0b1c30","on-primary":"#ffffff","outline-variant":"#c6c6cd","on-tertiary-fixed-variant":"#574425","primary-fixed-dim":"#bec6e0","on-tertiary":"#ffffff","tertiary-fixed":"#fcdeb5","tertiary-fixed-dim":"#dec29a","on-error-container":"#93000a","on-surface-variant":"#45464d","tertiary":"#000000","surface-container":"#e5eeff","surface-tint":"#565e74","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"header-height":"3.25rem","space-sm":"0.375rem","space-xl":"1.25rem","sidebar-width":"15rem","table-row-default":"2.75rem","space-xs":"0.25rem","table-row-dense":"2.25rem","space-2xs":"0.125rem","space-base":"0.75rem","space-md":"0.5rem","space-2xl":"1.5rem","space-3xl":"2rem","space-lg":"1rem"},"fontFamily":{"caption":["geist"],"mono-data":["geist"],"body-md":["geist"],"display":["hankenGrotesk"],"label-md":["geist"],"label-sm":["geist"],"body-sm":["geist"],"headline-sm":["hankenGrotesk"],"headline-md":["hankenGrotesk"],"headline-lg":["hankenGrotesk"]},"fontSize":{"caption":["10px",{"lineHeight":"12px","letterSpacing":"0.03em","fontWeight":"500"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"400"}],"display":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.025em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-sm text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-header-height px-space-base flex items-center gap-space-sm border-b border-outline-variant"><img alt="Brand logo. - Primary color: #0f172a
+- Font: hankenGrotesk
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UA0knAjgMr4e2HTz9hK3RAv9yrBNd4RxqVhLI-O_3FkH0ePExwraWKcBzWxFaWnV5YA4EKNYrUBvb4owCAtWH5Uw6SPSTpEGOIC1F3MV7zC6SWPRMdFvqGITv5B3CHi30FDCoABCqLWBZvpjZkU17btvMus8o2_RkcarNtqCoNfB696JkTQqC48pXSeBcYI5r899D_-dh_I7U2LXIiHPmZ-kEZzAqPTJ5NDN1dlK8L1iAV5Msg61IedoY"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">StockFlow</span><span class="font-caption text-caption uppercase text-on-surface-variant tracking-wider">Enterprise Portal</span></div></div><div class="p-space-base border-b border-outline-variant bg-surface-container-low"><div class="flex items-center justify-between gap-space-xs"><div class="flex flex-col overflow-hidden"><span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Active Tenant</span><span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Apex Mfg Corp</span><span class="font-caption text-caption text-secondary font-medium">Tier 1 Account</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">unfold_more</span></div></div><nav class="p-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-secondary text-on-secondary font-semibold"><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-catalog" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-label-md text-label-md">Product Catalog</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="orders-and-shipments" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-label-md text-label-md">Orders & Shipments</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="active-cart-and-reorders" href="#"><span class="material-symbols-outlined text-[18px]">shopping_cart</span><span class="font-label-md text-label-md">Active Cart & Reorders</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="invoices-and-credit-line" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-md text-label-md">Invoices & Credit Line</span></a><a class="flex items-center gap-space-sm px-space-base py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="account-and-facility-settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-label-md text-label-md">Account & Facility Settings</span></a></nav></div><div class="p-space-base border-t border-outline-variant bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-caption text-caption text-on-surface-variant font-medium">Operational</span></div><div class="flex items-center gap-space-2xs text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">sync</span><span class="font-mono-data text-caption">Live: 14ms</span></div></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface-container-lowest border-b border-outline-variant z-40 px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-low border border-outline-variant rounded-lg"><span class="material-symbols-outlined text-[16px] text-secondary">warehouse</span><span class="font-label-sm text-label-sm text-on-surface">Chicago Central DC-01</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span></div><div class="relative max-w-md w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-8 pr-3 py-1 bg-surface border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/20" placeholder="Search catalog, SKUs, POs... ⌘K" readonly="" type="text"/></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-base py-space-2xs rounded-lg border border-outline-variant bg-surface-container-low"><span class="font-caption text-caption text-on-surface-variant uppercase font-medium">Credit Net-30</span><span class="font-label-sm text-label-sm text-on-surface font-semibold tabular-nums">$184.5k / $250k</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span></div><button class="flex items-center gap-space-xs px-space-base py-space-2xs rounded-lg bg-surface-container border border-outline-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[16px] text-secondary">shopping_bag</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Cart: 3 items • $42,860</span></button><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error rounded-full flex items-center justify-center font-caption text-caption">2</span></button><div class="h-5 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AEtjO1W25QWQkinr0eELQlciTF15UfYbViSsqSTTAuTfGMrtyAi47y3jlAi_EzgI2MGmPZCwrLIpVE52JH94MZznRAn-GEJVIKFrtqF-UTbCXuoOCvP1QiEnUPgQtf6QfNLUCuJQ-kguzpFH6rKf4PMR36l2FuPl1bgXxkbaPfyTTBwXiY038N4u0mxOBBOY7Ly2XcOd3DWmwlJEWtOHQ1FYmiI76KmxwdpR0XgPu7k4HlY9v5MxzbnbTQb-M2Zc"/><div class="hidden xl:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Elena Rostova</span><span class="font-caption text-caption text-on-surface-variant">Apex Mfg Procurement</span></div></div></div></header><main class="w-full pt-header-height min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Header Glow -->
+<div class="relative px-space-xl pt-space-xl pb-space-lg bg-surface-container-lowest shadow-sm">
+<div class="flex flex-wrap items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-2xs min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-space-2xs rounded-full bg-secondary-container/15 text-secondary font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+            Wholesale Checkout • Step 3 of 3
+          </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">EDI-850 COMPLIANT</span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight">Wholesale Cart & Dispatch Order Review</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-xs flex-wrap">
+<span>Purchase Order Draft <span class="font-mono-data text-on-surface font-semibold">#PO-DRAFT-88412</span></span>
+<span class="text-outline-variant">•</span>
+<span>Customer Account: <strong class="text-on-surface font-semibold">Apex Manufacturing Corp</strong></span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1 text-secondary font-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Tier 1 Preferred Volume Pricing</span>
+</p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-space-sm">
+<button class="h-8 px-space-base rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-space-xs transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">print</span>
+<span>Print Manifest</span>
+</button>
+<button class="h-8 px-space-base rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-space-xs transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">ios_share</span>
+<span>Share with Logistics Desk</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Split Layout (65% Cart / 35% Summary & Checkout) -->
+<div class="p-space-xl grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Cart Items, Dispatch Routing & Site Specifications (8 of 12 cols = 66.6%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Smart Optimization Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-base shadow-sm">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-base">
+<div class="w-9 h-9 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Single-Node Consolidation Optimized</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-highest text-secondary font-mono-data text-caption uppercase">Zero Split Fee</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+              All 3 line items are verified in stock and reserved at <strong class="text-on-surface">Chicago Central DC-01</strong>. Consolidating into 1 single LTL Freight dispatch saves <span class="text-secondary font-semibold font-mono-data">$450.00</span> in separate cross-dock transfers and avoids secondary handling surcharges.
+            </p>
+</div>
+<div class="text-right hidden sm:block shrink-0">
+<span class="font-caption text-caption text-on-surface-variant uppercase">Reserved Hold Time</span>
+<div class="font-mono-data text-headline-sm text-on-surface font-semibold" id="holdCountdown">03:44:12</div>
+</div>
+</div>
+</div>
+<!-- Items & Allocation Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-base py-space-base bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">inventory</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Staged Wholesale Items (3 Items • 830 Units)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-space-2xs rounded bg-surface-container font-caption text-caption text-on-surface-variant font-mono-data">PALLET COUNT: 4 FULL SKIDS</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/60 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-base font-semibold">Item & Catalog SKU</th>
+<th class="py-space-sm px-space-base font-semibold">Dispatch Node</th>
+<th class="py-space-sm px-space-base font-semibold text-right">Unit Price</th>
+<th class="py-space-sm px-space-base font-semibold text-center">Order Qty</th>
+<th class="py-space-sm px-space-base font-semibold text-right">Line Total</th>
+<th class="py-space-sm px-space-base font-semibold text-center w-12"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-base">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container shrink-0 shadow-sm" data-alt="Close up product photograph of an industrial infrared sensor array 850nm on engineered metal PCB mount with dark blue housing and brass connector studs, clean high-tech warehouse studio lighting, professional supply chain product catalog photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw0wVAnx2PJAIfXZaXIa4mgYFDrx8ARsvpx9-p0-ZFf8GtUEhY6cJA9CBl3Gg77-8Fc7io-NSp_31klNuEzP-aImSqPKn6fpplNHFyPKgNfLZznLW9KUDd0U675y-Oi7yI9NUgp574PyYB3YRgipbv-zyESYVqZW-fVTKl2-3Ki4YhlfEHp-1h1HXA4YwZFBCtdxGcL9G8jpbuPriYwCDi8JAULwD4H3yBsJEGvi9f3gHiHidfvjQ_mg"/>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Infrared Sensor 850nm Array</div>
+<div class="font-mono-data text-caption text-on-surface-variant flex items-center gap-space-xs mt-0.5">
+<span class="bg-surface-container px-space-2xs py-0.5 rounded text-on-surface">SKU-9932-SN</span>
+<span>• Rev E • IPC Class 3</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base align-middle">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Chicago Central DC-01
+                    </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">Bay 14-F • 1,420 On Shelf</span>
+</div>
+</td>
+<td class="py-space-base px-space-base text-right align-middle font-mono-data">
+<div class="text-on-surface font-semibold">$16.50</div>
+<div class="font-caption text-caption text-secondary">Tier 2 Volume (-$2.10)</div>
+</td>
+<td class="py-space-base px-space-base align-middle">
+<div class="flex items-center justify-center">
+<div class="inline-flex items-center bg-surface-container rounded-lg p-0.5 shadow-sm">
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors" onclick="adjustQty(this, -10)">-</button>
+<input class="w-12 text-center bg-transparent font-mono-data text-label-md text-on-surface font-semibold focus:outline-none" type="text" value="250"/>
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors" onclick="adjustQty(this, 10)">+</button>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base text-right align-middle font-mono-data text-on-surface font-semibold text-headline-sm">
+                  $4,125.00
+                </td>
+<td class="py-space-base px-space-base text-center align-middle">
+<button class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-colors" title="Remove line item">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-base">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container shrink-0 shadow-sm" data-alt="Macro photography of reel-packed dual channel optocoupler IC semiconductors in antistatic blister tape with gold lead terminals, sharp precision industrial electronic component lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYg7mrwe43rHdVN1xKxApLS0y6LkdqLkO49Y95XPOT2qFm4GyT4ArEBd_5LBzGX02he5Xn_6GTZ5KqW7xJkoIsmNk2Qv4hJZxq3J9H2pMmJT4LbyFcMdDNDE3BlN5GOVeTxtZIM-A6-a2ewlZo17xdcF8_-vmbSOK7ioP8b9l6PajJ5uIg54XTSzVvSPr7xCseCzFVEi0gtbsypCbXONDUG0nfiVQpBwYcdDA63AYZ-2VyMbVjmKzEA"/>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Dual-Channel Optocoupler IC</div>
+<div class="font-mono-data text-caption text-on-surface-variant flex items-center gap-space-xs mt-0.5">
+<span class="bg-surface-container px-space-2xs py-0.5 rounded text-on-surface">SKU-9021-EL</span>
+<span>• SOIC-8 • Moisture Seal</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base align-middle">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Chicago Central DC-01
+                    </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">Aisle 03-C • 12,500 On Shelf</span>
+</div>
+</td>
+<td class="py-space-base px-space-base text-right align-middle font-mono-data">
+<div class="text-on-surface font-semibold">$2.40</div>
+<div class="font-caption text-caption text-on-surface-variant">Standard Contract</div>
+</td>
+<td class="py-space-base px-space-base align-middle">
+<div class="flex items-center justify-center">
+<div class="inline-flex items-center bg-surface-container rounded-lg p-0.5 shadow-sm">
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors" onclick="adjustQty(this, -25)">-</button>
+<input class="w-12 text-center bg-transparent font-mono-data text-label-md text-on-surface font-semibold focus:outline-none" type="text" value="500"/>
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors" onclick="adjustQty(this, 25)">+</button>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base text-right align-middle font-mono-data text-on-surface font-semibold text-headline-sm">
+                  $1,200.00
+                </td>
+<td class="py-space-base px-space-base text-center align-middle">
+<button class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-colors" title="Remove line item">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-base">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container shrink-0 shadow-sm" data-alt="Industrial heavy duty dual-acting hydraulic cylinders with polished chrome rod and forged steel trunnion mounts palletized in wooden crates, high contrast warehouse inspection lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxJmQi-wKiESZVtuUIVqfWsfK7IEiCzK1SAwW4aIFZNa90Fo4uhY0--Qr3k_ibw_0fVI0nMP0DG_O3HHdizs-pI3Jtpl73S70Ib0WmTklnMt5EzNPWE9MP-23EHUU6Mhn5GiA5GC__0H8yE4iQl2BbloxThSotJQlr7cUj9IX7vZ92d7e0z6YgaxWIlhJVkEQkUz3XtYXqv8cKqwksArNh0HUZlHnCOGvBJkU_X66-SipJxgvOTcOktw"/>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Heavy Duty Hydraulic Cylinders</div>
+<div class="font-mono-data text-caption text-on-surface-variant flex items-center gap-space-xs mt-0.5">
+<span class="bg-surface-container px-space-2xs py-0.5 rounded text-on-surface">SKU-5582-HD</span>
+<span>• 4.0in Bore • 3,000 PSI</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base align-middle">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Chicago Central DC-01
+                    </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">Heavy Bulk Bay 21 • 190 On Shelf</span>
+</div>
+</td>
+<td class="py-space-base px-space-base text-right align-middle font-mono-data">
+<div class="text-on-surface font-semibold">$480.00</div>
+<div class="font-caption text-caption text-secondary">Volume Crate Pricing</div>
+</td>
+<td class="py-space-base px-space-base align-middle">
+<div class="flex items-center justify-center">
+<div class="inline-flex items-center bg-surface-container rounded-lg p-0.5 shadow-sm">
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors" onclick="adjustQty(this, -5)">-</button>
+<input class="w-12 text-center bg-transparent font-mono-data text-label-md text-on-surface font-semibold focus:outline-none" type="text" value="80"/>
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors" onclick="adjustQty(this, 5)">+</button>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base text-right align-middle font-mono-data text-on-surface font-semibold text-headline-sm">
+                  $38,400.00
+                </td>
+<td class="py-space-base px-space-base text-center align-middle">
+<button class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-colors" title="Remove line item">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-space-base py-space-sm bg-surface-container-low/40 flex flex-wrap items-center justify-between text-on-surface-variant text-caption font-mono-data">
+<div class="flex items-center gap-space-base">
+<span>TOTAL LINE ITEMS: 03</span>
+<span>TOTAL WEIGHT: 4,920 LBS</span>
+<span>FREIGHT CLASS: 70 (MACHINERY/PARTS)</span>
+</div>
+<button class="text-secondary hover:underline font-label-sm">Batch Update Quantities via CSV</button>
+</div>
+</div>
+<!-- Destination, Target Docking Date & Handling Specs -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span>
+<span class="font-headline-md text-headline-md text-on-surface">Fulfillment & Job Site Routing</span>
+</div>
+<span class="font-caption text-caption text-secondary uppercase font-semibold">Priority Freight Protocol</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Job Site Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between">
+<span>Receiving Destination / Job Site Facility</span>
+<span class="text-secondary font-caption cursor-pointer hover:underline">+ New Job Site</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 pl-space-base pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container cursor-pointer appearance-none">
+<option selected="">Job Site: Austin Assembly Plant 3 (Dock 14B, Austin TX)</option>
+<option>Detroit Stamping Annex (Receiving Bay C, Detroit MI)</option>
+<option>Phoenix Semiconductor Fabrication Yard (East Gate Dock 2)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+<span>Authorized Facility Dock ID #TX-902 • Forklift Rated 10-Ton</span>
+</div>
+</div>
+<!-- Target Arrival Date -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between">
+<span>Requested Target Delivery Date</span>
+<span class="text-on-surface-variant font-caption">Est. Transit: 48 hrs</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full h-10 pl-10 pr-space-base rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container font-mono-data" readonly="" type="text" value="Target Arrival: Oct 29, 2024 (Standard 48h Freight)"/>
+<span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[18px]">calendar_month</span>
+<button class="absolute right-space-sm px-space-xs py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Modify</button>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Orders confirmed before 16:00 CST dispatch same-day from Chicago DC.</span>
+</div>
+</div>
+<!-- Special Handling / Dock Instructions -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between">
+<span>Special Handling & Carrier Bill of Lading (BOL) Instructions</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">78 / 250 CHARS</span>
+</label>
+<textarea class="w-full p-space-base rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container resize-none" placeholder="Provide dock clearance, liftgate, or security pass instructions..." rows="2">Require liftgate delivery and 24h prior driver notification at receiving dock.</textarea>
+<div class="flex items-center gap-space-md text-caption text-on-surface-variant">
+<label class="inline-flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="rounded text-secondary" type="checkbox"/>
+<span class="text-on-surface font-medium">Liftgate Required</span>
+</label>
+<label class="inline-flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="rounded text-secondary" type="checkbox"/>
+<span class="text-on-surface font-medium">Call 24h Prior to Gate Entry</span>
+</label>
+<label class="inline-flex items-center gap-space-xs cursor-pointer">
+<input class="rounded text-secondary" type="checkbox"/>
+<span class="text-on-surface font-medium">Inside Facility Delivery</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Order Summary, Credit Utilization & Purchase Order Submission Card (4 of 12 cols = 33.3%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-header-height">
+<!-- Primary Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-low">
+<span class="font-headline-md text-headline-md text-on-surface">Order Summary</span>
+<span class="px-space-sm py-space-2xs rounded bg-surface-container font-mono-data font-semibold text-label-sm text-secondary">NET-30 DRAFT</span>
+</div>
+<!-- Financial Breakdown -->
+<div class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-center">
+<span>Subtotal (3 items, 830 units)</span>
+<span class="font-mono-data text-on-surface font-medium text-body-md">$43,725.00</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="flex items-center gap-1">
+<span>Enterprise Tier Discount (CT-2024)</span>
+<span class="material-symbols-outlined text-[14px]">info</span>
+</span>
+<span class="font-mono-data font-semibold">-$1,311.75</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="flex items-center gap-1">
+<span>LTL Consolidated Freight (FedEx Direct)</span>
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</span>
+<span class="font-mono-data text-on-surface font-medium">$446.75</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span>Estimated Sales Tax</span>
+<span class="font-caption text-caption text-on-surface-variant">Cert #TX-98421</span>
+</div>
+<span class="font-mono-data text-on-surface font-medium">$0.00</span>
+</div>
+<!-- Total Divider -->
+<div class="my-space-xs h-px bg-surface-container-low"></div>
+<div class="flex justify-between items-baseline pt-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Grand Total</span>
+<span class="font-caption text-caption text-on-surface-variant">Includes all freight & handling</span>
+</div>
+<div class="text-right">
+<div class="font-mono-data text-display text-display text-on-surface font-semibold tracking-tight">$42,860.00</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">USD • Invoiced on Dispatch</span>
+</div>
+</div>
+</div>
+<!-- Credit Line Telemetry Gauge -->
+<div class="bg-surface-container-low rounded-xl p-space-base flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Credit Facility: Net-30</span>
+</div>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-mono-data text-caption font-semibold">APPROVED</span>
+</div>
+<!-- Visual Bar Gauge -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+<!-- Current utilized before this order: $65,500 of $250,000 = 26.2% -->
+<div class="bg-outline-variant h-full" style="width: 26.2%" title="Existing Open Invoices: $65,500"></div>
+<!-- This order: $42,860 of $250,000 = 17.1% -->
+<div class="bg-secondary h-full" style="width: 17.1%" title="Current Order: $42,860"></div>
+<!-- Remaining available: $141,640 = 56.7% -->
+<div class="bg-surface-container-high h-full" style="width: 56.7%"></div>
+</div>
+<div class="flex justify-between items-center font-caption text-caption">
+<div class="flex flex-col">
+<span class="text-on-surface-variant">Available Prior</span>
+<span class="font-mono-data text-on-surface font-semibold">$184,500.00</span>
+</div>
+<span class="text-secondary font-mono-data text-[16px]">→</span>
+<div class="flex flex-col text-right">
+<span class="text-on-surface-variant">Remaining After PO</span>
+<span class="font-mono-data text-secondary font-semibold">$141,640.00</span>
+</div>
+</div>
+</div>
+<!-- PO Number Entry & Attachment -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between">
+<span>Customer PO Number <span class="text-error">*</span></span>
+<span class="font-caption text-caption text-on-surface-variant">Required for Net-30</span>
+</label>
+<div class="relative">
+<input class="w-full h-10 px-space-base rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md font-semibold focus:outline-none focus:bg-surface-container" type="text" value="APEX-PO-2024-8841"/>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-secondary text-[18px]">check_circle</span>
+</div>
+</div>
+<!-- Document Upload Pill -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">attach_file</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">PO_Apex_Contract_8841_Signed.pdf</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono-data">1.8 MB • Verified Hash</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Order Action Buttons -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-12 rounded-lg bg-primary hover:bg-surface-variant hover:text-primary text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs transition-all shadow-md active:scale-[0.99]" onclick="submitOrder(this)">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Confirm & Submit Order ($42,860.00)</span>
+</button>
+<button class="w-full h-10 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium flex items-center justify-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">description</span>
+<span>Save Draft Order & Export Pro-Forma Quote</span>
+</button>
+</div>
+<!-- Compliance & EDI Info Footer in card -->
+<div class="pt-space-xs border-t border-surface-container-low flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>256-Bit Encrypted EDI Dispatch</span>
+</span>
+<span class="font-mono-data">REV-7.44.1</span>
+</div>
+</div>
+<!-- Quick SLA & Facility Invoicing Note Card -->
+<div class="bg-surface-container-low rounded-xl p-space-base flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">policy</span>
+<div class="font-caption text-caption text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-semibold">Terms & Conditions:</strong> Net-30 payment terms start strictly on carrier Bill of Lading departure timestamp from Chicago Central DC-01. Customer receives automated tracking payloads via webhook and AS2 EDI 856 ship notice.
+        </div>
+</div>
+</div>
+</div>
+<!-- Bottom Regulatory & Transaction Bar -->
+<div class="px-space-xl py-space-md bg-surface-container-lowest border-t border-surface-container-low flex flex-wrap items-center justify-between gap-space-base text-caption text-on-surface-variant font-mono-data">
+<div class="flex items-center gap-space-base flex-wrap">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>INVENTORY RESERVATION ACTIVE (LOCK #LK-77419)</span>
+</span>
+<span>•</span>
+<span>DISPATCH BROKER: FEDEX FREIGHT PRIORITY DIRECT</span>
+<span>•</span>
+<span>TARIFF CLASSIFICATION: HTS 8479.89.98</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<span class="hover:text-on-surface cursor-pointer">Terms of Wholesale Sale</span>
+<span class="hover:text-on-surface cursor-pointer">Freight Claims Protocol</span>
+<span class="hover:text-on-surface cursor-pointer">Assigned Account Exec: Marcus Vance</span>
+</div>
+</div>
+</div>
+<script>
+  function adjustQty(button, delta) {
+    const input = button.parentElement.querySelector('input');
+    if (!input) return;
+    let current = parseInt(input.value, 10) || 0;
+    let next = Math.max(1, current + delta);
+    input.value = next;
+  }
+
+  function submitOrder(btn) {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Transmitting EDI 850 Order...</span>';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Purchase Order #PO-88412 Confirmed</span>';
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-secondary');
+    }, 1200);
+  }
+</script></main></div></body></html>
