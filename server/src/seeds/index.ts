@@ -25,6 +25,7 @@ async function main() {
   // 2. Create Suppliers
   const supplierUser1 = await upsertUser("Alpha Supplier", "alpha.supplier@example.com", "supplier123", "SUPPLIER");
   const supplierUser2 = await upsertUser("Beta Supplier", "beta.supplier@example.com", "supplier123", "SUPPLIER");
+  const supplierTestUser = await upsertUser("Supplier Test User", "supplier@example.com", "supplier123", "SUPPLIER");
   const alphaSupplier = await prisma.supplier.findFirst({ where: { companyName: "Alpha Distributors Inc." } });
   const supplier1 = alphaSupplier
     ? await prisma.supplier.update({ where: { id: alphaSupplier.id }, data: { userId: supplierUser1.id, contactNumber: "+1-555-0101", address: "123 Supply Lane, Industrial District, NY 10001" } })
@@ -36,6 +37,22 @@ async function main() {
     ? await prisma.supplier.update({ where: { id: betaSupplier.id }, data: { userId: supplierUser2.id, contactNumber: "+1-555-0102", address: "456 Wholesale Rd, Commercial Area, CA 90210" } })
     : await prisma.supplier.create({ data: { userId: supplierUser2.id, companyName: "Beta Supplies Ltd.", contactNumber: "+1-555-0102", address: "456 Wholesale Rd, Commercial Area, CA 90210" } });
   console.log(`Created supplier: ${supplier2.companyName}`);
+
+  await prisma.supplier.upsert({
+    where: { userId: supplierTestUser.id },
+    update: {
+      companyName: "Supplier Test Company",
+      contactNumber: "+1-555-0103",
+      address: "789 Test Avenue, Development City",
+    },
+    create: {
+      userId: supplierTestUser.id,
+      companyName: "Supplier Test Company",
+      contactNumber: "+1-555-0103",
+      address: "789 Test Avenue, Development City",
+    },
+  });
+  console.log(`Created supplier user: ${supplierTestUser.email}`);
 
   // 3. Create Customers
   const customer1 = await upsertUser("Customer One", "customer@example.com", "customer123", "CUSTOMER");
