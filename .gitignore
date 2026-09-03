@@ -17,6 +17,8 @@ node_modules/
 /dist/
 /*.tsbuildinfo
 /.parcel-cache/
+client/node_modules
+client/node_modules/bin
 
 # prisma
 prisma/
