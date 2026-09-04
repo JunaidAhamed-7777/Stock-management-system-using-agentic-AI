@@ -106,55 +106,59 @@ const SupplierDashboardPage: React.FC = () => {
         {/* 4-Column KPI Metric Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {/* Open Purchase Orders */}
-          <div className="bg-white rounded-lg p-5 shadow-sm flex flex-col justify-between">
+          <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col justify-between relative overflow-hidden">
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500">Open Purchase Orders</p>
-              <p className="text-3xl font-bold tabular-nums">{stats?.openPurchaseOrders} Active</p>
+              <p className="text-lg font-semibold tabular-nums">{stats?.openPurchaseOrders} Active</p>
               <p className="text-sm text-gray-500">4 Require Action</p>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <span className="text-error text-error-container font-medium">$584,200.00 pending fulfillment</span>
               <span className="text-gray-400 text-xs">receipt_long</span>
             </div>
+            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-secondary"></div>
           </div>
 
           {/* On-Time Delivery Rate */}
-          <div className="bg-white rounded-lg p-5 shadow-sm flex flex-col justify-between">
+          <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col justify-between relative overflow-hidden">
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500">On-Time Delivery Rate (OTIF)</p>
-              <p className="text-3xl font-bold tabular-nums">{stats?.onTimeDeliveryRate}</p>
+              <p className="text-lg font-bold tabular-nums">{stats?.onTimeDeliveryRate}</p>
               <p className="text-sm text-gray-500">Gold Tier SLA</p>
             </div>
             <div className="mt-2 flex items-center gap-2">
               <span className="text-gray-400 text-xs">Target SLA > 96.5% (+2.3% margin)</span>
               <span className="text-primary-500">99.1% MTD</span>
             </div>
+            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-secondary"></div>
           </div>
 
           {/* ASNs In-Transit */}
-          <div className="bg-white rounded-lg p-5 shadow-sm flex flex-col justify-between">
+          <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col justify-between relative overflow-hidden">
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500">ASNs In-Transit</p>
-              <p className="text-3xl font-bold tabular-nums">{stats?.asnsInTransit} Shipments</p>
+              <p className="text-lg font-bold tabular-nums">{stats?.asnsInTransit} Shipments</p>
               <p className="text-sm text-gray-500">ETA < 48h</p>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <span className="text-gray-400 text-xs">34 Pallets • 18,400 Units</span>
               <span className="text-gray-400 text-xs">alt_route</span>
             </div>
+            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-secondary"></div>
           </div>
 
           {/* Quality Acceptance Rate */}
-          <div className="bg-white rounded-lg p-5 shadow-sm flex flex-col justify-between">
+          <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col justify-between relative overflow-hidden">
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-500">Quality Acceptance Rate</p>
-              <p className="text-3xl font-bold tabular-nums">{stats?.qualityAcceptanceRate}</p>
+              <p className="text-lg font-bold tabular-nums">{stats?.qualityAcceptanceRate}</p>
               <p className="text-sm text-gray-500">QC Gate 1 Certified</p>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <span className="text-gray-400 text-xs">0.4% RMA / Quarantine</span>
               <span className="text-gray-400 text-xs">verified</span>
             </div>
+            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-secondary"></div>
           </div>
         </div>
       </div>
@@ -177,48 +181,51 @@ const SupplierDashboardPage: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left font-body-sm text-body-sm border-collapse">
               <thead>
-                <tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider h-8 select-none">
-                  <th className="py-2 px-3 font-medium">PO Number</th>
-                  <th className="py-2 px-3 font-medium">Target Dock</th>
-                  <th className="py-2 px-3 font-medium">Destination Hub</th>
-                  <th className="py-2 px-3 font-medium text-right">Qty</th>
-                  <th className="py-2 px-3 font-medium text-right">Value ($)</th>
-                  <th className="py-2 px-3 font-medium">Status</th>
-                  <th className="py-2 px-3 font-medium text-center">Action</th>
+                <tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider h-8 select-none">
+                  <th className="px-space-base py-space-2xs font-semibold">PO Number</th>
+                  <th className="px-space-base py-space-2xs font-medium">Target Dock</th>
+                  <th className="px-space-base py-space-2xs font-medium">Destination Hub</th>
+                  <th className="px-space-base py-space-2xs font-medium text-right">Qty</th>
+                  <th className="px-space-base py-space-2xs font-medium text-right">Value ($)</th>
+                  <th className="px-space-base py-space-2xs font-medium">Status</th>
+                  <th className="px-space-base py-space-2xs font-medium text-center">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-transparent">
+              <tbody className="divide-y">
                 {highPriorityOrders.map((order: any, index: number) => (
                   <tr
                     key={index}
-                    className="h-10 hover:bg-surface-container-low transition-colors group"
+                    className="h-9 hover:bg-surface-container-low transition-colors group"
                   >
-                    <td className="py-2 px-2 font-mono-data text-on-surface font-semibold">
+                    <td className="px-space-base py-space-2xs font-mono-data text-on-surface font-semibold">
                       <a href="#" className="hover:underline flex items-center gap-1">
                         #PO-{order.id}
                         <span className="material-symbols-outlined text-[12px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
                       </a>
                     </td>
-                    <td className="py-2 px-2 font-mono-data text-on-surface">
+                    <td className="px-space-base py-space-2xs font-mono-data text-on-surface">
                       <span>{order.dockTarget}</span>
                     </td>
-                    <td className="py-2 px-2">
+                    <td className="px-space-base py-space-2xs">
                       <span className="inline-flex items-center gap-1 px-1 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">
                         {order.destinationHub}
                       </span>
                     </td>
-                    <td className="py-2 px-2 text-right font-mono-data tabular-nums font-semibold">
+                    <td className="px-space-base py-space-2xs text-right font-mono-data tabular-nums font-semibold">
                       {order.qty}
                     </td>
-                    <td className="py-2 px-2 text-right font-mono-data tabular-nums font-semibold">
+                    <td className="px-space-base py-space-2xs text-right font-mono-data tabular-nums font-semibold">
                       ${order.total}
                     </td>
-                    <td className="py-2 px-2">
-                      <span className="inline-flex items-center gap-1 px-1 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+                    <td className="px-space-base py-space-2xs">
+                      <span className={order.status === "PENDING" || order.status === "Awaiting Vendor Acceptance"
+                        ? "inline-flex items-center gap-1 px-1 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold"
+                        : "inline-flex items-center gap-1 px-1 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold"
+                      }>
                         {order.status}
                       </span>
                     </td>
-                    <td className="py-2 px-2 text-center">
+                    <td className="px-space-base py-space-2xs text-center">
                       <button
                         className="rounded-md px-2 py-1 text-xs font-medium text-primary-600 hover:bg-primary-50 transition-colors shadow-sm"
                         type="button"
@@ -229,6 +236,13 @@ const SupplierDashboardPage: React.FC = () => {
                   </tr>
                 ))}
               </tbody>
+              <tfoot className="mt-4 text-sm text-gray-500">
+                <tr>
+                  <th colSpan={7} className="text-right">
+                    {highPriorityOrders.length} high-priority orders requiring immediate SLA attention
+                  </th>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>

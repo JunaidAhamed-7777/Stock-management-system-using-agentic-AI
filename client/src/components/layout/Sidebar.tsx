@@ -21,35 +21,32 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { path: "orders", label: "Orders", icon: "🛒" },
   ];
 
-  const sidebarWidth = isCollapsed ? "64px" : "240px";
-  const navLinkWidth = isCollapsed ? "56px" : "auto";
-  //@ts-ignore
-  const linkText = isCollapsed ? "" : "";
+  const sidebarWidth = isCollapsed ? "16px" : "240px";
+  const navLinkWidth = isCollapsed ? "calc(100% - 24px)" : "auto";
 
   return (
     <div
       className="
-        w-sidebar
         h-screen
         bg-white
         border-r
         border-border-default
         flex
         flex-col
-        shadow-md
+        shadow-sm
         transition-transform
         duration-300
       "
       style={{ width: sidebarWidth }}
     >
-      <div className="flex h-16 items-center px-4 border-b border-border-subtle">
-        <span className="text-sm font-semibold text-slate-900">
+      <div className="flex h-14 items-center px-4 border-b border-border-subtle">
+        <span className="text-xs font-medium text-slate-600">
           StockFlow
         </span>
       </div>
 
       <nav className="flex-1 overflow-y-auto">
-        <ul className="space-y-1 px-2">
+        <ul className="space-y-px px-2">
           {navLinks.map((link) => {
             const isActive = currentPath === link.path;
             return (
@@ -60,19 +57,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     flex
                     items-center
                     rounded-md
+                    h-10
                     px-3
-                    py-2
-                    text-sm
+                    text-xs
                     font-medium
-                    text-slate-600
+                    text-slate-500
                     group-hover:text-primary-600
                     transition-colors
                     select-none
                   "
                   style={{ width: navLinkWidth }}
                 >
-                  <span className="shrink-0 w-6">{link.icon}</span>
-                  <span className="hidden sm:inline">{linkText} {link.label}</span>
+                  <span className="shrink-0 w-5">{link.icon}</span>
+                  <span className="hidden sm:inline">{link.label}</span>
                 </Link>
               </li>
             );
@@ -82,7 +79,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {onToggleCollapse && (
         <div
-          className="p-2 border-t border-border-subtle"
+          className="border-t border-border-subtle"
         >
           <button
             onClick={onToggleCollapse}
@@ -90,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               w-full
               rounded-md
               px-2
-              py-1.5
+              py-1
               text-xs
               font-medium
               text-slate-500
@@ -104,7 +101,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               : "Collapse Sidebar"}
           </button>
         </div>
-      )}
+      </div>
     </div>
   );
 };

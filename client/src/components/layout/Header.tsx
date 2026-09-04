@@ -17,14 +17,14 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header
       className="
-        h-16
+        h-[3.25rem]
         bg-white
         border-b
         border-border-default
         shadow-sm
         flex
         items-center
-        px-6
+        px-4
         sticky
         top-0
         z-20

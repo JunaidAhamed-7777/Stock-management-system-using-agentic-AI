@@ -441,7 +441,7 @@ const AdminDashboardPage: React.FC = () => {
           <div className="w-full overflow-x-auto rounded-lg bg-surface-container-lowest">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="h-8 bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider select-none">
+                <tr className="h-11 bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider select-none">
                   <th className="px-space-base py-1 font-semibold">
                     SKU & Description
                   </th>
