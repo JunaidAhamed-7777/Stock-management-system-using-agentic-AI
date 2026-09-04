@@ -54,23 +54,23 @@ const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="p-6">
-      <div className="bg-white rounded-lg p-6 shadow mb-6">
-        <h3 className="text-lg font-medium text-gray-500 mb-4">Dashboard</h3>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div className="p-space-lg">
+      <div className="bg-white rounded-lg p-space-lg shadow mb-6">
+        <h3 className="text-lg font-medium text-gray-500 mb-4 space-y-1">Dashboard</h3>
+        <div className="grid grid-cols-1 gap-space-base md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-2xl font-bold">{stats?.totalProducts}</p>
-            <p className="text-gray-500">Total Products</p>
+            <p className="text-xl font-bold tabular-nums">{stats?.totalProducts}</p>
+            <p className="text-text-subtle">Total Products</p>
           </div>
           <div>
-            <p className="text-2xl font-bold">{stats?.totalStock}</p>
-            <p className="text-gray-500">Total Stock</p>
+            <p className="text-xl font-bold tabular-nums">{stats?.totalStock}</p>
+            <p className="text-text-subtle">Total Stock</p>
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg p-6 shadow mb-6">
-        <h3 className="text-lg font-medium text-gray-500 mb-4">Recent Orders</h3>
+      <div className="bg-white rounded-lg p-space-lg shadow mb-6">
+        <h3 className="text-lg font-medium text-gray-500 mb-4 space-y-1">Recent Orders</h3>
         <TableHeadCell label="Order #" />
         <TableHeadCell label="Date" />
         <TableHeadCell label="Status" />
@@ -82,7 +82,7 @@ const DashboardPage: React.FC = () => {
             cells={[
               order.id,
               order.createdAt?.slice(0, 10) || "N/A",
-              <span className="px-2 inline-flex text-xs font-medium rounded-full bg-green-100 text-green-800">
+              <span className="px-2 inline-flex text-xs font-medium rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
                 {order.status}
               </span>,
               `$${order.totalAmount}`,
@@ -92,18 +92,18 @@ const DashboardPage: React.FC = () => {
         ))}
       </div>
 
-      <div className="bg-white rounded-lg p-6 shadow">
-        <h3 className="text-lg font-medium text-gray-500 mb-4">Low Stock Alerts</h3>
+      <div className="bg-white rounded-lg p-space-lg shadow">
+        <h3 className="text-lg font-medium text-gray-500 mb-4 space-y-1">Low Stock Alerts</h3>
         {lowStock.length === 0 ? (
-          <p className="text-gray-500">No low-stock products</p>
+          <p className="text-text-subtle">No low-stock products</p>
         ) : (
-          <TableHeadCell label="Product" /><!-- simplified -->
+          <TableHeadCell label="Product" />
         )}
         {lowStock.map((product: any) => (
-          <div key={product.id} className="p-4 border rounded">
-            <h4>{product.name}</h4>
-            <p>{product.sku}</p>
-            <p>{product.quantity} in stock</p>
+          <div key={product.id} className="p-space-base border rounded">
+            <h4 className="font-medium">{product.name}</h4>
+            <p className="text-text-subtle">{product.sku}</p>
+            <p className="text-text-subtle">{product.quantity} in stock</p>
           </div>
         ))}
       </div>
