@@ -1,0 +1,91 @@
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { getProducts } from "../../services/product.service";
+import { Loading, EmptyState, ErrorState } from "../../components/ui";
+import { Button } from "../../components/ui/Form";
+
+const ProductsPage: React.FC = () => {
+  const { user } = useAuth();
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { search, category } = useSearchParams() as any;
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      try {
+        const response = await getProducts({
+          category: category || undefined,
+        });
+        setProducts(response);
+        setLoading(false);
+      } catch (err: any) {
+        setError(err.message || "Failed to fetch products");
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [category]);
+
+  if (loading) {
+    return <Loading className="p-8" />;
+  }
+
+  if (error) {
+    return <ErrorState message={error} />;
+  }
+
+  if (products.length === 0) {
+    return <EmptyState
+      title="No Products Found"
+      description="No products match your criteria. Try adjusting your filters."
+    />;
+  }
+
+  return (
+    <div className="py-8">
+      <div className="bg-white rounded-lg p-6 shadow mb-6">
+        <h2 className="text-xl font-medium text-gray-500 mb-4">Products</h2>
+        
+        <div className="grid grid-cols-1 gap-3 mb-4">
+          <Button
+            onClick={() => navigator.dispatcher
+              ? navigator.dispatcher.dispatch(
+                  new CustomEvent("navigate", { detail: "/customer/products/new" })
+                )
+              : alert("Add Product")}
+            className="bg-primary-600 hover:bg-primary-700"
+          >
+            Add Product
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {products.map((product: any) => (
+            <div key={product.id} className="p-4 border rounded hover:bg-gray-50 transition-colors">
+              <h4 className="font-medium">{product.name}</h4>
+              <p className="text-sm text-gray-500">{product.sku}</p>
+              <p className="text-primary-600 font-medium">${product.price}</p>
+              <p className="text-sm text-gray-500">{product.quantity} in stock</p>
+              <Button
+                onClick={() => window.dispatcher
+                  ? window.dispatcher.dispatch(
+                      new CustomEvent("navigate", { detail: `/customer/products/${product.id}` })
+                    )
+                  : window.alert(`View details for ${product.name}`)}
+                className="mt-2 text-sm text-primary-600 hover:underline"
+              >
+                View Details
+              </Button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductsPage;
