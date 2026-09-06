@@ -119,3 +119,7 @@
     $products = Invoke-RestMethod http://localhost:3001/api/products
     $products
     $products[0].id
+
+3. Frontend
+- cd client
+- npm run dev
