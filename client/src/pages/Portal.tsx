@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 import api, { messageFromError } from "../services/api";
 import { useAuth, type Role } from "../context/AuthContext";
 
-type Product = { id:number; name:string; sku:string; description?:string; price:number; quantity:number; lowStockThreshold:number; category?:{name:string}; supplier?:{companyName:string} };
+type Product = { id:number; name:string; sku:string; description?:string; price:number; quantity:number; lowStockThreshold:number; categoryId:number; supplierId:number; category?:{name:string}; supplier?:{companyName:string} };
 type Order = { id:number; status:string; totalAmount:number; createdAt:string; customer?:{name:string;email:string}; orderItems:{id:number;quantity:number;price:number;product?:Product}[] };
 const money=(v:number)=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(v);
 const titleCase=(x:string)=>x.replaceAll("_"," ").replace(/\b\w/g,c=>c.toUpperCase());
