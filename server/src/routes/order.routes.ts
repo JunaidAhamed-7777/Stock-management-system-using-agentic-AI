@@ -158,12 +158,26 @@ router.get("/", authenticate, async (req: AuthenticatedRequest, res: Response) =
       return res.json(orders);
     }
 
-    // SUPPLIER - see all orders (existing behavior extended)
     if (role === "SUPPLIER") {
+      const supplier = await prisma.supplier.findUnique({ where: { userId: Number(userId) } });
+      if (!supplier) {
+        return res.status(404).json({ message: "Supplier profile not found" });
+      }
+
       const orders = await prisma.order.findMany({
+        where: {
+          orderItems: {
+            some: {
+              product: { supplierId: supplier.id },
+            },
+          },
+        },
         include: {
           customer: true,
           orderItems: {
+            where: {
+              product: { supplierId: supplier.id },
+            },
             include: {
               product: true,
             },

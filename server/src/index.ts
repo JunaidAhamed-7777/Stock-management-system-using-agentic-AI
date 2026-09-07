@@ -7,6 +7,9 @@ import productRoutes from "./routes/product.routes.js";
 import orderRoutes from "./routes/order.routes.js";
 import stockRoutes from "./routes/stock.routes.js";
 import aiRoutes from "./routes/ai/ai.routes.js";
+import dashboardRoutes from "./routes/dashboard/dashboard.routes.js";
+import discoveryRoutes from "./routes/discovery/discovery.routes.js";
+import userRoutes from "./routes/users/users.routes.js";
 
 dotenv.config();
 
@@ -21,6 +24,9 @@ app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/stock", stockRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/discovery", discoveryRoutes);
+app.use("/api/users", userRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });

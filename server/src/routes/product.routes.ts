@@ -119,7 +119,7 @@ router.post("/", authenticate, async (req: AuthenticatedRequest, res: Response) 
 });
 
 // Update product (admin or supplier who owns it)
-router.put("/:id", async (req: Request, res: Response) => {
+router.put("/:id", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
     const { id } = req.params;
     const { name, description, sku, price, quantity, lowStockThreshold, categoryId, supplierId } = req.body;
@@ -130,6 +130,16 @@ router.put("/:id", async (req: Request, res: Response) => {
 
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
+    }
+
+    // Check authorization
+    if (req.user!.role === "SUPPLIER") {
+      const supplier = await prisma.supplier.findUnique({ where: { userId: req.user!.userId } });
+      if (!supplier || product.supplierId !== supplier.id) {
+        return res.status(403).json({ message: "Forbidden: You do not own this product" });
+      }
+    } else if (req.user!.role !== "ADMIN") {
+      return res.status(403).json({ message: "Forbidden" });
     }
 
     const updatedProduct = await prisma.product.update({
@@ -154,8 +164,11 @@ router.put("/:id", async (req: Request, res: Response) => {
 });
 
 // Delete product (admin only)
-router.delete("/:id", async (req: Request, res: Response) => {
+router.delete("/:id", authenticate, async (req: AuthenticatedRequest, res: Response) => {
   try {
+    if (req.user!.role !== "ADMIN") {
+      return res.status(403).json({ message: "Forbidden: Admin only" });
+    }
     const { id } = req.params;
 
     const product = await prisma.product.findUnique({
