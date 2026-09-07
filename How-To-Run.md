@@ -123,3 +123,12 @@
 3. Frontend
 - cd client
 - npm run dev
+
+
+# Login Info
+
+| Role     | Email                      | Password          |
+| -------- | -------------------------- | ----------------- |
+| Admin    | `admin@example.com`        | `admin123`        |
+| Supplier | `supplier1@example.com`    | `supplier123`     |
+| Customer | `testcustomer@example.com` | `TestPassword123` |
