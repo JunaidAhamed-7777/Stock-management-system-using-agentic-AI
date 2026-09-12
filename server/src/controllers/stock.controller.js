@@ -19,7 +19,16 @@ const adjustStockController = async (req, res, next) => {
   }
 };
 
+const getStockTransactionsController = async (req, res, next) => {
+  try {
+    res.status(501).json({ success: false, code: 'NOT_IMPLEMENTED', message: 'Stock transaction listing not implemented yet.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   lowStockController,
   adjustStockController,
+  getStockTransactionsController,
 };
