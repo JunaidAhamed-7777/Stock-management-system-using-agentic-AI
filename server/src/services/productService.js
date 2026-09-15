@@ -45,7 +45,17 @@ const deleteProduct = async (id, user) => {
     err.status = 403;
     throw err;
   }
-  await prisma.product.delete({ where: { id } });
+  try {
+    await prisma.product.delete({ where: { id } });
+  } catch (error) {
+    const message = String(error.message || '');
+    if (message.includes('foreign key') || message.includes('referenced')) {
+      const err = new Error('Cannot delete product that is referenced by orders or stock history');
+      err.status = 409;
+      throw err;
+    }
+    throw error;
+  }
 };
 
 const getAll = async (filters = {}) => {

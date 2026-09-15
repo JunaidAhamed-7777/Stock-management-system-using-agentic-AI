@@ -1,6 +1,11 @@
 const prisma = require('../prismaClient');
 
-const createOrder = async (userId, items) => {
+const createOrder = async (userId, items, userRole) => {
+  if (userRole && userRole !== 'CUSTOMER') {
+    const err = new Error('Only customers can create orders');
+    err.status = 403;
+    throw err;
+  }
   if (!Array.isArray(items) || items.length === 0) {
     const err = new Error('Order must contain at least one item');
     err.status = 400;
@@ -50,15 +55,49 @@ const createOrder = async (userId, items) => {
 };
 
 const getOrdersByUser = async (userId) => {
-  return prisma.order.findMany({ where: { customerId: userId }, include: { orderItems: { include: { product: true } } } });
+  return prisma.order.findMany({
+    where: { customerId: userId },
+    include: { orderItems: { include: { product: true } } },
+    orderBy: { createdAt: 'desc' },
+  });
+};
+
+const getOrdersForSupplier = async (supplierId) => {
+  return prisma.order.findMany({
+    where: {
+      orderItems: {
+        some: { product: { supplierId } },
+      },
+    },
+    include: {
+      customer: { select: { id: true, name: true, email: true } },
+      orderItems: {
+        where: { product: { supplierId } },
+        include: { product: true },
+      },
+    },
+    orderBy: { createdAt: 'desc' },
+  });
 };
 
 const getAllOrders = async () => {
-  return prisma.order.findMany({ include: { customer: { select: { id: true, name: true, email: true } }, orderItems: { include: { product: true } } } });
+  return prisma.order.findMany({
+    include: {
+      customer: { select: { id: true, name: true, email: true } },
+      orderItems: { include: { product: true } },
+    },
+    orderBy: { createdAt: 'desc' },
+  });
 };
 
 const getOrderById = async (id, user) => {
-  const order = await prisma.order.findUnique({ where: { id }, include: { orderItems: { include: { product: true } }, customer: true } });
+  const order = await prisma.order.findUnique({
+    where: { id },
+    include: {
+      orderItems: { include: { product: { include: { supplier: true } } } },
+      customer: true,
+    },
+  });
   if (!order) throw new Error('Order not found');
 
   // Access control: customer only for own orders; supplier only for orders containing their products.
@@ -66,7 +105,9 @@ const getOrderById = async (id, user) => {
     const err = new Error('Forbidden'); err.status = 403; throw err;
   }
   if (user.role === 'SUPPLIER') {
-    const hasProduct = order.orderItems.some((oi) => oi.product && oi.product.supplier && oi.product.supplier.userId === user.id);
+    const hasProduct = order.orderItems.some(
+      (oi) => oi.product && oi.product.supplierId === user.supplierId
+    );
     if (!hasProduct) {
       const err = new Error('Forbidden'); err.status = 403; throw err;
     }
@@ -89,8 +130,21 @@ const updateOrderStatus = async (id, status, user) => {
     if (!hasProduct) { const err = new Error('Forbidden'); err.status = 403; throw err; }
   }
   // Admin has full access.
-  await prisma.order.update({ where: { id }, data: { status } });
-  return order;
+  return prisma.order.update({
+    where: { id },
+    data: { status },
+    include: {
+      customer: { select: { id: true, name: true, email: true } },
+      orderItems: { include: { product: true } },
+    },
+  });
 };
 
-module.exports = { createOrder, getOrdersByUser, getAllOrders, getOrderById, updateOrderStatus };
+module.exports = {
+  createOrder,
+  getOrdersByUser,
+  getOrdersForSupplier,
+  getAllOrders,
+  getOrderById,
+  updateOrderStatus,
+};

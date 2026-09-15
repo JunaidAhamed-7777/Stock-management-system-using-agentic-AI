@@ -2,14 +2,21 @@ const prisma = require('../prismaClient');
 const bcrypt = require('bcryptjs');
 const { signToken } = require('../utils/jwt');
 
+const ALLOWED_ROLES = ['CUSTOMER', 'SUPPLIER', 'ADMIN'];
+
 const register = async ({ name, email, password, role = 'CUSTOMER' }) => {
+  if (!ALLOWED_ROLES.includes(role)) {
+    const err = new Error('Invalid role');
+    err.status = 400;
+    throw err;
+  }
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) {
     const err = new Error('Email already in use');
     err.status = 409;
     throw err;
   }
-  const hashed = bcrypt.hashSync(password, Number(process.env.BCRYPT_SALT_ROUNDS) || 10));
+  const hashed = bcrypt.hashSync(password, Number(process.env.BCRYPT_SALT_ROUNDS) || 10);
   const user = await prisma.user.create({ data: { name, email, password: hashed, role } });
   return user;
 };

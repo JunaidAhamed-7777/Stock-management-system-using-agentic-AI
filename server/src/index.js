@@ -8,7 +8,7 @@ const helmet = require('helmet');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
-const productRoutes = require('./routes/product.routes');
+const { publicRouter: productPublicRoutes, protectedRouter: productProtectedRoutes } = require('./routes/product.routes');
 const orderRoutes = require('./routes/order.routes');
 const stockRoutes = require('./routes/stock.routes');
 const discoveryRoutes = require('./routes/discovery.routes');
@@ -35,14 +35,17 @@ app.get('/api/health', (req, res) => {
 // Auth routes
 app.use('/api/auth', authRoutes);
 
+// Public catalog and discovery routes
+app.use('/api/products', productPublicRoutes);
+app.use('/api/discovery', discoveryRoutes);
+
 // Authenticated routes
 app.use(authenticate);
 
 app.use('/api/users', userRoutes);
-app.use('/api/products', productRoutes);
+app.use('/api/products', productProtectedRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/stock', stockRoutes);
-app.use('/api/discovery', discoveryRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/ai', aiRoutes);
 

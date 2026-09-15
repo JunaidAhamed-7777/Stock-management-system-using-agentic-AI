@@ -5,8 +5,8 @@ const listProducts = async (req, res, next) => {
   try {
     const filters = {
       search: req.query.search,
-      categoryId: req.query.category,
-      supplierId: req.query.supplier,
+      categoryId: req.query.category ? Number(req.query.category) : undefined,
+      supplierId: req.query.supplier ? Number(req.query.supplier) : undefined,
       lowStock: req.query.lowStock === 'true',
       lowStockThreshold: req.query.lowStockThreshold ? Number(req.query.lowStockThreshold) : undefined,
     };

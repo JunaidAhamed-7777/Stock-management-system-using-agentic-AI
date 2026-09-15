@@ -1,12 +1,13 @@
 const express = require('express');
-const router = express.Router();
+const publicRouter = express.Router();
+const protectedRouter = express.Router();
 const { listProducts, productDetails, createProductController, updateProductController, deleteProductController } = require('../controllers/product.controller');
 const { authorize } = require('../middleware/authorize');
 
-router.get('/', listProducts);
-router.get('/:id', productDetails);
-router.post('/', authorize('ADMIN', 'SUPPLIER'), createProductController);
-router.put('/:id', authorize('ADMIN', 'SUPPLIER'), updateProductController);
-router.delete('/:id', authorize('ADMIN'), deleteProductController);
+publicRouter.get('/', listProducts);
+publicRouter.get('/:id', productDetails);
+protectedRouter.post('/', authorize('ADMIN', 'SUPPLIER'), createProductController);
+protectedRouter.put('/:id', authorize('ADMIN', 'SUPPLIER'), updateProductController);
+protectedRouter.delete('/:id', authorize('ADMIN'), deleteProductController);
 
-module.exports = router;
+module.exports = { publicRouter, protectedRouter };
