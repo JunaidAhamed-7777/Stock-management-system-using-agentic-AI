@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: #f8f9ff;
+    color: #0b1c30;
+    font-family: Geist, sans-serif;
+    overscroll-behavior: none;
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
