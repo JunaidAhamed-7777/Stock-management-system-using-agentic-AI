@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { useAuth } from "../../context/AuthContext";
+import { useApiHealth } from "../../hooks/useApiHealth";
 import { portalLabel, roleSubtitle } from "../../utils/roles";
 import { Icon } from "../ui/Icon";
 
@@ -69,7 +70,9 @@ const NAV = {
 
 export function Sidebar({ open, onClose, collapsed, onToggleCollapse }) {
   const { role, user, supplier } = useAuth();
+  const apiHealth = useApiHealth();
   const sections = NAV[role] || [];
+  const apiLabel = apiHealth === "live" ? "API live" : apiHealth === "down" ? "API down" : "API…";
 
   return (
     <>
@@ -144,10 +147,16 @@ export function Sidebar({ open, onClose, collapsed, onToggleCollapse }) {
             {!collapsed ? (
               <div className="flex items-center gap-1.5 min-w-0">
                 <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary" />
+                  {apiHealth === "live" ? (
+                    <>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary" />
+                    </>
+                  ) : (
+                    <span className={`relative inline-flex rounded-full h-2 w-2 ${apiHealth === "down" ? "bg-error" : "bg-outline"}`} />
+                  )}
                 </span>
-                <span className="font-caption text-caption text-on-surface-variant truncate font-mono-data">API live • {user?.email}</span>
+                <span className="font-caption text-caption text-on-surface-variant truncate font-mono-data">{apiLabel} • {user?.email}</span>
               </div>
             ) : null}
             <button

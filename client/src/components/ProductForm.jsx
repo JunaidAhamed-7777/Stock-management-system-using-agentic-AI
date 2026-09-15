@@ -58,6 +58,8 @@ export function ProductForm({ productId, cancelTo, successTo }) {
           });
         } else if (role === "SUPPLIER" && supplier?.id) {
           setForm((current) => ({ ...current, supplierId: String(supplier.id) }));
+        } else if (role === "SUPPLIER") {
+          setError("No supplier profile is linked to this account. The catalog API cannot assign ownership until a supplier record exists.");
         }
       } catch (err) {
         if (!cancelled) setError(getErrorMessage(err));
@@ -88,8 +90,23 @@ export function ProductForm({ productId, cancelTo, successTo }) {
       lowStockThreshold: Number(form.lowStockThreshold),
       categoryId: Number(form.categoryId),
     };
+    if (Number.isNaN(payload.categoryId) || Number.isNaN(payload.price) || Number.isNaN(payload.quantity) || Number.isNaN(payload.lowStockThreshold)) {
+      setError("Price, quantity, threshold, and category must be valid numbers.");
+      setSaving(false);
+      return;
+    }
     if (role === "ADMIN") {
       payload.supplierId = Number(form.supplierId);
+      if (Number.isNaN(payload.supplierId)) {
+        setError("Select a supplier.");
+        setSaving(false);
+        return;
+      }
+    }
+    if (role === "SUPPLIER" && !supplier?.id) {
+      setError("No supplier profile is linked to this account. Product create/update is blocked until a supplier record exists.");
+      setSaving(false);
+      return;
     }
     try {
       if (isEdit) {
@@ -124,14 +141,14 @@ export function ProductForm({ productId, cancelTo, successTo }) {
         actions={
           <>
             <Button variant="outline" onClick={() => navigate(cancelTo)}>Discard Changes</Button>
-            <Button variant="dark" loading={saving} onClick={onSubmit} icon={<Icon name="publish" size={16} />}>
+            <Button variant="dark" type="submit" form="product-form" loading={saving} disabled={role === "SUPPLIER" && !supplier?.id} icon={<Icon name="publish" size={16} />}>
               {isEdit ? "Save SKU" : "Publish SKU"}
             </Button>
           </>
         }
       />
       {error ? <ErrorState message={error} /> : null}
-      <form onSubmit={onSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+      <form id="product-form" onSubmit={onSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
         <Card className="lg:col-span-8 p-space-xl flex flex-col gap-space-md">
           <div className="flex items-center gap-space-xs">
             <Icon name="fingerprint" className="text-secondary" />
@@ -169,7 +186,7 @@ export function ProductForm({ productId, cancelTo, successTo }) {
               Supplier ownership is assigned automatically to {supplier?.companyName || "your supplier profile"}.
             </div>
           )}
-          <Button type="submit" variant="dark" loading={saving}>{isEdit ? "Save changes" : "Create product"}</Button>
+          <Button type="submit" variant="dark" loading={saving} disabled={role === "SUPPLIER" && !supplier?.id}>{isEdit ? "Save changes" : "Create product"}</Button>
         </Card>
       </form>
     </>

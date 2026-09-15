@@ -32,12 +32,13 @@ export function AdminProducts() {
   const [pendingDelete, setPendingDelete] = useState(null);
   const [deleting, setDeleting] = useState(false);
 
-  async function load() {
+  async function load(searchOverride) {
+    const searchValue = (searchOverride ?? search).trim();
     setLoading(true);
     setError("");
     try {
       const params = {};
-      if (search.trim()) params.search = search.trim();
+      if (searchValue) params.search = searchValue;
       if (category) params.category = category;
       if (supplier) params.supplier = supplier;
       if (lowStock) params.lowStock = true;
@@ -53,8 +54,10 @@ export function AdminProducts() {
   }
 
   useEffect(() => {
-    load();
-  }, []);
+    const next = new URLSearchParams(location.search).get("search") || "";
+    setSearch(next);
+    load(next);
+  }, [location.search]);
 
   const columns = useMemo(
     () => [

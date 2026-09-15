@@ -86,7 +86,7 @@ export function OrdersPage({ title, description, canUpdateStatus }) {
             { key: "createdAt", header: "Created", render: (row) => formatDate(row.createdAt) },
             { key: "totalAmount", header: "Total", align: "right", render: (row) => formatCurrency(row.totalAmount) },
             { key: "status", header: "Status", render: (row) => <OrderStatusBadge status={row.status} /> },
-            { key: "actions", header: "", render: (row) => <Button variant="outline" onClick={() => openOrder(row)}>View</Button> },
+            { key: "actions", header: "", render: (row) => <Button variant="outline" onClick={(event) => { event.stopPropagation(); openOrder(row); }}>View</Button> },
           ]}
         />
       </Card>

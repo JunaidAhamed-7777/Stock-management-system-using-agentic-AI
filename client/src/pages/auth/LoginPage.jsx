@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { useAuth } from "../../context/AuthContext";
+import { useApiHealth } from "../../hooks/useApiHealth";
 import { getErrorMessage } from "../../utils/errors";
 import { portalHome } from "../../utils/roles";
 import { Icon } from "../../components/ui/Icon";
@@ -15,6 +16,7 @@ const ROLES = [
 
 export function LoginPage() {
   const { login, isAuthenticated, role } = useAuth();
+  const apiHealth = useApiHealth();
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState("ADMIN");
   const [email, setEmail] = useState("");
@@ -42,7 +44,7 @@ export function LoginPage() {
     setSaving(true);
     setError("");
     try {
-      const user = await login(email, password);
+      const user = await login(email, password, trust);
       navigate(portalHome(user.role), { replace: true });
     } catch (err) {
       setError(getErrorMessage(err));
@@ -75,8 +77,10 @@ export function LoginPage() {
                   </div>
                 </div>
                 <div className="inline-flex items-center gap-space-sm bg-surface-container-highest/80 px-space-base py-space-xs rounded-lg self-start">
-                  <Icon name="sensors" className="text-secondary" size={16} />
-                  <span className="font-label-sm text-label-sm font-medium">Connected to StockFlow API</span>
+                  <Icon name="sensors" className={apiHealth === "live" ? "text-secondary" : "text-on-surface-variant"} size={16} />
+                  <span className="font-label-sm text-label-sm font-medium">
+                    {apiHealth === "live" ? "Connected to StockFlow API" : apiHealth === "down" ? "StockFlow API unreachable" : "Checking StockFlow API…"}
+                  </span>
                 </div>
                 <div className="flex flex-col gap-space-md mt-space-md">
                   <h1 className="font-display text-display tracking-tight max-w-lg">Autonomous Supply Chain & Multi-DC Stock Orchestration</h1>
@@ -92,7 +96,9 @@ export function LoginPage() {
                       <Icon name="hub" className="text-secondary" size={15} />
                       Portal routing
                     </span>
-                    <span className="font-mono-data text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">LIVE API</span>
+                    <span className={`font-mono-data text-label-sm px-2 py-0.5 rounded ${apiHealth === "live" ? "text-emerald-700 bg-emerald-50" : apiHealth === "down" ? "text-error bg-error/10" : "text-on-surface-variant bg-surface-container"}`}>
+                      {apiHealth === "live" ? "LIVE API" : apiHealth === "down" ? "API DOWN" : "CHECKING"}
+                    </span>
                   </div>
                   <p className="font-body-sm text-on-surface-variant">{liveCopy[selectedRole]} Role is assigned by the backend after authentication.</p>
                 </div>

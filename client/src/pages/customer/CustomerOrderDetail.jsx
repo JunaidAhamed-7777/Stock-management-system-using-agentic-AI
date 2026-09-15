@@ -19,6 +19,8 @@ export function CustomerOrderDetail() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
+  const [reloadKey, setReloadKey] = useState(0);
+
   useEffect(() => {
     let cancelled = false;
     async function load() {
@@ -37,10 +39,10 @@ export function CustomerOrderDetail() {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [id, reloadKey]);
 
   if (loading) return <Loading label="Loading order…" />;
-  if (error) return <ErrorState message={error} onRetry={() => window.location.reload()} />;
+  if (error) return <ErrorState message={error} onRetry={() => setReloadKey((value) => value + 1)} />;
   if (!order) return <ErrorState message="Order not found." />;
 
   return (

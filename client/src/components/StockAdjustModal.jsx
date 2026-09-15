@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "./ui/Modal";
 import { Button } from "./ui/Button";
 import { Input, Textarea } from "./ui/Input";
@@ -11,16 +11,26 @@ export function StockAdjustModal({ product, open, onClose, onAdjusted }) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  if (!product) return null;
+  useEffect(() => {
+    setQuantityChange("0");
+    setReason("");
+    setError("");
+  }, [product?.id, open]);
 
   async function onSubmit(event) {
     event.preventDefault();
+    if (!product) return;
+    const change = Number(quantityChange);
+    if (!Number.isInteger(change) || change === 0) {
+      setError("Enter a non-zero whole number for the quantity change.");
+      return;
+    }
     setSaving(true);
     setError("");
     try {
       const result = await adjustStock({
         productId: product.id,
-        quantityChange: Number(quantityChange),
+        quantityChange: change,
         reason: reason.trim() || undefined,
       });
       onAdjusted?.(result);
@@ -34,6 +44,8 @@ export function StockAdjustModal({ product, open, onClose, onAdjusted }) {
     }
   }
 
+  if (!product) return null;
+
   return (
     <Modal
       open={open}
@@ -42,11 +54,11 @@ export function StockAdjustModal({ product, open, onClose, onAdjusted }) {
       footer={
         <>
           <Button variant="outline" onClick={onClose}>Cancel</Button>
-          <Button loading={saving} onClick={onSubmit}>Apply adjustment</Button>
+          <Button type="submit" form="stock-adjust-form" loading={saving}>Apply adjustment</Button>
         </>
       }
     >
-      <form onSubmit={onSubmit} className="flex flex-col gap-space-md">
+      <form id="stock-adjust-form" onSubmit={onSubmit} className="flex flex-col gap-space-md">
         <p className="font-body-sm text-on-surface-variant">
           Current on-hand quantity for {product.name}: <span className="font-mono-data text-on-surface">{product.quantity}</span>
         </p>

@@ -24,11 +24,18 @@ export function SupplierStock() {
   const [adjusting, setAdjusting] = useState(null);
 
   async function load() {
+    if (!supplier?.id) {
+      setProducts([]);
+      setLowStock([]);
+      setLoading(false);
+      setError("No supplier profile is linked to this account, so stock cannot be scoped to your SKUs.");
+      return;
+    }
     setLoading(true);
     setError("");
     try {
       const [rows, low] = await Promise.all([
-        listProducts(supplier?.id ? { supplier: supplier.id } : {}),
+        listProducts({ supplier: supplier.id }),
         getLowStock(),
       ]);
       setProducts(rows || []);
@@ -41,7 +48,7 @@ export function SupplierStock() {
   }
 
   useEffect(() => {
-    if (supplier?.id) load();
+    load();
   }, [supplier?.id]);
 
   if (loading) return <PageSkeleton />;

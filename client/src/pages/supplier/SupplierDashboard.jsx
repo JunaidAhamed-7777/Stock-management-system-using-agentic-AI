@@ -28,12 +28,21 @@ export function SupplierDashboard() {
   const [loading, setLoading] = useState(true);
 
   async function load() {
+    if (!supplier?.id) {
+      setMetrics(null);
+      setProducts([]);
+      setLowStock([]);
+      setOrders([]);
+      setLoading(false);
+      setError("No supplier profile is linked to this account. Catalog and stock requests are blocked until a supplier record exists.");
+      return;
+    }
     setLoading(true);
     setError("");
     try {
       const [dash, catalog, stock, orderRows] = await Promise.all([
         getDashboard(),
-        listProducts(supplier?.id ? { supplier: supplier.id } : {}),
+        listProducts({ supplier: supplier.id }),
         getLowStock(),
         listOrders(),
       ]);
@@ -49,8 +58,7 @@ export function SupplierDashboard() {
   }
 
   useEffect(() => {
-    if (supplier?.id) load();
-    else setLoading(false);
+    load();
   }, [supplier?.id]);
 
   if (loading) return <PageSkeleton />;

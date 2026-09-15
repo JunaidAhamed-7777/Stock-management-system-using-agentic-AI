@@ -1,7 +1,14 @@
 import axios from "axios";
 import { TOKEN_KEY, readStorage, removeStorage, USER_KEY } from "../utils/storage";
 
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://localhost:3001/api").replace(/\/$/, "");
+function normalizeApiBase(value) {
+  return String(value || "http://localhost:3001/api")
+    .trim()
+    .replace(/\/+$/, "")
+    .replace(/\/api\/api$/i, "/api");
+}
+
+const API_BASE_URL = normalizeApiBase(import.meta.env.VITE_API_BASE_URL);
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
@@ -16,13 +23,16 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+function isAuthHandshake(url) {
+  const path = String(url || "");
+  return path.includes("/auth/login") || path.includes("/auth/register") || path.includes("/auth/me");
+}
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      const url = String(error.config?.url || "");
-      const isAuthAttempt = url.includes("/auth/login") || url.includes("/auth/register");
-      if (!isAuthAttempt) {
+      if (!isAuthHandshake(error.config?.url)) {
         removeStorage(TOKEN_KEY);
         removeStorage(USER_KEY);
         if (window.location.pathname !== "/login") {
@@ -36,4 +46,9 @@ api.interceptors.response.use(
 
 export function unwrap(response) {
   return response.data?.data ?? response.data;
+}
+
+export async function getHealth() {
+  const response = await api.get("/health");
+  return response.data;
 }

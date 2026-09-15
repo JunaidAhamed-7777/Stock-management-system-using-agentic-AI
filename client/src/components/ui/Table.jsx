@@ -1,4 +1,5 @@
 export function Table({ columns, rows, rowKey = "id", empty, onRowClick }) {
+  const safeRows = Array.isArray(rows) ? rows : [];
   return (
     <div className="overflow-x-auto">
       <table className="w-full min-w-[720px] text-left">
@@ -15,16 +16,16 @@ export function Table({ columns, rows, rowKey = "id", empty, onRowClick }) {
           </tr>
         </thead>
         <tbody>
-          {rows.length === 0 ? (
+          {safeRows.length === 0 ? (
             <tr>
               <td colSpan={columns.length} className="px-space-base py-space-3xl">
                 {empty}
               </td>
             </tr>
           ) : (
-            rows.map((row) => (
+            safeRows.map((row, index) => (
               <tr
-                key={row[rowKey]}
+                key={row?.[rowKey] ?? `row-${index}`}
                 onClick={onRowClick ? () => onRowClick(row) : undefined}
                 className={`h-table-row-default border-b border-outline-variant last:border-0 hover:bg-surface ${onRowClick ? "cursor-pointer" : ""}`}
               >

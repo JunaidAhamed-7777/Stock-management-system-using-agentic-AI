@@ -22,6 +22,8 @@ export function CustomerProductDetail() {
   const [notice, setNotice] = useState("");
   const [loading, setLoading] = useState(true);
 
+  const [reloadKey, setReloadKey] = useState(0);
+
   useEffect(() => {
     let cancelled = false;
     async function load() {
@@ -40,10 +42,10 @@ export function CustomerProductDetail() {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [id, reloadKey]);
 
   if (loading) return <Loading label="Loading product…" />;
-  if (error) return <ErrorState message={error} onRetry={() => window.location.reload()} />;
+  if (error) return <ErrorState message={error} onRetry={() => setReloadKey((value) => value + 1)} />;
   if (!product) return <ErrorState message="Product not found." />;
 
   const status = stockStatus(product);

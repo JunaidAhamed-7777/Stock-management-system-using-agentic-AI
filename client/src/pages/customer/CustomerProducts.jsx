@@ -30,12 +30,13 @@ export function CustomerProducts() {
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
 
-  async function load() {
+  async function load(searchOverride) {
+    const searchValue = (searchOverride ?? search).trim();
     setLoading(true);
     setError("");
     try {
       const params = {};
-      if (search.trim()) params.search = search.trim();
+      if (searchValue) params.search = searchValue;
       if (category) params.category = category;
       if (supplier) params.supplier = supplier;
       const [rows, cats, sups] = await Promise.all([listProducts(params), getCategories(), getSuppliers()]);
@@ -50,8 +51,10 @@ export function CustomerProducts() {
   }
 
   useEffect(() => {
-    load();
-  }, []);
+    const next = new URLSearchParams(location.search).get("search") || "";
+    setSearch(next);
+    load(next);
+  }, [location.search]);
 
   function addToCart(product) {
     if ((product.quantity || 0) <= 0) return;
@@ -101,7 +104,7 @@ export function CustomerProducts() {
                   <span className="font-headline-md">{formatCurrency(product.price)}</span>
                   <span className="text-on-surface-variant">{product.quantity} on hand</span>
                 </div>
-                <p className="font-caption text-outline">{product.category?.name || "Uncategorized"} · {product.supplier?.companyName || "Supplier"}</p>
+                <p className="font-caption text-outline">{product.category?.name || "Uncategorized"} · {product.supplier?.companyName || "—"}</p>
                 <div className="flex gap-space-sm mt-auto">
                   <Button variant="outline" className="flex-1" onClick={() => navigate(`/customer/products/${product.id}`)}>Details</Button>
                   <Button className="flex-1" disabled={status === "OUT"} onClick={() => addToCart(product)} icon={<Icon name="add_shopping_cart" size={16} />}>

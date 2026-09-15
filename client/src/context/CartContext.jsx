@@ -11,10 +11,14 @@ function cartStorageKey(userId) {
 export function CartProvider({ children }) {
   const { user } = useAuth();
   const storageKey = cartStorageKey(user?.id);
-  const [items, setItems] = useState(() => readStorage(storageKey, []));
+  const [items, setItems] = useState(() => {
+    const stored = readStorage(storageKey, []);
+    return Array.isArray(stored) ? stored : [];
+  });
 
   useEffect(() => {
-    setItems(readStorage(storageKey, []));
+    const stored = readStorage(storageKey, []);
+    setItems(Array.isArray(stored) ? stored : []);
   }, [storageKey]);
 
   const addItem = useCallback(
@@ -23,11 +27,13 @@ export function CartProvider({ children }) {
       const available = Number(product.quantity) || 0;
       setItems((current) => {
         const next = [...current];
-        const index = next.findIndex((item) => item.productId === product.id);
+        const productId = Number(product.id);
+        const index = next.findIndex((item) => Number(item.productId) === productId);
         if (index >= 0) {
           const proposed = next[index].quantity + qty;
           next[index] = {
             ...next[index],
+            productId,
             quantity: available > 0 ? Math.min(available, proposed) : proposed,
             name: product.name,
             sku: product.sku,
@@ -36,7 +42,7 @@ export function CartProvider({ children }) {
           };
         } else {
           next.push({
-            productId: product.id,
+            productId,
             name: product.name,
             sku: product.sku,
             price: Number(product.price),
@@ -54,11 +60,12 @@ export function CartProvider({ children }) {
   const updateQuantity = useCallback(
     (productId, quantity) => {
       const qty = Number(quantity);
+      const id = Number(productId);
       setItems((current) => {
         const next =
           !Number.isFinite(qty) || qty <= 0
-            ? current.filter((item) => item.productId !== productId)
-            : current.map((item) => (item.productId === productId ? { ...item, quantity: qty } : item));
+            ? current.filter((item) => Number(item.productId) !== id)
+            : current.map((item) => (Number(item.productId) === id ? { ...item, quantity: qty, productId: id } : item));
         writeStorage(storageKey, next);
         return next;
       });
@@ -69,7 +76,7 @@ export function CartProvider({ children }) {
   const removeItem = useCallback(
     (productId) => {
       setItems((current) => {
-        const next = current.filter((item) => item.productId !== productId);
+        const next = current.filter((item) => Number(item.productId) !== Number(productId));
         writeStorage(storageKey, next);
         return next;
       });

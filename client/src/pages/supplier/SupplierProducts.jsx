@@ -25,15 +25,21 @@ export function SupplierProducts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  async function load() {
+  async function load(searchOverride) {
+    if (!supplier?.id) {
+      setProducts([]);
+      setLoading(false);
+      setError("No supplier profile is linked to this account, so owned SKUs cannot be loaded.");
+      return;
+    }
+    const searchValue = (searchOverride ?? search).trim();
     setLoading(true);
     setError("");
     try {
-      const params = {};
-      if (supplier?.id) params.supplier = supplier.id;
-      if (search.trim()) params.search = search.trim();
+      const params = { supplier: supplier.id };
+      if (searchValue) params.search = searchValue;
       const [rows, cats] = await Promise.all([listProducts(params), getCategories()]);
-      setProducts(enrichProducts(rows || [], cats || [], supplier ? [supplier] : []));
+      setProducts(enrichProducts(rows || [], cats || [], [supplier]));
     } catch (err) {
       setError(getErrorMessage(err));
     } finally {
@@ -42,8 +48,10 @@ export function SupplierProducts() {
   }
 
   useEffect(() => {
-    if (supplier?.id) load();
-  }, [supplier?.id]);
+    const next = new URLSearchParams(location.search).get("search") || "";
+    setSearch(next);
+    load(next);
+  }, [supplier?.id, location.search]);
 
   const columns = useMemo(
     () => [

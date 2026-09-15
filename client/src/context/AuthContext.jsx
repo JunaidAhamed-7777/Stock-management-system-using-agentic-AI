@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { getMe, login as loginRequest, register as registerRequest } from "../services/auth.service";
 import { getSuppliers } from "../services/discovery.service";
-import { TOKEN_KEY, USER_KEY, readStorage, removeStorage, writeStorage } from "../utils/storage";
+import { TOKEN_KEY, USER_KEY, isSessionKey, readStorage, removeStorage, writeStorage } from "../utils/storage";
 import { normalizeRole, portalHome } from "../utils/roles";
 import { getErrorMessage } from "../utils/errors";
 
@@ -13,12 +13,13 @@ export function AuthProvider({ children }) {
   const [supplier, setSupplier] = useState(null);
   const [loading, setLoading] = useState(Boolean(readStorage(TOKEN_KEY)));
 
-  const persist = useCallback((nextToken, nextUser) => {
+  const persist = useCallback((nextToken, nextUser, remember = true) => {
     setToken(nextToken);
     setUser(nextUser);
-    if (nextToken) writeStorage(TOKEN_KEY, nextToken);
+    const options = { session: !remember };
+    if (nextToken) writeStorage(TOKEN_KEY, nextToken, options);
     else removeStorage(TOKEN_KEY);
-    if (nextUser) writeStorage(USER_KEY, nextUser);
+    if (nextUser) writeStorage(USER_KEY, nextUser, options);
     else removeStorage(USER_KEY);
   }, []);
 
@@ -27,15 +28,23 @@ export function AuthProvider({ children }) {
       setSupplier(null);
       return null;
     }
-    const suppliers = await getSuppliers();
-    const match = (suppliers || []).find((item) => item.userId === nextUser.id || item.user?.id === nextUser.id);
-    setSupplier(match || null);
-    return match || null;
+    try {
+      const suppliers = await getSuppliers();
+      const userId = Number(nextUser.id);
+      const match = (suppliers || []).find(
+        (item) => Number(item.userId) === userId || Number(item.user?.id) === userId
+      );
+      setSupplier(match || null);
+      return match || null;
+    } catch {
+      setSupplier(null);
+      return null;
+    }
   }, []);
 
   const refreshUser = useCallback(async () => {
     const current = await getMe();
-    persist(readStorage(TOKEN_KEY), current);
+    persist(readStorage(TOKEN_KEY), current, !isSessionKey(TOKEN_KEY));
     await resolveSupplier(current);
     return current;
   }, [persist, resolveSupplier]);
@@ -50,7 +59,7 @@ export function AuthProvider({ children }) {
       try {
         const current = await getMe();
         if (cancelled) return;
-        persist(readStorage(TOKEN_KEY), current);
+        persist(readStorage(TOKEN_KEY), current, !isSessionKey(TOKEN_KEY));
         await resolveSupplier(current);
       } catch {
         if (!cancelled) {
@@ -67,9 +76,9 @@ export function AuthProvider({ children }) {
     };
   }, [persist, resolveSupplier]);
 
-  const login = useCallback(async (email, password) => {
+  const login = useCallback(async (email, password, remember = true) => {
     const result = await loginRequest(email, password);
-    persist(result.token, result.user);
+    persist(result.token, result.user, remember);
     await resolveSupplier(result.user);
     return result.user;
   }, [persist, resolveSupplier]);

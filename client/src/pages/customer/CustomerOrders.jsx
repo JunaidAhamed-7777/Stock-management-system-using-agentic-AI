@@ -55,7 +55,7 @@ export function CustomerOrders() {
             { key: "items", header: "Lines", align: "right", render: (row) => row.orderItems?.length || 0 },
             { key: "totalAmount", header: "Total", align: "right", render: (row) => formatCurrency(row.totalAmount) },
             { key: "status", header: "Status", render: (row) => <OrderStatusBadge status={row.status} /> },
-            { key: "actions", header: "", render: (row) => <Button variant="outline" onClick={() => navigate(`/customer/orders/${row.id}`)}>Track</Button> },
+            { key: "actions", header: "", render: (row) => <Button variant="outline" onClick={(event) => { event.stopPropagation(); navigate(`/customer/orders/${row.id}`); }}>Track</Button> },
           ]}
         />
       </Card>
