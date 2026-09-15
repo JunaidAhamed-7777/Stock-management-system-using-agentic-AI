@@ -8,6 +8,8 @@ yarn-error.log*
 # Runtime stuff
 .env
 .env.local
+server/.pgdata/
+server/.pgpw.txt
 .env.development.local
 .env.test.local
 .env.production.local

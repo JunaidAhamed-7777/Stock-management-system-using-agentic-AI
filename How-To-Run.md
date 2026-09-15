@@ -70,9 +70,31 @@ npm install
 
 ### Configure the environment
 
-If the backend contains an `.env.example`, create `.env` from it and configure the PostgreSQL connection and required environment variables.
+Create `server/.env` from `server/.env.example` and configure the PostgreSQL connection and required environment variables.
+
+Example development configuration:
+
+```env
+DATABASE_URL="postgresql://stockflow:StockFlow_Dev2026@localhost:55432/stock_management?schema=public"
+JWT_SECRET="stockflow-local-jwt-secret-change-in-production"
+BCRYPT_SALT_ROUNDS="10"
+PORT="3001"
+CLIENT_URL="http://localhost:5173"
+```
 
 Do not commit `.env` or other files containing secrets.
+
+### Database credentials (local development)
+
+| Setting  | Value              |
+| -------- | ------------------ |
+| Host     | `localhost`        |
+| Port     | `55432`            |
+| Database | `stock_management` |
+| User     | `stockflow`        |
+| Password | `StockFlow_Dev2026` |
+
+If the database does not exist yet, initialize a local PostgreSQL instance on port `55432`, create the `stock_management` database, then run Prisma push and seed (sections 4–5). See the setup commands in `server/scripts/setup-database.sql` and the local instance bootstrap in section 3.
 
 ---
 
@@ -271,7 +293,7 @@ $login
 Store the returned token:
 
 ```powershell
-$customerToken = $login.token
+$customerToken = $login.data.token
 ```
 
 ---
@@ -313,16 +335,16 @@ This confirms that the endpoint is protected by JWT authentication.
 Seeded admin credentials:
 
 ```text
-Email:    admin@example.com
-Password: admin123
+Email:    admin.test@stockflow.local
+Password: AdminTest2026!
 ```
 
 Login:
 
 ```powershell
 $body = @{
-    email = "admin@example.com"
-    password = "admin123"
+    email = "admin.test@stockflow.local"
+    password = "AdminTest2026!"
 } | ConvertTo-Json
 
 $adminLogin = Invoke-RestMethod `
@@ -331,7 +353,7 @@ $adminLogin = Invoke-RestMethod `
     -ContentType "application/json" `
     -Body $body
 
-$adminToken = $adminLogin.token
+$adminToken = $adminLogin.data.token
 ```
 
 Test the admin token:
@@ -355,16 +377,16 @@ role = ADMIN
 Seeded supplier credentials:
 
 ```text
-Email:    supplier1@example.com
-Password: supplier123
+Email:    supplier.test@stockflow.local
+Password: SupplierTest2026!
 ```
 
 Login:
 
 ```powershell
 $body = @{
-    email = "supplier1@example.com"
-    password = "supplier123"
+    email = "supplier.test@stockflow.local"
+    password = "SupplierTest2026!"
 } | ConvertTo-Json
 
 $supplierLogin = Invoke-RestMethod `
@@ -373,7 +395,7 @@ $supplierLogin = Invoke-RestMethod `
     -ContentType "application/json" `
     -Body $body
 
-$supplierToken = $supplierLogin.token
+$supplierToken = $supplierLogin.data.token
 ```
 
 Verify the supplier token:
@@ -848,21 +870,35 @@ To run the future frontend, navigate to the active client directory and use the 
 
 # 22. Development Login Credentials
 
-| Role     | Email                   | Password      |
-| -------- | ----------------------- | ------------- |
-| Admin    | `admin@example.com`     | `admin123`    |
-| Supplier | `supplier1@example.com` | `supplier123` |
-| Customer | `customer@example.com`  | `customer123` |
+Fresh test accounts created by `npm run seed`:
 
-Additional test customer previously used during API testing:
+| Role     | Email                           | Password            |
+| -------- | ------------------------------- | ------------------- |
+| Admin    | `admin.test@stockflow.local`    | `AdminTest2026!`    |
+| Supplier | `supplier.test@stockflow.local` | `SupplierTest2026!` |
+| Customer | `customer.test@stockflow.local` | `CustomerTest2026!` |
 
-| Role          | Email                      | Password          |
-| ------------- | -------------------------- | ----------------- |
-| Test Customer | `testcustomer@example.com` | `TestPassword123` |
+Database connection password (PostgreSQL user `stockflow`):
+
+```text
+StockFlow_Dev2026
+```
 
 These credentials are for local development/testing only.
 
 Do not use them in production.
+
+---
+
+# 22.1 Automated Endpoint Verification
+
+From `server/`, with the API running on port `3001`:
+
+```powershell
+node scripts/test-endpoints.js
+```
+
+This script exercises all routes documented in `server/endpoints.md` and reports pass/fail for each endpoint.
 
 ---
 
